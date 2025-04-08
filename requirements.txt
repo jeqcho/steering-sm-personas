@@ -1,1 +1,4 @@
-gdown>=4.7.1 
+gdown>=4.7.1
+torch>=2.0.0
+transformers>=4.36.0
+accelerate>=0.25.0 
