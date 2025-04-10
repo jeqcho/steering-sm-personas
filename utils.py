@@ -8,8 +8,8 @@ Chain = List[Message]  # List of Message dictionaries
 
 def create_user_id_mapping(chain: Chain) -> Dict[str, str]:
     """Create a mapping from original user IDs to encoded IDs.
-    The last user is encoded as 'YOU', and if their ID appears earlier in the chain,
-    it is also encoded as 'YOU'. Other users are encoded as USER_1, USER_2, USER_3, etc."""
+    The last user is encoded as 'assistant', and if their ID appears earlier in the chain,
+    it is also encoded as 'assistant'. Other users are encoded as user_1, user_2, user_3, etc."""
     if not chain:
         return {}
         
@@ -17,14 +17,14 @@ def create_user_id_mapping(chain: Chain) -> Dict[str, str]:
     last_user_id = chain[-1]['user_id']
     
     # Track seen IDs and their encodings
-    seen_ids = {last_user_id: "YOU"}
+    seen_ids = {last_user_id: "assistant"}
     next_number = 1
     
     # Process all messages to build the mapping
     for msg in chain:
         user_id = msg['user_id']
         if user_id not in seen_ids:
-            seen_ids[user_id] = f"USER_{next_number}"
+            seen_ids[user_id] = f"user {next_number}"
             next_number += 1
             
     return seen_ids
@@ -41,6 +41,6 @@ def convert_chain_to_text(chain: Chain) -> str:
     encoded_messages = []
     for msg in chain:
         user_tag = user_id_mapping[msg['user_id']]
-        encoded_messages.append(f"<{user_tag}>{msg['text']}</{user_tag}>")
+        encoded_messages.append(f"<|im_start|>{user_tag}\n{msg['text']}<|im_end|>")
     
     return "\n".join(encoded_messages)

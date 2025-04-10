@@ -1,1 +1,1 @@
-salloc --account=def-rrabba --mem=120G --gpus-per-node=1 --time=00-03:00:00
+salloc --account=def-rrabba --mem=100G --gpus-per-node=1 --time=00-02:59:00

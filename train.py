@@ -74,11 +74,12 @@ class SPMPrefixTrainer(Trainer):
 def main():
     # Initialize model and tokenizer
     model_name = "Qwen/Qwen2.5-3B-Instruct"
-    tokenizer = AutoTokenizer.from_pretrained(model_name, trust_remote_code=True)
+    tokenizer = AutoTokenizer.from_pretrained(model_name, trust_remote_code=True, local_files_only=True)
     model = AutoModelForCausalLM.from_pretrained(
         model_name,
         trust_remote_code=True,
         torch_dtype=torch.bfloat16,
+        local_files_only=True,
         device_map="auto"
     )
     
