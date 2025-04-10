@@ -24,7 +24,7 @@ def create_user_id_mapping(chain: Chain) -> Dict[str, str]:
     for msg in chain:
         user_id = msg['user_id']
         if user_id not in seen_ids:
-            seen_ids[user_id] = f"user {next_number}"
+            seen_ids[user_id] = f"user_{next_number}"
             next_number += 1
             
     return seen_ids
