@@ -12,6 +12,9 @@ import logging
 from tqdm import tqdm
 import os
 from dataclasses import dataclass
+import wandb
+
+wandb.require("legacy-service")
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -22,14 +25,14 @@ USER_EMBEDDING_CACHE_FILE = f"/scratch/{USERNAME}/caches/data_processing_user_em
 @dataclass
 class TrainingConfig:
     """Configuration for training."""
-    batch_size: int = 4
+    batch_size: int = 2
     num_epochs: int = 10
     learning_rate: float = 0.001
     weight_decay: float = 0.001
     num_workers: int = 4
-    checkpoint_dir: str = "./results"
+    checkpoint_dir: str = "/home/jchooi/scratch/checkpoints"
     save_every_n_epochs: int = 2
-    num_virtual_tokens: int = 20  # Number of virtual tokens for prefix tuning
+    gradient_accumulation_steps: int = 4
 
 class ConversationDataset(Dataset):
     def __init__(self, file_path: str, tokenizer: Any):
@@ -99,7 +102,26 @@ class PrefixTrainer:
         self.train_dataset = train_dataset
         self.config = config
         self.tokenizer = tokenizer
-        self.device = model.device
+        self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+        
+        # Initialize wandb
+        wandb.init(
+            entity="sandbox-persona",
+            project="prefix-tune",
+            config={
+                "batch_size": config.batch_size,
+                "num_epochs": config.num_epochs,
+                "learning_rate": config.learning_rate,
+                "weight_decay": config.weight_decay,
+                "gradient_accumulation_steps": config.gradient_accumulation_steps,
+                "model_name": "meta-llama/Llama-3.2-3B-Instruct",
+                "num_virtual_tokens": 20,
+                "encoder_hidden_size": 1024
+            }
+        )
+        
+        # Move model to device
+        self.model = self.model.to(self.device)
         
         # Setup dataloader
         self.train_dataloader = DataLoader(
@@ -124,21 +146,49 @@ class PrefixTrainer:
         """Train for one epoch."""
         self.model.train()
         total_loss = 0
+        self.optimizer.zero_grad()
         
-        for batch in tqdm(self.train_dataloader, desc="Training"):
+        # Initialize loss tracking
+        recent_losses = []
+        max_recent_losses = 4
+        
+        progress_bar = tqdm(self.train_dataloader, desc="Training", postfix={"loss": 0.0})
+        for i, batch in enumerate(progress_bar):
             # Move batch to device
             batch = {k: v.to(self.device) for k, v in batch.items()}
             
             # Forward pass
             outputs = self.model(**batch)
-            loss = outputs.loss
+            loss = outputs.loss / self.config.gradient_accumulation_steps
             
             # Backward pass
-            self.optimizer.zero_grad()
             loss.backward()
-            self.optimizer.step()
             
-            total_loss += loss.item()
+            if (i + 1) % self.config.gradient_accumulation_steps == 0:
+                self.optimizer.step()
+                self.optimizer.zero_grad()
+            
+            # Update recent losses
+            batch_loss = loss.item() * self.config.gradient_accumulation_steps
+            recent_losses.append(batch_loss)
+            if len(recent_losses) > max_recent_losses:
+                recent_losses.pop(0)
+            
+            # Calculate moving average
+            moving_avg = sum(recent_losses) / len(recent_losses)
+            
+            # Update tqdm postfix with current moving average
+            progress_bar.set_postfix({"loss": f"{moving_avg:.4f}"})
+            progress_bar.write(f"Loss (last {len(recent_losses)} batches): {moving_avg:.4f}")
+            
+            # Log to wandb
+            wandb.log({
+                "batch_loss": batch_loss,
+                "moving_avg_loss": moving_avg,
+                "step": i
+            })
+            
+            total_loss += batch_loss
         
         return total_loss / len(self.train_dataloader)
     
@@ -148,6 +198,9 @@ class PrefixTrainer:
         os.makedirs(checkpoint_dir, exist_ok=True)
         self.model.save_pretrained(checkpoint_dir)
         logger.info(f"Saved checkpoint to {checkpoint_dir}")
+        
+        # Log checkpoint to wandb
+        wandb.save(os.path.join(checkpoint_dir, "*"))
     
     def train(self):
         """Run the training loop."""
@@ -156,16 +209,28 @@ class PrefixTrainer:
             avg_loss = self.train_epoch()
             logger.info(f"Epoch {epoch + 1}/{self.config.num_epochs}, Loss: {avg_loss:.4f}")
             
+            # Log epoch metrics to wandb
+            wandb.log({
+                "epoch_loss": avg_loss,
+                "epoch": epoch + 1
+            })
+            
             # Save checkpoint
             if (epoch + 1) % self.config.save_every_n_epochs == 0:
                 self.save_checkpoint(epoch + 1)
         
         logger.info("Training completed!")
+        wandb.finish()
 
 def main():
     # Initialize model and tokenizer
     model_name = "meta-llama/Llama-3.2-3B-Instruct"
     tokenizer = AutoTokenizer.from_pretrained(model_name, trust_remote_code=True)
+    
+    # Set padding token
+    if tokenizer.pad_token is None:
+        tokenizer.pad_token = tokenizer.eos_token
+    
     model = AutoModelForCausalLM.from_pretrained(
         model_name,
         trust_remote_code=True,
