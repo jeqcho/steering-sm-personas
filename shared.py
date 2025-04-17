@@ -24,7 +24,7 @@ CLUSTER_POST_FILES = [
 class ConversationDataset(Dataset):
     def __init__(self, file_paths: List[str], tokenizer: Any):
         self.tokenizer = tokenizer
-        self.examples: List[Tuple[str, NDArray[np.float32]]] = []
+        self.examples: List[Tuple[str, str, NDArray[np.float32]]] = []  # (full_text, assistant_text, embeddings)
         
         # read user embeddings
         user_embeddings = {}
@@ -38,31 +38,48 @@ class ConversationDataset(Dataset):
                     chain = json.loads(line)
                     user_id = get_subject_user_id(chain)
                     embeddings = user_embeddings[user_id]
-                    text = convert_chain_to_text(chain)
-                    payload = (text, embeddings)
+                    full_text = convert_chain_to_text(chain)
+                    
+                    # Split text to get assistant's response
+                    parts = full_text.split("<|im_start|>assistant")
+                    if len(parts) != 2:
+                        continue  # Skip malformed examples
+                    assistant_text = "<|im_start|>assistant" + parts[1]  # Include separator in assistant part
+                    
+                    payload = (full_text, assistant_text, embeddings)
                     self.examples.append(payload)
     
     def __len__(self) -> int:
         return len(self.examples)
     
     def __getitem__(self, idx: int) -> Dict[str, torch.Tensor]:
-        text, embeddings = self.examples[idx]
+        full_text, assistant_text, embeddings = self.examples[idx]
         embeddings = torch.tensor(embeddings)
         
-        # Tokenize the full text
+        # Tokenize the full text for input
         tokenized = self.tokenizer(
-            text,
+            full_text,
             padding="max_length",
             truncation=True,
             max_length=2048,
             return_tensors="pt"
         )
         
+        # Create labels where we only compute loss on assistant's response
+        # First, find where the assistant's text starts in the full text
+        full_tokens = self.tokenizer.encode(full_text)
+        assistant_tokens = self.tokenizer.encode(assistant_text)
+        
+        # Create labels with -100 for tokens before assistant's response
+        labels = tokenized["input_ids"].clone()
+        assistant_start_idx = len(full_tokens) - len(assistant_tokens)
+        labels[:, :assistant_start_idx] = -100  # Set to -100 to ignore in loss
+        
         return {
             "input_ids": tokenized["input_ids"].squeeze(0),
             "attention_mask": tokenized["attention_mask"].squeeze(0),
-            "labels": tokenized["input_ids"].squeeze(0),  # For language modeling
-            "text": text  # Store original text for reference
+            "labels": labels.squeeze(0),  # Only compute loss on assistant's response
+            "text": full_text  # Store original text for reference
         }
 
 def collate_fn(batch):
