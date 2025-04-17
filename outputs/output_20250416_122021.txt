@@ -1,0 +1,247 @@
+
+================================================================================
+Cluster: downloaded_clusters/cluster_0.jsonl
+================================================================================
+
+Original Message:
+----------------------------------------
+<|im_start|>assistant
+when your Hawke grew up having horrible experiences with mages and therefore doesn’t trust them.. bad things may or may not happen<|im_end|>
+
+Generated Completion:
+----------------------------------------
+<|im_start|>assistant
+
+--------------------------------------------------------------------------------
+
+Original Message:
+----------------------------------------
+<|im_start|>assistant
+I could describe it as either yellowish light green or greenish yellow. 
+Not plain yellow, though.<|im_end|>
+
+Generated Completion:
+----------------------------------------
+<|im_start|>assistant
+
+--------------------------------------------------------------------------------
+
+Original Message:
+----------------------------------------
+<|im_start|>user_1
+thank you Canada<|im_end|>
+<|im_start|>assistant
+[action: follow]<|im_end|>
+
+Generated Completion:
+----------------------------------------
+<|im_start|>user_1
+thank you Canada<|im_end|>
+<|im_start|>assistant
+
+--------------------------------------------------------------------------------
+
+Original Message:
+----------------------------------------
+<|im_start|>user_1
+You’re forgetting that this will further secure the votes of the hundred or so Americans who share the exact same politics as Liz Cheney.<|im_end|>
+<|im_start|>assistant
+[action: ignore]<|im_end|>
+
+Generated Completion:
+----------------------------------------
+<|im_start|>user_1
+You’re forgetting that this will further secure the votes of the hundred or so Americans who share the exact same politics as Liz Cheney.<|im_end|>
+<|im_start|>assistant
+
+--------------------------------------------------------------------------------
+
+Original Message:
+----------------------------------------
+<|im_start|>user_1
+“And now he’s saying he’s putting 50% tariffs on Canada unless they agree to become the 51st state,” the journalist continued. “That is insane. There is just no other way of describing it.”<|im_end|>
+<|im_start|>assistant
+[action: follow]<|im_end|>
+
+Generated Completion:
+----------------------------------------
+<|im_start|>user_1
+“And now he’s saying he’s putting 50% tariffs on Canada unless they agree to become the 51st state,” the journalist continued. “That is insane. There is just no other way of describing it.”<|im_end|>
+<|im_start|>assistant
+
+--------------------------------------------------------------------------------
+
+
+================================================================================
+Cluster: downloaded_clusters/cluster_1.jsonl
+================================================================================
+
+Original Message:
+----------------------------------------
+<|im_start|>user_1
+#racist white #green<|im_end|>
+<|im_start|>assistant
+[action: ignore]<|im_end|>
+
+Generated Completion:
+----------------------------------------
+<|im_start|>user_1
+#racist white #green<|im_end|>
+<|im_start|>assistant
+
+--------------------------------------------------------------------------------
+
+Original Message:
+----------------------------------------
+<|im_start|>user_1
+One fine day, Ashevillians will realize that Republican was brought to you by gerrymandering and voter suppression and 100% election interference<|im_end|>
+<|im_start|>assistant
+[action: ignore]<|im_end|>
+
+Generated Completion:
+----------------------------------------
+<|im_start|>user_1
+One fine day, Ashevillians will realize that Republican was brought to you by gerrymandering and voter suppression and 100% election interference<|im_end|>
+<|im_start|>assistant
+
+--------------------------------------------------------------------------------
+
+Original Message:
+----------------------------------------
+<|im_start|>assistant
+As a fallback option, maybe. But Gould keeps saying they want members with a sustained history of competing at the highest level. Texas State does not have that history, unfortunately. They’ve been a mediocre Sun Belt team for most of their 13 FBS seasons.<|im_end|>
+
+Generated Completion:
+----------------------------------------
+<|im_start|>assistant
+
+--------------------------------------------------------------------------------
+
+Original Message:
+----------------------------------------
+<|im_start|>user_1
+Writing Tip:
+Research the different names for colors. Believe me, they come in handy and dramatically increase the quality of your work. It can be boring to list everything as blue, or green or black, when you could be describing them as aquamarine, jade, or charcoal.
+#writing #writingtips #Booksky<|im_end|>
+<|im_start|>assistant
+[action: ignore]<|im_end|>
+
+Generated Completion:
+----------------------------------------
+<|im_start|>user_1
+Writing Tip:
+Research the different names for colors. Believe me, they come in handy and dramatically increase the quality of your work. It can be boring to list everything as blue, or green or black, when you could be describing them as aquamarine, jade, or charcoal.
+#writing #writingtips #Booksky<|im_end|>
+<|im_start|>assistant
+
+--------------------------------------------------------------------------------
+
+Original Message:
+----------------------------------------
+<|im_start|>user_1
+Thank you, Sen. Elizabeth Warren!<|im_end|>
+<|im_start|>assistant
+[action: ignore]<|im_end|>
+
+Generated Completion:
+----------------------------------------
+<|im_start|>user_1
+Thank you, Sen. Elizabeth Warren!<|im_end|>
+<|im_start|>assistant
+
+--------------------------------------------------------------------------------
+
+
+================================================================================
+Cluster: downloaded_clusters/cluster_2.jsonl
+================================================================================
+
+Original Message:
+----------------------------------------
+<|im_start|>user_1
+Tesla is under investigation in Canada for processing 8,600 vehicle sales in just three days before a federal EV credit expired.
+
+The company claimed $43 million in credits over those three days. It was a big jump from usual sales volumes.<|im_end|>
+<|im_start|>assistant
+[action: like]<|im_end|>
+
+Generated Completion:
+----------------------------------------
+<|im_start|>user_1
+Tesla is under investigation in Canada for processing 8,600 vehicle sales in just three days before a federal EV credit expired.
+
+The company claimed $43 million in credits over those three days. It was a big jump from usual sales volumes.<|im_end|>
+<|im_start|>assistant
+
+--------------------------------------------------------------------------------
+
+Original Message:
+----------------------------------------
+<|im_start|>user_1
+Four days ago - Trump literally said this "then they rigged the election and I became President"... Hey @housedemocrats.bsky.social  - Anything you gonna do about this? Or maybe just make some paddles?<|im_end|>
+<|im_start|>assistant
+[action: ignore]<|im_end|>
+
+Generated Completion:
+----------------------------------------
+<|im_start|>user_1
+Four days ago - Trump literally said this "then they rigged the election and I became President"... Hey @housedemocrats.bsky.social  - Anything you gonna do about this? Or maybe just make some paddles?<|im_end|>
+<|im_start|>assistant
+
+--------------------------------------------------------------------------------
+
+Original Message:
+----------------------------------------
+<|im_start|>user_1
+[Video] Gas prices to rise in coming weeks following President Trump's tariffs on Mexico and Canada 
+Source: WUSA9<|im_end|>
+<|im_start|>assistant
+[action: ignore]<|im_end|>
+
+Generated Completion:
+----------------------------------------
+<|im_start|>user_1
+[Video] Gas prices to rise in coming weeks following President Trump's tariffs on Mexico and Canada 
+Source: WUSA9<|im_end|>
+<|im_start|>assistant
+
+--------------------------------------------------------------------------------
+
+Original Message:
+----------------------------------------
+<|im_start|>user_1
+Always “is this a yves reference” and never “is this a job”<|im_end|>
+<|im_start|>assistant
+[action: ignore]<|im_end|>
+
+Generated Completion:
+----------------------------------------
+<|im_start|>user_1
+Always “is this a yves reference” and never “is this a job”<|im_end|>
+<|im_start|>assistant and
+
+--------------------------------------------------------------------------------
+
+Original Message:
+----------------------------------------
+<|im_start|>user_1
+Despite trump’s stupid tariffs, my friendly Canadian prescription company still sends me one of my critical medicines for $70/180 pills so I can avoid paying $1400/180 pills through my insurance & pharmaceutical corporations, a difference of $5320/year.
+
+🇨🇦How has Canada enriched your life?🇨🇦
+
+#Canada<|im_end|>
+<|im_start|>assistant
+[action: ignore]<|im_end|>
+
+Generated Completion:
+----------------------------------------
+<|im_start|>user_1
+Despite trump’s stupid tariffs, my friendly Canadian prescription company still sends me one of my critical medicines for $70/180 pills so I can avoid paying $1400/180 pills through my insurance & pharmaceutical corporations, a difference of $5320/year.
+
+🇨🇦How has Canada enriched your life?🇨🇦
+
+#Canada<|im_end|>
+<|im_start|>assistant
+
+--------------------------------------------------------------------------------
+

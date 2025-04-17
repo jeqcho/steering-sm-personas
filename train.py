@@ -1,26 +1,22 @@
 from typing import List, Dict, Any, Tuple, Optional
-import json
 import torch
-from torch.utils.data import Dataset, DataLoader
-from transformers import AutoModelForCausalLM, AutoTokenizer
+from torch.utils.data import DataLoader
+from transformers import AutoModelForCausalLM
 from peft import get_peft_config, get_peft_model, PrefixTuningConfig, TaskType
-from numpy.typing import NDArray
-import numpy as np
-import pickle
-from utils import convert_chain_to_text, get_subject_user_id
 import logging
 from tqdm import tqdm
 import os
 from dataclasses import dataclass
 import wandb
+from shared import (
+    ConversationDataset,
+    CLUSTER_POST_FILES,
+    load_model_and_tokenizer,
+    collate_fn,
+    logger
+)
 
 wandb.require("legacy-service")
-
-logging.basicConfig(level=logging.INFO)
-logger = logging.getLogger(__name__)
-
-USERNAME = "jchooi"
-USER_EMBEDDING_CACHE_FILE = f"/scratch/{USERNAME}/caches/data_processing_user_embedding_cache.pkl"
 
 @dataclass
 class TrainingConfig:
@@ -31,62 +27,8 @@ class TrainingConfig:
     weight_decay: float = 0.001
     num_workers: int = 4
     checkpoint_dir: str = "/home/jchooi/scratch/checkpoints"
-    save_every_n_epochs: int = 2
+    save_every_n_steps: int = 100  # Save checkpoint every N steps
     gradient_accumulation_steps: int = 4
-
-class ConversationDataset(Dataset):
-    def __init__(self, file_path: str, tokenizer: Any):
-        self.tokenizer = tokenizer
-        self.examples: List[Tuple[str, NDArray[np.float32]]] = []
-        
-        # read user embeddings
-        user_embeddings = {}
-        with open(USER_EMBEDDING_CACHE_FILE, 'rb') as f:
-            user_embeddings = pickle.load(f)
-        
-        # read actual test
-        with open(file_path, 'r') as f:
-            for line in f:
-                chain = json.loads(line)
-                user_id = get_subject_user_id(chain)
-                embeddings = user_embeddings[user_id]
-                text = convert_chain_to_text(chain)
-                payload = (text, embeddings)
-                self.examples.append(payload)
-    
-    def __len__(self) -> int:
-        return len(self.examples)
-    
-    def __getitem__(self, idx: int) -> Dict[str, torch.Tensor]:
-        text, embeddings = self.examples[idx]
-        embeddings = torch.tensor(embeddings)
-        
-        # Tokenize the full text
-        tokenized = self.tokenizer(
-            text,
-            padding="max_length",
-            truncation=True,
-            max_length=2048,
-            return_tensors="pt"
-        )
-        
-        return {
-            "input_ids": tokenized["input_ids"].squeeze(0),
-            "attention_mask": tokenized["attention_mask"].squeeze(0),
-            "labels": tokenized["input_ids"].squeeze(0)  # For language modeling
-        }
-
-def collate_fn(batch):
-    """Custom collate function to handle our dataset format."""
-    input_ids = torch.stack([item["input_ids"] for item in batch])
-    attention_mask = torch.stack([item["attention_mask"] for item in batch])
-    labels = torch.stack([item["labels"] for item in batch])
-    
-    return {
-        "input_ids": input_ids,
-        "attention_mask": attention_mask,
-        "labels": labels
-    }
 
 class PrefixTrainer:
     """Trainer for the PEFT model."""
@@ -94,7 +36,7 @@ class PrefixTrainer:
     def __init__(
         self,
         model: AutoModelForCausalLM,
-        train_dataset: Dataset,
+        train_dataset: ConversationDataset,
         config: TrainingConfig,
         tokenizer: Any,
     ):
@@ -189,12 +131,16 @@ class PrefixTrainer:
             })
             
             total_loss += batch_loss
+            
+            # Save checkpoint every N steps
+            if (i + 1) % self.config.save_every_n_steps == 0:
+                self.save_checkpoint(f"step_{i+1}")
         
         return total_loss / len(self.train_dataloader)
     
-    def save_checkpoint(self, epoch: int):
+    def save_checkpoint(self, checkpoint_name: str):
         """Save model checkpoint."""
-        checkpoint_dir = os.path.join(self.config.checkpoint_dir, f"checkpoint-epoch-{epoch}")
+        checkpoint_dir = os.path.join(self.config.checkpoint_dir, f"checkpoint-{checkpoint_name}")
         os.makedirs(checkpoint_dir, exist_ok=True)
         self.model.save_pretrained(checkpoint_dir)
         logger.info(f"Saved checkpoint to {checkpoint_dir}")
@@ -214,29 +160,13 @@ class PrefixTrainer:
                 "epoch_loss": avg_loss,
                 "epoch": epoch + 1
             })
-            
-            # Save checkpoint
-            if (epoch + 1) % self.config.save_every_n_epochs == 0:
-                self.save_checkpoint(epoch + 1)
         
         logger.info("Training completed!")
         wandb.finish()
 
 def main():
-    # Initialize model and tokenizer
-    model_name = "meta-llama/Llama-3.2-3B-Instruct"
-    tokenizer = AutoTokenizer.from_pretrained(model_name, trust_remote_code=True)
-    
-    # Set padding token
-    if tokenizer.pad_token is None:
-        tokenizer.pad_token = tokenizer.eos_token
-    
-    model = AutoModelForCausalLM.from_pretrained(
-        model_name,
-        trust_remote_code=True,
-        torch_dtype=torch.bfloat16,
-        device_map="auto"
-    )
+    # Load base model and tokenizer
+    base_model, tokenizer = load_model_and_tokenizer()
     
     # Setup PEFT config
     peft_config = PrefixTuningConfig(
@@ -246,11 +176,11 @@ def main():
     )
     
     # Get PEFT model
-    model = get_peft_model(model, peft_config)
+    model = get_peft_model(base_model, peft_config)
     model.print_trainable_parameters()
     
     # Create dataset
-    dataset = ConversationDataset("downloaded_clusters/cluster_0.jsonl", tokenizer)
+    dataset = ConversationDataset(CLUSTER_POST_FILES, tokenizer)
     
     # Training configuration
     config = TrainingConfig()

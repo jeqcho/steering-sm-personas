@@ -1,0 +1,252 @@
+
+================================================================================
+Cluster: downloaded_clusters/cluster_0.jsonl
+================================================================================
+
+Original Message:
+----------------------------------------
+<|im_start|>user_1
+I feel so helpless here in Canada trying to help Americans remove Trump from power.<|im_end|>
+<|im_start|>assistant
+[action: ignore]<|im_end|>
+
+Generated Completion:
+----------------------------------------
+<|im_start|>user_1
+I feel so helpless here in Canada trying to help Americans remove Trump from power.<|im_end|>
+<|im_start|>assistant and
+
+--------------------------------------------------------------------------------
+
+Original Message:
+----------------------------------------
+<|im_start|>user_1
+💙 Al Green<|im_end|>
+<|im_start|>assistant
+[action: follow]<|im_end|>
+
+Generated Completion:
+----------------------------------------
+<|im_start|>user_1
+💙 Al Green<|im_end|>
+<|im_start|>assistant
+
+--------------------------------------------------------------------------------
+
+Original Message:
+----------------------------------------
+<|im_start|>user_1
+Joly was fantastic. Her and Trudeau - what a team!<|im_end|>
+<|im_start|>assistant
+[action: ignore]<|im_end|>
+
+Generated Completion:
+----------------------------------------
+<|im_start|>user_1
+Joly was fantastic. Her and Trudeau - what a team!<|im_end|>
+<|im_start|>assistant
+
+--------------------------------------------------------------------------------
+
+Original Message:
+----------------------------------------
+<|im_start|>user_1
+He may actually make a decent olive oyl lol<|im_end|>
+<|im_start|>assistant
+[action: ignore]<|im_end|>
+
+Generated Completion:
+----------------------------------------
+<|im_start|>user_1
+He may actually make a decent olive oyl lol<|im_end|>
+<|im_start|>assistant
+
+--------------------------------------------------------------------------------
+
+Original Message:
+----------------------------------------
+<|im_start|>user_1
+If I could speak to billionaires quivering in fear, I would ask: Is the risk of losing some money worth sacrificing your dignity?
+
+If I could speak to Republican politicians, I would ask: Is the risk of losing an election worth being remembered as a coward?<|im_end|>
+<|im_start|>assistant
+[action: like]<|im_end|>
+
+Generated Completion:
+----------------------------------------
+<|im_start|>user_1
+If I could speak to billionaires quivering in fear, I would ask: Is the risk of losing some money worth sacrificing your dignity?
+
+If I could speak to Republican politicians, I would ask: Is the risk of losing an election worth being remembered as a coward?<|im_end|>
+<|im_start|>assistant
+
+--------------------------------------------------------------------------------
+
+
+================================================================================
+Cluster: downloaded_clusters/cluster_1.jsonl
+================================================================================
+
+Original Message:
+----------------------------------------
+<|im_start|>user_1
+And I am not an academic or a journalist. I'm just a guy who spent a lot of time online in weird theory circles. 
+
+In my darkest thoughts, if left unchallenged, I worry it ends in exterminist policies, Gaza as general condition outside green zones.
+
+ Hope to god I'm catastrophizing on that one.<|im_end|>
+<|im_start|>assistant
+[action: ignore]<|im_end|>
+
+Generated Completion:
+----------------------------------------
+<|im_start|>user_1
+And I am not an academic or a journalist. I'm just a guy who spent a lot of time online in weird theory circles. 
+
+In my darkest thoughts, if left unchallenged, I worry it ends in exterminist policies, Gaza as general condition outside green zones.
+
+ Hope to god I'm catastrophizing on that one.<|im_end|>
+<|im_start|>assistant
+
+--------------------------------------------------------------------------------
+
+Original Message:
+----------------------------------------
+<|im_start|>user_1
+Telegraph-Forum 1984 Article on Marion Crawford Retired Volunteers Chatham Bus Trip & Wheels Inn Tour #ChathamKent #Ontario #Canada #Bucyrus #Ohio #MarionCrawford #Retired #Senior #Volunteers #BusTrip #Sponsored #Visit #Tour #Greenhouse #Winery #WheelsInn<|im_end|>
+<|im_start|>assistant
+[action: ignore]<|im_end|>
+
+Generated Completion:
+----------------------------------------
+<|im_start|>user_1
+Telegraph-Forum 1984 Article on Marion Crawford Retired Volunteers Chatham Bus Trip & Wheels Inn Tour #ChathamKent #Ontario #Canada #Bucyrus #Ohio #MarionCrawford #Retired #Senior #Volunteers #BusTrip #Sponsored #Visit #Tour #Greenhouse #Winery #WheelsInn<|im_end|>
+<|im_start|>assistant
+
+--------------------------------------------------------------------------------
+
+Original Message:
+----------------------------------------
+<|im_start|>user_1
+Yep, especially from Canadians<|im_end|>
+<|im_start|>assistant
+[action: ignore]<|im_end|>
+
+Generated Completion:
+----------------------------------------
+<|im_start|>user_1
+Yep, especially from Canadians<|im_end|>
+<|im_start|>assistant
+
+--------------------------------------------------------------------------------
+
+Original Message:
+----------------------------------------
+<|im_start|>user_1
+Trudeau is like 5 seconds away from punching that crusty tangerine in the throat and I am here for that energy<|im_end|>
+<|im_start|>assistant
+[action: ignore]<|im_end|>
+
+Generated Completion:
+----------------------------------------
+<|im_start|>user_1
+Trudeau is like 5 seconds away from punching that crusty tangerine in the throat and I am here for that energy<|im_end|>
+<|im_start|>assistant
+
+--------------------------------------------------------------------------------
+
+Original Message:
+----------------------------------------
+<|im_start|>user_1
+This video shows that we need to get a forensic audit of the 2024 election in the 7 swing states (AZ, NZ, MI, WI, NC, PA, and GA) which would show trump did not legitimately win the election. The first five would be enough to show it.
+
+Tell your neighbors and relatives in these states!<|im_end|>
+<|im_start|>assistant
+[action: ignore]<|im_end|>
+
+Generated Completion:
+----------------------------------------
+<|im_start|>user_1
+This video shows that we need to get a forensic audit of the 2024 election in the 7 swing states (AZ, NZ, MI, WI, NC, PA, and GA) which would show trump did not legitimately win the election. The first five would be enough to show it.
+
+Tell your neighbors and relatives in these states!<|im_end|>
+<|im_start|>assistant
+
+--------------------------------------------------------------------------------
+
+
+================================================================================
+Cluster: downloaded_clusters/cluster_2.jsonl
+================================================================================
+
+Original Message:
+----------------------------------------
+<|im_start|>user_1
+I've done it for every version since '22 (Cena, Rey, WrestleMania XL, Bloodline).  I want to get the most out of it now instead of paying for the base now and the rest later.  Plus, Bloodline has some extras, so may as well take advantage of it.<|im_end|>
+<|im_start|>assistant
+[action: ignore]<|im_end|>
+
+Generated Completion:
+----------------------------------------
+<|im_start|>user_1
+I've done it for every version since '22 (Cena, Rey, WrestleMania XL, Bloodline).  I want to get the most out of it now instead of paying for the base now and the rest later.  Plus, Bloodline has some extras, so may as well take advantage of it.<|im_end|>
+<|im_start|>assistant
+
+--------------------------------------------------------------------------------
+
+Original Message:
+----------------------------------------
+<|im_start|>user_1
+I agree but I will vote for whomever the democratic candidate is over Trump or Vance.Trump said we’d never have to vote again. Unless he dies of natural causes we may not have a fair election.We may vote but it will be like Russia where Putin wins every election. I pray we get house&senate in 2026.<|im_end|>
+<|im_start|>assistant
+[action: follow]<|im_end|>
+
+Generated Completion:
+----------------------------------------
+<|im_start|>user_1
+I agree but I will vote for whomever the democratic candidate is over Trump or Vance.Trump said we’d never have to vote again. Unless he dies of natural causes we may not have a fair election.We may vote but it will be like Russia where Putin wins every election. I pray we get house&senate in 2026.<|im_end|>
+<|im_start|>assistant
+
+--------------------------------------------------------------------------------
+
+Original Message:
+----------------------------------------
+<|im_start|>user_1
+"You may praise me now."<|im_end|>
+<|im_start|>assistant
+[action: follow]<|im_end|>
+
+Generated Completion:
+----------------------------------------
+<|im_start|>user_1
+"You may praise me now."<|im_end|>
+<|im_start|>assistant
+
+--------------------------------------------------------------------------------
+
+Original Message:
+----------------------------------------
+<|im_start|>user_1
+The main problem of modern politics is how to get the public to notice and respond to events, when our media ecosystem is so fragmented. The solution, we've seen time and again, is CRISIS. Crisis gets everyone paying attention, all at once. stancilculture.substack.com/p/crisis-is-...<|im_end|>
+<|im_start|>assistant
+[action: follow]<|im_end|>
+
+Generated Completion:
+----------------------------------------
+<|im_start|>user_1
+The main problem of modern politics is how to get the public to notice and respond to events, when our media ecosystem is so fragmented. The solution, we've seen time and again, is CRISIS. Crisis gets everyone paying attention, all at once. stancilculture.substack.com/p/crisis-is-...<|im_end|>
+<|im_start|>assistant
+
+--------------------------------------------------------------------------------
+
+Original Message:
+----------------------------------------
+<|im_start|>assistant
+Let's go Mark Carney<|im_end|>
+
+Generated Completion:
+----------------------------------------
+<|im_start|>assistant
+
+--------------------------------------------------------------------------------
+

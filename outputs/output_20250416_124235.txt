@@ -1,0 +1,259 @@
+
+================================================================================
+Cluster: downloaded_clusters/cluster_0.jsonl
+================================================================================
+
+Original Message:
+----------------------------------------
+<|im_start|>user_1
+I'm a member of the Royal Canadian Legion and I didn't know this. Great information.
+My dad Allister.
+ Embarked in UK,  3 June 1944.  Disembarked France, 6 June 1944<|im_end|>
+<|im_start|>assistant
+[action: ignore]<|im_end|>
+
+Generated Completion:
+----------------------------------------
+<|im_start|>user_1
+I'm a member of the Royal Canadian Legion and I didn't know this. Great information.
+My dad Allister.
+ Embarked in UK,  3 June 1944.  Disembarked France, 6 June 1944<|im_end|>
+<|im_start|>assistant
+
+--------------------------------------------------------------------------------
+
+Original Message:
+----------------------------------------
+<|im_start|>user_1
+In Canada where I often am they are universally practiced and accepted and I just find it right. And same in New Zealand<|im_end|>
+<|im_start|>assistant
+[action: ignore]<|im_end|>
+
+Generated Completion:
+----------------------------------------
+<|im_start|>user_1
+In Canada where I often am they are universally practiced and accepted and I just find it right. And same in New Zealand<|im_end|>
+<|im_start|>assistant
+
+--------------------------------------------------------------------------------
+
+Original Message:
+----------------------------------------
+<|im_start|>user_1
+Our political system is broken - public trust is at an all-time low, and abuse in politics is rising. Change is only possible if we work together. Sign our open letter to MPs and demand a better politics for all!  you.38degrees.org.uk/petitions/he...<|im_end|>
+<|im_start|>assistant
+[action: ignore]<|im_end|>
+
+Generated Completion:
+----------------------------------------
+<|im_start|>user_1
+Our political system is broken - public trust is at an all-time low, and abuse in politics is rising. Change is only possible if we work together. Sign our open letter to MPs and demand a better politics for all!  you.38degrees.org.uk/petitions/he...<|im_end|>
+<|im_start|>assistant
+
+--------------------------------------------------------------------------------
+
+Original Message:
+----------------------------------------
+<|im_start|>user_1
+You are a sellout to the republican regime.  I look forward to casting my vote at the next election for someone who will stand up to a fascists regime.  You should move to Florida.  We don’t want you here in Illinois.<|im_end|>
+<|im_start|>assistant
+[action: ignore]<|im_end|>
+
+Generated Completion:
+----------------------------------------
+<|im_start|>user_1
+You are a sellout to the republican regime.  I look forward to casting my vote at the next election for someone who will stand up to a fascists regime.  You should move to Florida.  We don’t want you here in Illinois.<|im_end|>
+<|im_start|>assistant
+
+--------------------------------------------------------------------------------
+
+Original Message:
+----------------------------------------
+<|im_start|>user_1
+I believe that trans member in congress does prove the whole narrative that trans people lost the dems the election is pure bullshit.
+
+However... she just seems to actively try her best to not use her actual power to defend her community even after proving that we are not a lost political cause.<|im_end|>
+<|im_start|>assistant
+[action: ignore]<|im_end|>
+
+Generated Completion:
+----------------------------------------
+<|im_start|>user_1
+I believe that trans member in congress does prove the whole narrative that trans people lost the dems the election is pure bullshit.
+
+However... she just seems to actively try her best to not use her actual power to defend her community even after proving that we are not a lost political cause.<|im_end|>
+<|im_start|>assistant
+
+--------------------------------------------------------------------------------
+
+
+================================================================================
+Cluster: downloaded_clusters/cluster_1.jsonl
+================================================================================
+
+Original Message:
+----------------------------------------
+<|im_start|>user_1
+I’m sure a bit of military speculation is good for the domestic audience in China as well . . . we can’t liberalise because we may be in an armed conflict soon . . .
+
+I’m no expert on Taiwan but I imagine China wouldn’t really want a boots on ground type thing happening<|im_end|>
+<|im_start|>assistant
+[action: ignore]<|im_end|>
+
+Generated Completion:
+----------------------------------------
+<|im_start|>user_1
+I’m sure a bit of military speculation is good for the domestic audience in China as well... we can’t liberalise because we may be in an armed conflict soon...
+
+I’m no expert on Taiwan but I imagine China wouldn’t really want a boots on ground type thing happening<|im_end|>
+<|im_start|>assistant
+
+--------------------------------------------------------------------------------
+
+Original Message:
+----------------------------------------
+<|im_start|>user_1
+Canada is progressive- woke. The US is not<|im_end|>
+<|im_start|>assistant
+[action: ignore]<|im_end|>
+
+Generated Completion:
+----------------------------------------
+<|im_start|>user_1
+Canada is progressive- woke. The US is not<|im_end|>
+<|im_start|>assistant
+
+--------------------------------------------------------------------------------
+
+Original Message:
+----------------------------------------
+<|im_start|>user_1
+Tesla investor survey shows 85% believe Elon Musk's politics are having 'negative' or 'extremely negative' impact on company<|im_end|>
+<|im_start|>assistant
+[action: follow]<|im_end|>
+
+Generated Completion:
+----------------------------------------
+<|im_start|>user_1
+Tesla investor survey shows 85% believe Elon Musk's politics are having 'negative' or 'extremely negative' impact on company<|im_end|>
+<|im_start|>assistant
+
+--------------------------------------------------------------------------------
+
+Original Message:
+----------------------------------------
+<|im_start|>user_1
+Canada Geese.
+#wildlife #photography #nature #birds #geese<|im_end|>
+<|im_start|>assistant
+[action: ignore]<|im_end|>
+
+Generated Completion:
+----------------------------------------
+<|im_start|>user_1
+Canada Geese.
+#wildlife #photography #nature #birds #geese<|im_end|>
+<|im_start|>assistantim)
+
+--------------------------------------------------------------------------------
+
+Original Message:
+----------------------------------------
+<|im_start|>user_1
+Generalizations hurt.   From the outside, delineating who is good and who is bad is  not the work of the oppressed.  Canadians have worked hard to delineate and differentiate from US folks.<|im_end|>
+<|im_start|>assistant
+[action: ignore]<|im_end|>
+
+Generated Completion:
+----------------------------------------
+<|im_start|>user_1
+Generalizations hurt.   From the outside, delineating who is good and who is bad is  not the work of the oppressed.  Canadians have worked hard to delineate and differentiate from US folks.<|im_end|>
+<|im_start|>assistant
+
+--------------------------------------------------------------------------------
+
+
+================================================================================
+Cluster: downloaded_clusters/cluster_2.jsonl
+================================================================================
+
+Original Message:
+----------------------------------------
+<|im_start|>user_1
+Al Green is a hero. #algreen @algreen.house.gov<|im_end|>
+<|im_start|>assistant
+[action: follow]<|im_end|>
+
+Generated Completion:
+----------------------------------------
+<|im_start|>user_1
+Al Green is a hero. #algreen @algreen.house.gov<|im_end|>
+<|im_start|>assistant and
+
+--------------------------------------------------------------------------------
+
+Original Message:
+----------------------------------------
+<|im_start|>user_1
+Grass is green and itty bitty flowers are blooming. all is right in the world<|im_end|>
+<|im_start|>assistant
+[action: ignore]<|im_end|>
+
+Generated Completion:
+----------------------------------------
+<|im_start|>user_1
+Grass is green and itty bitty flowers are blooming. all is right in the world<|im_end|>
+<|im_start|>assistant>
+
+--------------------------------------------------------------------------------
+
+Original Message:
+----------------------------------------
+<|im_start|>assistant
+BREAKING NEWS !
+
+Schumer supports Trump claim on Greenland and Canada as 51th State of the US.
+"Perhaps Gaza can also become the 52th State", says now Palestine Schumer.<|im_end|>
+
+Generated Completion:
+----------------------------------------
+<|im_start|>assistant
+
+--------------------------------------------------------------------------------
+
+Original Message:
+----------------------------------------
+<|im_start|>user_1
+His term is up in 2029. So election in 2028.
+I wanted Conor Lamb in 2022. What is he doing now?<|im_end|>
+<|im_start|>assistant
+[action: follow]<|im_end|>
+
+Generated Completion:
+----------------------------------------
+<|im_start|>user_1
+His term is up in 2029. So election in 2028.
+I wanted Conor Lamb in 2022. What is he doing now?<|im_end|>
+<|im_start|>assistant
+
+--------------------------------------------------------------------------------
+
+Original Message:
+----------------------------------------
+<|im_start|>user_1
+Who is NOT up and arms about all the so called DEI initiatives  ending? Who wasn’t  upset about affirmative action ending? Who is it who thought Black Lives DON’T matter? 
+And WTF elected trump? 
+There may be some curious White folks, but they ain’t makin’ the nightly news.<|im_end|>
+<|im_start|>assistant
+[action: ignore]<|im_end|>
+
+Generated Completion:
+----------------------------------------
+<|im_start|>user_1
+Who is NOT up and arms about all the so called DEI initiatives  ending? Who wasn’t  upset about affirmative action ending? Who is it who thought Black Lives DON’T matter? 
+And WTF elected trump? 
+There may be some curious White folks, but they ain’t makin’ the nightly news.<|im_end|>
+<|im_start|>assistant
+
+--------------------------------------------------------------------------------
+

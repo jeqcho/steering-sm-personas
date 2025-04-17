@@ -1,0 +1,246 @@
+
+================================================================================
+Cluster: downloaded_clusters/cluster_0.jsonl
+================================================================================
+
+Original Message:
+----------------------------------------
+<|im_start|>user_1
+That may be his little army to threaten us but they can be arrested especially if armed and shooting. States have National Guard. Thinking of what could happen helps plan for ways to stop them.<|im_end|>
+<|im_start|>assistant
+[action: follow]<|im_end|>
+
+Generated Completion:
+----------------------------------------
+<|im_start|>user_1
+That may be his little army to threaten us but they can be arrested especially if armed and shooting. States have National Guard. Thinking of what could happen helps plan for ways to stop them.<|im_end|>
+<|im_start|>assistant**
+
+--------------------------------------------------------------------------------
+
+Original Message:
+----------------------------------------
+<|im_start|>assistant
+May you have a wonderful and amazing weekend. I’m enjoying my anime and have been binge watching some good tv shows, by Silent Knight<|im_end|>
+
+Generated Completion:
+----------------------------------------
+<|im_start|>assistant is heincs<>)s_annand the and night he as
+ heres is and theim is
+
+--------------------------------------------------------------------------------
+
+Original Message:
+----------------------------------------
+<|im_start|>user_1
+'Deadly serious': NYT reports Trump told Canada he wants to 'revise' our border lines
+
+www.rawstory.com/trump-canada...<|im_end|>
+<|im_start|>assistant
+[action: follow]<|im_end|>
+
+Generated Completion:
+----------------------------------------
+<|im_start|>user_1
+'Deadly serious': NYT reports Trump told Canada he wants to'revise' our border lines
+
+www.rawstory.com/trump-canada...<|im_end|>
+<|im_start|>assistant
+
+--------------------------------------------------------------------------------
+
+Original Message:
+----------------------------------------
+<|im_start|>user_1
+Even if you’re not sure if you can attend, you can make signs for other people to hold. I design mine in Word, print out the image, and use an overhead projector to trace it out on some chloroplast before coloring it in with Sharpies. My body may be weak, but my signage game is strong. ;)<|im_end|>
+<|im_start|>assistant
+[action: ignore]<|im_end|>
+
+Generated Completion:
+----------------------------------------
+<|im_start|>user_1
+Even if you’re not sure if you can attend, you can make signs for other people to hold. I design mine in Word, print out the image, and use an overhead projector to trace it out on some chloroplast before coloring it in with Sharpies. My body may be weak, but my signage game is strong. ;)<|im_end|>
+<|im_start|>assistant*
+
+--------------------------------------------------------------------------------
+
+Original Message:
+----------------------------------------
+<|im_start|>user_1
+I read this today in Playbook and was like Whaaa...? Politico needs to quit trying to both sides the issue, reaching for straws with this fluff. Anyone old enough to be reading, watching, into politics has heard and said these words.<|im_end|>
+<|im_start|>assistant
+[action: ignore]<|im_end|>
+
+Generated Completion:
+----------------------------------------
+<|im_start|>user_1
+I read this today in Playbook and was like Whaaa...? Politico needs to quit trying to both sides the issue, reaching for straws with this fluff. Anyone old enough to be reading, watching, into politics has heard and said these words.<|im_end|>
+<|im_start|>assistant isand **will **will...<_< sleep
+
+--------------------------------------------------------------------------------
+
+
+================================================================================
+Cluster: downloaded_clusters/cluster_1.jsonl
+================================================================================
+
+Original Message:
+----------------------------------------
+<|im_start|>assistant
+I will post every day until the Bucks get active on here. I will get sillier. 
+
+Pie in the BlueSky ideas:
+- dunk challenge AJ Green
+- taunt mascots from active teams on here to taunt Bango
+- get tattooed?
+- the worst/best/finest photoshops everyday
+
+Probably that last one is doable<|im_end|>
+
+Generated Completion:
+----------------------------------------
+<|im_start|>assistant=="' will<
+
+--------------------------------------------------------------------------------
+
+Original Message:
+----------------------------------------
+<|im_start|>user_1
+That may not be true, but the second season came out almost three years after the first.<|im_end|>
+<|im_start|>assistant
+[action: follow]<|im_end|>
+
+Generated Completion:
+----------------------------------------
+<|im_start|>user_1
+That may not be true, but the second season came out almost three years after the first.<|im_end|>
+<|im_start|>assistant or = always
+
+--------------------------------------------------------------------------------
+
+Original Message:
+----------------------------------------
+<|im_start|>user_1
+i'm sorry but roddy gayle shouldn't have the green light to shoot a three unless the shot clock is about to hit zero<|im_end|>
+<|im_start|>assistant
+[action: ignore]<|im_end|>
+
+Generated Completion:
+----------------------------------------
+<|im_start|>user_1
+i'm sorry but roddy gayle shouldn't have the green light to shoot a three unless the shot clock is about to hit zero<|im_end|>
+<|im_start|>assistant, or
+
+
+--------------------------------------------------------------------------------
+
+Original Message:
+----------------------------------------
+<|im_start|>user_1
+Very exciting!!!! I can’t wait to read them! Also, the story may have been there, but it takes talent to bring it to life. You did an excellent job!<|im_end|>
+<|im_start|>assistant
+[action: ignore]<|im_end|>
+
+Generated Completion:
+----------------------------------------
+<|im_start|>user_1
+Very exciting!!!! I can’t wait to read them! Also, the story may have been there, but it takes talent to bring it to life. You did an excellent job!<|im_end|>
+<|im_start|>assistant androns> and for ( will*> There*
+
+--------------------------------------------------------------------------------
+
+Original Message:
+----------------------------------------
+<|im_start|>assistant
+#NFFC  🌳🔴⚪🔴
+
+FOREST FOCUS - POST MATCH VERDICT. MATT DAVIES IS JOINED BY RUBY NAYLOR CHRIS FROM FOREST ALL OVER AND CHIEF 
+
+www.youtube.com/live/WxdsZRz...<|im_end|>
+
+Generated Completion:
+----------------------------------------
+<|im_start|>assistant <
+
+--------------------------------------------------------------------------------
+
+
+================================================================================
+Cluster: downloaded_clusters/cluster_2.jsonl
+================================================================================
+
+Original Message:
+----------------------------------------
+<|im_start|>user_1
+Congratulations Canada on not being us!<|im_end|>
+<|im_start|>assistant
+yes we are celebrating  i think he is socially progressive and fiscally conservative  the best combo in my opinion<|im_end|>
+
+Generated Completion:
+----------------------------------------
+<|im_start|>user_1
+Congratulations Canada on not being us!<|im_end|>
+<|im_start|>assistant is and
+
+--------------------------------------------------------------------------------
+
+Original Message:
+----------------------------------------
+<|im_start|>user_1
+DMN reporting SSA to withhold full benefits to recover overpayments even though it may not be beneficiaries' fault. Nursing homes/landlords/mortgage co will evict these people w/o their monthly payments. How will these people live w/o paycheck from SSA? Unnecessary cruelty- this is the U.S. today!<|im_end|>
+<|im_start|>assistant
+[action: ignore]<|im_end|>
+
+Generated Completion:
+----------------------------------------
+<|im_start|>user_1
+DMN reporting SSA to withhold full benefits to recover overpayments even though it may not be beneficiaries' fault. Nursing homes/landlords/mortgage co will evict these people w/o their monthly payments. How will these people live w/o paycheck from SSA? Unnecessary cruelty- this is the U.S. today!<|im_end|>
+<|im_start|>assistant
+
+--------------------------------------------------------------------------------
+
+Original Message:
+----------------------------------------
+<|im_start|>user_1
+omg I may hit 6k soon 😵‍💫 
+
+hmmm what to do 🤔🤔<|im_end|>
+<|im_start|>assistant
+[action: ignore]<|im_end|>
+
+Generated Completion:
+----------------------------------------
+<|im_start|>user_1
+omg I may hit 6k soon 😵‍💫 
+
+hmmm what to do 🤔🤔<|im_end|>
+<|im_start|>assistant often
+
+--------------------------------------------------------------------------------
+
+Original Message:
+----------------------------------------
+<|im_start|>assistant
+It's snowing right now. May not get to see this one. 🇪🇺🇺🇦🌻<|im_end|>
+
+Generated Completion:
+----------------------------------------
+<|im_start|>assistant constantly he so and
+
+--------------------------------------------------------------------------------
+
+Original Message:
+----------------------------------------
+<|im_start|>user_1
+If you agree that Mark Robinson is a massive gaping asshole, I want to follow you.<|im_end|>
+<|im_start|>assistant
+[action: follow]<|im_end|>
+
+Generated Completion:
+----------------------------------------
+<|im_start|>user_1
+If you agree that Mark Robinson is a massive gaping asshole, I want to follow you.<|im_end|>
+<|im_start|>assistant# was isn,| or 
+
+--------------------------------------------------------------------------------
+
