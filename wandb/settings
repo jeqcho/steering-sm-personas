@@ -1,5 +1,0 @@
-[default]
-entity = sandbox-persona
-project = test-sandbox
-base_url = https://api.wandb.ai
-

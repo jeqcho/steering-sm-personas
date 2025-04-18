@@ -26,7 +26,7 @@ class TrainingConfig:
     learning_rate: float = 0.001
     weight_decay: float = 0.001
     num_workers: int = 4
-    checkpoint_dir: str = "/home/jchooi/scratch/checkpoints"
+    checkpoint_dir: str = "/home/ubuntu/sandbox-persona/checkpoints"
     save_every_n_steps: int = 100  # Save checkpoint every N steps
     gradient_accumulation_steps: int = 4
 

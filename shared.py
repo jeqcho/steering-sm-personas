@@ -14,7 +14,7 @@ logger = logging.getLogger(__name__)
 
 # Shared constants
 USERNAME = "jchooi"
-USER_EMBEDDING_CACHE_FILE = f"/scratch/{USERNAME}/caches/data_processing_user_embedding_cache.pkl"
+USER_EMBEDDING_CACHE_FILE = f"/home/ubuntu/sandbox-persona/caches/data_processing_user_embedding_cache.pkl"
 CLUSTER_POST_FILES = [
     "downloaded_clusters/cluster_0.jsonl",
     "downloaded_clusters/cluster_1.jsonl",

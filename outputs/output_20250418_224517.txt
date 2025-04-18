@@ -1,0 +1,288 @@
+
+================================================================================
+Cluster: downloaded_clusters/cluster_0.jsonl
+================================================================================
+
+Original Message:
+----------------------------------------
+<|im_start|>user_1
+Note to Congress flip a Repub!
+If you’re not working on impeachment you’re not following your oath of office to defend our country. 
+Nonviolent solution to Dictator Trump
+Hire these guys to impeach Dictator Trump before May 1st
+Brownstein Hyatt Farber Shreck LLP 
+Akin Gump Strauss Hauer & Feld LLP<|im_end|>
+<|im_start|>assistant
+[action: ignore]<|im_end|>
+
+Generated Completion:
+----------------------------------------
+<|im_start|>user_1
+Note to Congress flip a Repub!
+If you’re not working on impeachment you’re not following your oath of office to defend our country. 
+Nonviolent solution to Dictator Trump
+Hire these guys to impeach Dictator Trump before May 1st
+Brownstein Hyatt Farber Shreck LLP 
+Akin Gump Strauss Hauer & Feld LLP<|im_end|>
+<|im_start|>assistant
+
+--------------------------------------------------------------------------------
+
+Original Message:
+----------------------------------------
+<|im_start|>user_1
+Insult, introduce the Donut, withdraw military intelligence then fuck Canada and Mexico offski<|im_end|>
+<|im_start|>assistant
+[action: follow]<|im_end|>
+
+Generated Completion:
+----------------------------------------
+<|im_start|>user_1
+Insult, introduce the Donut, withdraw military intelligence then fuck Canada and Mexico offski<|im_end|>
+<|im_start|>assistant
+
+--------------------------------------------------------------------------------
+
+Original Message:
+----------------------------------------
+<|im_start|>user_1
+“On Thursday, at a news conference, a reporter asked Mr. Trudeau: “Your foreign affairs minister yesterday characterized all this as a psychodrama. How would you characterize it?”
+
+““Thursday,” Mr. Trudeau quipped ruefully.”
+www.nytimes.com/2025/03/07/w...<|im_end|>
+<|im_start|>assistant
+[action: ignore]<|im_end|>
+
+Generated Completion:
+----------------------------------------
+<|im_start|>user_1
+“On Thursday, at a news conference, a reporter asked Mr. Trudeau: “Your foreign affairs minister yesterday characterized all this as a psychodrama. How would you characterize it?”
+
+““Thursday,” Mr. Trudeau quipped ruefully.”
+www.nytimes.com/2025/03/07/w...<|im_end|>
+<|im_start|>assistant
+
+--------------------------------------------------------------------------------
+
+Original Message:
+----------------------------------------
+<|im_start|>user_1
+Outgoing Prime Minister Justin Trudeau addresses supporters in his final speech as Liberal leader soon before Canadians find out who the party has chosen as its new leader.<|im_end|>
+<|im_start|>assistant
+[action: ignore]<|im_end|>
+
+Generated Completion:
+----------------------------------------
+<|im_start|>user_1
+Outgoing Prime Minister Justin Trudeau addresses supporters in his final speech as Liberal leader soon before Canadians find out who the party has chosen as its new leader.<|im_end|>
+<|im_start|>assistant
+
+--------------------------------------------------------------------------------
+
+Original Message:
+----------------------------------------
+<|im_start|>assistant
+You may also enjoy Claymore:<|im_end|>
+
+Generated Completion:
+----------------------------------------
+<|im_start|>assistant 
+
+ 
+
+
+
+--------------------------------------------------------------------------------
+
+
+================================================================================
+Cluster: downloaded_clusters/cluster_1.jsonl
+================================================================================
+
+Original Message:
+----------------------------------------
+<|im_start|>user_1
+How do Dems hope to fundraise with such a flaccid response of leadership? The whole caucus should have walked out when Al Green was expelled. Show some backbone, courage, fight, signs of actual life ….instead of feckless scolding of those who ‘made good trouble’. You’re helping kill our democracy.<|im_end|>
+<|im_start|>assistant
+[action: ignore]<|im_end|>
+
+Generated Completion:
+----------------------------------------
+<|im_start|>user_1
+How do Dems hope to fundraise with such a flaccid response of leadership? The whole caucus should have walked out when Al Green was expelled. Show some backbone, courage, fight, signs of actual life ….instead of feckless scolding of those who ‘made good trouble’. You’re helping kill our democracy.<|im_end|>
+<|im_start|>assistant
+
+--------------------------------------------------------------------------------
+
+Original Message:
+----------------------------------------
+<|im_start|>user_1
+How bored must JK Rowling be that she thinks the perfect moment to reheat her [transphob…] comments is the height of BLM?
+
+This is a good starting point to reflect on how gender critical arguments interact with anti-racist, intersectional and decolonial critiques of Western, white liberal feminism."<|im_end|>
+<|im_start|>assistant
+[action: ignore]<|im_end|>
+
+Generated Completion:
+----------------------------------------
+<|im_start|>user_1
+How bored must JK Rowling be that she thinks the perfect moment to reheat her [transphob…] comments is the height of BLM?
+
+This is a good starting point to reflect on how gender critical arguments interact with anti-racist, intersectional and decolonial critiques of Western, white liberal feminism."<|im_end|>
+<|im_start|>assistant
+
+--------------------------------------------------------------------------------
+
+Original Message:
+----------------------------------------
+<|im_start|>user_1
+I addressed that. A target for Trump helps him. How many times must I remind people The Financial Times reported every governing party in every developed democracy that had an election lost voter share. Every fucking one. Got it? That's what happened. After the pandemic and pandemic driven inflation<|im_end|>
+<|im_start|>assistant
+[action: ignore]<|im_end|>
+
+Generated Completion:
+----------------------------------------
+<|im_start|>user_1
+I addressed that. A target for Trump helps him. How many times must I remind people The Financial Times reported every governing party in every developed democracy that had an election lost voter share. Every fucking one. Got it? That's what happened. After the pandemic and pandemic driven inflation<|im_end|>
+<|im_start|>assistant
+
+--------------------------------------------------------------------------------
+
+Original Message:
+----------------------------------------
+<|im_start|>user_1
+Mark your calendar! At least the universe will provide us with some galactic pleasures - let's grab them!
+
+"A total lunar eclipse on March 13-14, 2025, will be visible across Earth's night side. See detailed maps of where and when to watch the dramatic 'Blood Moon'. 
+
+www.space.com/where-blood-...<|im_end|>
+<|im_start|>assistant
+[action: ignore]<|im_end|>
+
+Generated Completion:
+----------------------------------------
+<|im_start|>user_1
+Mark your calendar! At least the universe will provide us with some galactic pleasures - let's grab them!
+
+"A total lunar eclipse on March 13-14, 2025, will be visible across Earth's night side. See detailed maps of where and when to watch the dramatic 'Blood Moon'. 
+
+www.space.com/where-blood-...<|im_end|>
+<|im_start|>assistant
+
+--------------------------------------------------------------------------------
+
+Original Message:
+----------------------------------------
+<|im_start|>user_1
+Trump declared war on Canada.
+Canada is retaliating.
+===============
+www.smartnews.com/en-us/articl...<|im_end|>
+<|im_start|>assistant
+[action: like]<|im_end|>
+
+Generated Completion:
+----------------------------------------
+<|im_start|>user_1
+Trump declared war on Canada.
+Canada is retaliating.
+===============
+www.smartnews.com/en-us/articl...<|im_end|>
+<|im_start|>assistant
+
+--------------------------------------------------------------------------------
+
+
+================================================================================
+Cluster: downloaded_clusters/cluster_2.jsonl
+================================================================================
+
+Original Message:
+----------------------------------------
+<|im_start|>user_1
+“If Harris wins the election you will quickly have a Kamala economic crash”-Trump 
+(👆🏾👆🏾👆🏾This is called projection)<|im_end|>
+<|im_start|>assistant
+[action: follow]<|im_end|>
+
+Generated Completion:
+----------------------------------------
+<|im_start|>user_1
+“If Harris wins the election you will quickly have a Kamala economic crash”-Trump 
+(👆🏾👆🏾👆🏾This is called projection)<|im_end|>
+<|im_start|>assistant
+
+--------------------------------------------------------------------------------
+
+Original Message:
+----------------------------------------
+<|im_start|>user_1
+I’m scared for all my beautiful and wonderful American friends and family. Canada wishes for you to wake up and use your 2nd amendment rights. FIGHT THE FUCK BACK GODDAMMIT. omg i am losing it. Sorry. Just so angry I’m having a hard time believing my state right now. youtu.be/wz_42pckM7w?...<|im_end|>
+<|im_start|>assistant
+[action: ignore]<|im_end|>
+
+Generated Completion:
+----------------------------------------
+<|im_start|>user_1
+I’m scared for all my beautiful and wonderful American friends and family. Canada wishes for you to wake up and use your 2nd amendment rights. FIGHT THE FUCK BACK GODDAMMIT. omg i am losing it. Sorry. Just so angry I’m having a hard time believing my state right now. youtu.be/wz_42pckM7w?...<|im_end|>
+<|im_start|>assistant
+
+--------------------------------------------------------------------------------
+
+Original Message:
+----------------------------------------
+<|im_start|>user_1
+Did the random cat spray somewhere? The pheromones may be making them territorial. 🤷🏼‍♀️<|im_end|>
+<|im_start|>assistant
+[action: ignore]<|im_end|>
+
+Generated Completion:
+----------------------------------------
+<|im_start|>user_1
+Did the random cat spray somewhere? The pheromones may be making them territorial. 🤷🏼‍♀️<|im_end|>
+<|im_start|>assistant
+
+--------------------------------------------------------------------------------
+
+Original Message:
+----------------------------------------
+<|im_start|>assistant
+Ban it from Canada NOW.<|im_end|>
+
+Generated Completion:
+----------------------------------------
+<|im_start|>assistant
+
+--------------------------------------------------------------------------------
+
+Original Message:
+----------------------------------------
+<|im_start|>user_1
+this came for free with my hellofresh box 
+
+everyone has such a hard-on for me consuming green powders all a sudden
+
+Andrew Huberman’s AI clone won’t shut up about AG-1 on YouTube 
+
+it’s enough 
+
+if i don’t trust what you’ve done with a fully-formed fresh vegetable why would dehydrating it help?<|im_end|>
+<|im_start|>assistant
+[action: follow]<|im_end|>
+
+Generated Completion:
+----------------------------------------
+<|im_start|>user_1
+this came for free with my hellofresh box 
+
+everyone has such a hard-on for me consuming green powders all a sudden
+
+Andrew Huberman’s AI clone won’t shut up about AG-1 on YouTube 
+
+it’s enough 
+
+if i don’t trust what you’ve done with a fully-formed fresh vegetable why would dehydrating it help?<|im_end|>
+<|im_start|>assistant
+
+--------------------------------------------------------------------------------
+

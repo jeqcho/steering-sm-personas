@@ -176,3 +176,5 @@ cython_debug/
 /downloaded_clusters/*
 caches/*
 logs/*
+
+wandb/

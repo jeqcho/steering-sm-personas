@@ -11,7 +11,7 @@ from shared import (
 )
 
 def generate_completions(
-    checkpoint_path: str = "/home/jchooi/scratch/checkpoints/checkpoint-step_500",
+    checkpoint_path: str = "/home/ubuntu/sandbox-persona/checkpoints/checkpoint-step_200",
     examples_per_cluster: int = 5,
     output_dir: str = "outputs"
 ):
