@@ -1,4 +1,4 @@
-from typing import List, Dict, Any, Tuple
+from typing import List, Dict, Any, Tuple, Optional
 import json
 import torch
 from torch.utils.data import Dataset
@@ -8,6 +8,7 @@ import numpy as np
 import pickle
 from utils import convert_chain_to_text, get_subject_user_id
 import logging
+from sklearn.model_selection import train_test_split
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -22,7 +23,7 @@ CLUSTER_POST_FILES = [
 ]
 
 class ConversationDataset(Dataset):
-    def __init__(self, file_paths: List[str], tokenizer: Any):
+    def __init__(self, file_paths: List[str], tokenizer: Any, split: Optional[str] = None, test_size: float = 0.2, random_state: int = 42):
         self.tokenizer = tokenizer
         self.examples: List[Tuple[str, str, NDArray[np.float32]]] = []  # (full_text, assistant_text, embeddings)
         
@@ -48,6 +49,18 @@ class ConversationDataset(Dataset):
                     
                     payload = (full_text, assistant_text, embeddings)
                     self.examples.append(payload)
+        
+        # Perform train/test split if requested
+        if split is not None:
+            if split not in ['train', 'test']:
+                raise ValueError("split must be either 'train' or 'test'")
+            
+            train_examples, test_examples = train_test_split(
+                self.examples,
+                test_size=test_size,
+                random_state=random_state
+            )
+            self.examples = train_examples if split == 'train' else test_examples
     
     def __len__(self) -> int:
         return len(self.examples)

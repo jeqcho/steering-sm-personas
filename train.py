@@ -1,4 +1,6 @@
 from typing import List, Dict, Any, Tuple, Optional
+from peft.mixed_model import PeftMixedModel
+from peft.peft_model import PeftModel
 import torch
 from torch.utils.data import DataLoader
 from transformers import AutoModelForCausalLM
@@ -35,7 +37,7 @@ class PrefixTrainer:
     
     def __init__(
         self,
-        model: AutoModelForCausalLM,
+        model: PeftModel | PeftMixedModel,
         train_dataset: ConversationDataset,
         config: TrainingConfig,
         tokenizer: Any,
@@ -180,7 +182,7 @@ def main():
     model.print_trainable_parameters()
     
     # Create dataset
-    dataset = ConversationDataset(CLUSTER_POST_FILES, tokenizer)
+    dataset = ConversationDataset(CLUSTER_POST_FILES[:1], tokenizer)
     
     # Training configuration
     config = TrainingConfig()
