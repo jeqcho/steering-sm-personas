@@ -3,7 +3,7 @@ from peft.mixed_model import PeftMixedModel
 from peft.peft_model import PeftModel
 import torch
 from torch.utils.data import DataLoader
-from transformers import AutoModelForCausalLM
+from transformers import AutoModelForCausalLM, AutoTokenizer
 from peft import get_peft_config, get_peft_model, PrefixTuningConfig, TaskType
 import logging
 from tqdm import tqdm
@@ -17,6 +17,8 @@ from shared import (
     collate_fn,
     logger
 )
+from huggingface_hub import login
+from dotenv import load_dotenv
 
 wandb.require("legacy-service")
 
@@ -39,11 +41,13 @@ class PrefixTrainer:
         self,
         model: PeftModel | PeftMixedModel,
         train_dataset: ConversationDataset,
+        test_dataset: ConversationDataset,  # Add test dataset
         config: TrainingConfig,
         tokenizer: Any,
     ):
         self.model = model
         self.train_dataset = train_dataset
+        self.test_dataset = test_dataset  # Store test dataset
         self.config = config
         self.tokenizer = tokenizer
         self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -59,7 +63,7 @@ class PrefixTrainer:
                 "weight_decay": config.weight_decay,
                 "gradient_accumulation_steps": config.gradient_accumulation_steps,
                 "model_name": "meta-llama/Llama-3.2-3B-Instruct",
-                "num_virtual_tokens": 20,
+                "num_virtual_tokens": 10,
                 "encoder_hidden_size": 1024
             }
         )
@@ -67,11 +71,19 @@ class PrefixTrainer:
         # Move model to device
         self.model = self.model.to(self.device)
         
-        # Setup dataloader
+        # Setup dataloaders
         self.train_dataloader = DataLoader(
             train_dataset,
             batch_size=config.batch_size,
             shuffle=True,
+            collate_fn=collate_fn,
+            num_workers=config.num_workers
+        )
+        
+        self.test_dataloader = DataLoader(
+            test_dataset,
+            batch_size=config.batch_size,
+            shuffle=False,
             collate_fn=collate_fn,
             num_workers=config.num_workers
         )
@@ -86,7 +98,33 @@ class PrefixTrainer:
         # Create checkpoint directory
         os.makedirs(config.checkpoint_dir, exist_ok=True)
     
-    def train_epoch(self) -> float:
+    def evaluate(self) -> float:
+        """Evaluate the model on the test set."""
+        self.model.eval()
+        total_loss = 0
+        
+        with torch.no_grad():
+            for batch in tqdm(self.test_dataloader, desc="Evaluating"):
+                # Move batch to device
+                batch = {k: v.to(self.device) for k, v in batch.items()}
+                
+                # Forward pass
+                outputs = self.model(**batch)
+                loss = outputs.loss
+                
+                total_loss += loss.item()
+        
+        avg_loss = total_loss / len(self.test_dataloader)
+        logger.info(f"Evaluation Loss: {avg_loss:.4f}")
+        
+        # Log to wandb
+        wandb.log({
+            "eval_loss": avg_loss
+        })
+        
+        return avg_loss
+
+    def train_epoch(self, epoch: int) -> float:
         """Train for one epoch."""
         self.model.train()
         total_loss = 0
@@ -96,7 +134,7 @@ class PrefixTrainer:
         recent_losses = []
         max_recent_losses = 4
         
-        progress_bar = tqdm(self.train_dataloader, desc="Training", postfix={"loss": 0.0})
+        progress_bar = tqdm(self.train_dataloader, desc=f"Training Epoch {epoch + 1}", postfix={"loss": 0.0})
         for i, batch in enumerate(progress_bar):
             # Move batch to device
             batch = {k: v.to(self.device) for k, v in batch.items()}
@@ -129,7 +167,7 @@ class PrefixTrainer:
             wandb.log({
                 "batch_loss": batch_loss,
                 "moving_avg_loss": moving_avg,
-                "step": i
+                "step": i + epoch * len(self.train_dataloader)
             })
             
             total_loss += batch_loss
@@ -137,6 +175,12 @@ class PrefixTrainer:
             # Save checkpoint every N steps
             if (i + 1) % self.config.save_every_n_steps == 0:
                 self.save_checkpoint(f"step_{i+1}")
+            
+            # Evaluate every 250 steps
+            if (i + 1) % 250 == 0:
+                eval_loss = self.evaluate()
+                logger.info(f"Step {i + 1}: Evaluation Loss = {eval_loss:.4f}")
+                self.model.train()  # Switch back to training mode
         
         return total_loss / len(self.train_dataloader)
     
@@ -154,7 +198,7 @@ class PrefixTrainer:
         """Run the training loop."""
         logger.info("Starting training...")
         for epoch in range(self.config.num_epochs):
-            avg_loss = self.train_epoch()
+            avg_loss = self.train_epoch(epoch)
             logger.info(f"Epoch {epoch + 1}/{self.config.num_epochs}, Loss: {avg_loss:.4f}")
             
             # Log epoch metrics to wandb
@@ -167,13 +211,28 @@ class PrefixTrainer:
         wandb.finish()
 
 def main():
+    # Load environment variables from .env file
+    load_dotenv()
+    
+    # Login to Hugging Face
+    hf_token = os.getenv("HF_TOKEN")
+    if not hf_token:
+        raise ValueError("HF_TOKEN not found in .env file. Please add it to your .env file.")
+    login(token=hf_token)
+    
+    # Login to WandB
+    wandb_token = os.getenv("WANDB_API_KEY")
+    if not wandb_token:
+        raise ValueError("WANDB_API_KEY not found in .env file. Please add it to your .env file.")
+    wandb.login(key=wandb_token)
+    
     # Load base model and tokenizer
     base_model, tokenizer = load_model_and_tokenizer()
     
     # Setup PEFT config
     peft_config = PrefixTuningConfig(
         task_type=TaskType.CAUSAL_LM,
-        num_virtual_tokens=20,
+        num_virtual_tokens=10,
         encoder_hidden_size=1024  # Match user embedding dimension
     )
     
@@ -181,8 +240,9 @@ def main():
     model = get_peft_model(base_model, peft_config)
     model.print_trainable_parameters()
     
-    # Create dataset
-    dataset = ConversationDataset(CLUSTER_POST_FILES[:1], tokenizer)
+    # Create datasets
+    train_dataset = ConversationDataset(CLUSTER_POST_FILES[:1], tokenizer, split='train', test_size=0.001)
+    test_dataset = ConversationDataset(CLUSTER_POST_FILES[:1], tokenizer, split='test', test_size=0.001)
     
     # Training configuration
     config = TrainingConfig()
@@ -190,7 +250,8 @@ def main():
     # Initialize trainer
     trainer = PrefixTrainer(
         model=model,
-        train_dataset=dataset,
+        train_dataset=train_dataset,
+        test_dataset=test_dataset,
         config=config,
         tokenizer=tokenizer
     )

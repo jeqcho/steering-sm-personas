@@ -1,0 +1,274 @@
+
+================================================================================
+Cluster: downloaded_clusters/cluster_0.jsonl
+================================================================================
+
+Original Message:
+----------------------------------------
+<|im_start|>assistant
+Y'know if I keep this pace for feeling better I may be able to take pictures of cloak clasps Sunday :>
+
+I wouldn't need to do anything strenuous, just need to set things up basically<|im_end|>
+
+Generated Completion:
+----------------------------------------
+<|begin_of_text|><|im_start|>assistant
+<|eot_id|>
+
+--------------------------------------------------------------------------------
+
+Original Message:
+----------------------------------------
+<|im_start|>user_1
+They want to fingerprint and ‘register’ Canadians coming down to the US to avoid the winter cold, the Snowbirds. 
+
+Canada should also ‘fingerprint and register’ all Americans in retaliation. 
+
+That’s what friends are for. Why we fought side by side. So we could have each other’s fingerprints.<|im_end|>
+<|im_start|>assistant
+[action: ignore]<|im_end|>
+
+Generated Completion:
+----------------------------------------
+<|begin_of_text|><|im_start|>user_1
+They want to fingerprint and ‘register’ Canadians coming down to the US to avoid the winter cold, the Snowbirds. 
+
+Canada should also ‘fingerprint and register’ all Americans in retaliation. 
+
+That’s what friends are for. Why we fought side by side. So we could have each other’s fingerprints.<|im_end|>
+<|im_start|>assistant
+<|eot_id|>
+
+--------------------------------------------------------------------------------
+
+Original Message:
+----------------------------------------
+<|im_start|>user_1
+Oh yeah! I love this!!
+#canada #ilovecanada #usalovescanada
+
+www.youtube.com/watch?v=feQN...<|im_end|>
+<|im_start|>assistant
+[action: ignore]<|im_end|>
+
+Generated Completion:
+----------------------------------------
+<|begin_of_text|><|im_start|>user_1
+Oh yeah! I love this!!
+#canada #ilovecanada #usalovescanada
+
+www.youtube.com/watch?v=feQN...<|im_end|>
+<|im_start|>assistant
+<|eot_id|>
+
+--------------------------------------------------------------------------------
+
+Original Message:
+----------------------------------------
+<|im_start|>assistant
+Shannon Elizabeth<|im_end|>
+
+Generated Completion:
+----------------------------------------
+<|begin_of_text|><|im_start|>assistant
+<|eot_id|>
+
+--------------------------------------------------------------------------------
+
+Original Message:
+----------------------------------------
+<|im_start|>user_1
+other option is having your own shop set up like with big cartel, but there is no inbuilt marketplace so you have to constantly advertise it otherwise you may make no sales.
+Redbubble, society6 are all horrible 3rd party it's nearly impossible to earn any decent profit and (2/3)<|im_end|>
+<|im_start|>assistant
+[action: ignore]<|im_end|>
+
+Generated Completion:
+----------------------------------------
+<|begin_of_text|><|im_start|>user_1
+other option is having your own shop set up like with big cartel, but there is no inbuilt marketplace so you have to constantly advertise it otherwise you may make no sales.
+Redbubble, society6 are all horrible 3rd party it's nearly impossible to earn any decent profit and (2/3)<|im_end|>
+<|im_start|>assistant
+<|eot_id|>
+
+--------------------------------------------------------------------------------
+
+
+================================================================================
+Cluster: downloaded_clusters/cluster_1.jsonl
+================================================================================
+
+Original Message:
+----------------------------------------
+<|im_start|>user_1
+Having to put the Canadian and Mexican auto tariffs off for a month, shows how Trump and his advisers haven’t thought through the unintended consequences of their actions.  They are making emotional decisions, without much analysis.  This is the same stupidity they have applied to DOGE.<|im_end|>
+<|im_start|>assistant
+[action: follow]<|im_end|>
+
+Generated Completion:
+----------------------------------------
+<|begin_of_text|><|im_start|>user_1
+Having to put the Canadian and Mexican auto tariffs off for a month, shows how Trump and his advisers haven’t thought through the unintended consequences of their actions.  They are making emotional decisions, without much analysis.  This is the same stupidity they have applied to DOGE.<|im_end|>
+<|im_start|>assistant
+<|eot_id|>
+
+--------------------------------------------------------------------------------
+
+Original Message:
+----------------------------------------
+<|im_start|>user_1
+Exactly–Trump promised Putin a weakened NATO, and now we see the consequences. Putin saw the green light and attacked Ukraine. He reckless deals with dictators are a direct threat to global security. How much more damage will he cause?!🚨👊
+
+🚨 Don’t let them win. Follow & share—together we fight back!<|im_end|>
+<|im_start|>assistant
+[action: ignore]<|im_end|>
+
+Generated Completion:
+----------------------------------------
+<|begin_of_text|><|im_start|>user_1
+Exactly–Trump promised Putin a weakened NATO, and now we see the consequences. Putin saw the green light and attacked Ukraine. He reckless deals with dictators are a direct threat to global security. How much more damage will he cause?!🚨👊
+
+🚨 Don’t let them win. Follow & share—together we fight back!<|im_end|>
+<|im_start|>assistant
+<|eot_id|>
+
+--------------------------------------------------------------------------------
+
+Original Message:
+----------------------------------------
+<|im_start|>user_1
+Elon is cuttingvthe budgets of government agencies and contractors, EXCEPT HIS. He is giving himself more contracts. That not only screams conflict of interest, and abuse of power, and may make you wonder about fraud too.<|im_end|>
+<|im_start|>assistant
+[action: ignore]<|im_end|>
+
+Generated Completion:
+----------------------------------------
+<|begin_of_text|><|im_start|>user_1
+Elon is cuttingvthe budgets of government agencies and contractors, EXCEPT HIS. He is giving himself more contracts. That not only screams conflict of interest, and abuse of power, and may make you wonder about fraud too.<|im_end|>
+<|im_start|>assistant
+<|eot_id|>
+
+--------------------------------------------------------------------------------
+
+Original Message:
+----------------------------------------
+<|im_start|>assistant
+Closest I’ll get to America in a while 👋 🇨🇦 The Canadian flag waving at the end of the White Rock Pier in Semiahmoo Bay, with the Peace Arch border crossing in the distance.
+#Canada<|im_end|>
+
+Generated Completion:
+----------------------------------------
+<|begin_of_text|><|im_start|>assistant
+<|eot_id|>
+
+--------------------------------------------------------------------------------
+
+Original Message:
+----------------------------------------
+<|im_start|>user_1
+the tariffs, but then also dismissed Canada's commendable and awe inspiring efforts to address each and every falsely based claim Trump had.
+
+The evidence is strong, it's substantial, and it strongly points towards what Justin kindly pointed out..  It was never about fentanyl, nothing Canada could<|im_end|>
+<|im_start|>assistant
+[action: ignore]<|im_end|>
+
+Generated Completion:
+----------------------------------------
+<|begin_of_text|><|im_start|>user_1
+the tariffs, but then also dismissed Canada's commendable and awe inspiring efforts to address each and every falsely based claim Trump had.
+
+The evidence is strong, it's substantial, and it strongly points towards what Justin kindly pointed out..  It was never about fentanyl, nothing Canada could<|im_end|>
+<|im_start|>assistant
+<|eot_id|>
+
+--------------------------------------------------------------------------------
+
+
+================================================================================
+Cluster: downloaded_clusters/cluster_2.jsonl
+================================================================================
+
+Original Message:
+----------------------------------------
+<|im_start|>user_1
+You may feel slight discomfort initially...  (Really, BS?  Sexually explicit?  Because it shows an ass cheek?  And yet you allow Trump's face?)<|im_end|>
+<|im_start|>assistant
+[action: follow]<|im_end|>
+
+Generated Completion:
+----------------------------------------
+<|begin_of_text|><|im_start|>user_1
+You may feel slight discomfort initially...  (Really, BS?  Sexually explicit?  Because it shows an ass cheek?  And yet you allow Trump's face?)<|im_end|>
+<|im_start|>assistant
+<|eot_id|>
+
+--------------------------------------------------------------------------------
+
+Original Message:
+----------------------------------------
+<|im_start|>user_1
+Surely. Just as surely as you’re not going to ignore demands for an explanation of your vote to Censure Rep. Al Green -for making the exact same point that you do above.
+
+I must be gullible; I didn’t see what a hypocrite & political opportunist you are.
+
+Now, the entire country sees it.<|im_end|>
+<|im_start|>assistant
+[action: ignore]<|im_end|>
+
+Generated Completion:
+----------------------------------------
+<|begin_of_text|><|im_start|>user_1
+Surely. Just as surely as you’re not going to ignore demands for an explanation of your vote to Censure Rep. Al Green -for making the exact same point that you do above.
+
+I must be gullible; I didn’t see what a hypocrite & political opportunist you are.
+
+Now, the entire country sees it.<|im_end|>
+<|im_start|>assistant
+<|eot_id|>
+
+--------------------------------------------------------------------------------
+
+Original Message:
+----------------------------------------
+<|im_start|>user_1
+If CNN thinks they will win over Trump supporters, they are fucking stupid. All giving Jennings a raise does is alienate liberal viewers. It does not bring in MAGA people who still view CNN as liberal.<|im_end|>
+<|im_start|>assistant
+[action: ignore]<|im_end|>
+
+Generated Completion:
+----------------------------------------
+<|begin_of_text|><|im_start|>user_1
+If CNN thinks they will win over Trump supporters, they are fucking stupid. All giving Jennings a raise does is alienate liberal viewers. It does not bring in MAGA people who still view CNN as liberal.<|im_end|>
+<|im_start|>assistant
+<|eot_id|>
+
+--------------------------------------------------------------------------------
+
+Original Message:
+----------------------------------------
+<|im_start|>user_1
+You have NO friends in Canada you fascist felon asshole. GO FUCK YOURSELF<|im_end|>
+<|im_start|>assistant
+[action: like]<|im_end|>
+
+Generated Completion:
+----------------------------------------
+<|begin_of_text|><|im_start|>user_1
+You have NO friends in Canada you fascist felon asshole. GO FUCK YOURSELF<|im_end|>
+<|im_start|>assistant
+<|eot_id|>
+
+--------------------------------------------------------------------------------
+
+Original Message:
+----------------------------------------
+<|im_start|>assistant
+These right-wing media groups like Fox News, Conservative YouTubers and streamers, Facebook, and X ads have huge money backing them to brainwash Americans. Those with money back them because right wingers don't threaten their money. The Left doesn't have that.<|im_end|>
+
+Generated Completion:
+----------------------------------------
+<|begin_of_text|><|im_start|>assistant
+<|eot_id|>
+
+--------------------------------------------------------------------------------
+

@@ -1,0 +1,302 @@
+
+================================================================================
+Cluster: downloaded_clusters/cluster_0.jsonl
+================================================================================
+
+Original Message:
+----------------------------------------
+<|im_start|>user_1
+Contracts may not mean much in this day and administration. Trump seems to be fine stiffing #USAID contractors for money they're already owed for work already done<|im_end|>
+<|im_start|>assistant
+[action: like]<|im_end|>
+
+Generated Completion:
+----------------------------------------
+<|begin_of_text|><|im_start|>user_1
+Contracts may not mean much in this day and administration. Trump seems to be fine stiffing #USAID contractors for money they're already owed for work already done<|im_end|>
+<|im_start|>assistant<|eot_id|>
+
+--------------------------------------------------------------------------------
+
+Original Message:
+----------------------------------------
+<|im_start|>user_1
+Please challenge Senator Schumer for his Minority Leader position - the one he abdicated, today, for all intents and purposes.
+
+I know it may seem antithetical, but you would the citizenry squarely behind you.
+
+America needs you and deserves better 
+
+It's still worth fighting to protect and defend.<|im_end|>
+<|im_start|>assistant
+[action: ignore]<|im_end|>
+
+Generated Completion:
+----------------------------------------
+<|begin_of_text|><|im_start|>user_1
+Please challenge Senator Schumer for his Minority Leader position - the one he abdicated, today, for all intents and purposes.
+
+I know it may seem antithetical, but you would the citizenry squarely behind you.
+
+America needs you and deserves better 
+
+It's still worth fighting to protect and defend.<|im_end|>
+<|im_start|>assistant<|eot_id|>
+
+--------------------------------------------------------------------------------
+
+Original Message:
+----------------------------------------
+<|im_start|>user_1
+Bend Me Over At Breakback Mountain, J.D., It's Time For My "Briefing"
+
+------
+#trump💙 #Felon47💙 #Pendejo
+💙#Swineocracy💙
+#gop 
+#maga  
+#donaldtrump 
+#deplorables
+#felon
+#usa
+#melania  
+#kamala
+#republican  
+#conservative  
+#america  
+#makeamericagreatagain 
+#MAGAtrainingAcademy 
+#TrumpHireDEI<|im_end|>
+<|im_start|>assistant
+[action: ignore]<|im_end|>
+
+Generated Completion:
+----------------------------------------
+<|begin_of_text|><|im_start|>user_1
+Bend Me Over At Breakback Mountain, J.D., It's Time For My "Briefing"
+
+------
+#trump💙 #Felon47💙 #Pendejo
+💙#Swineocracy💙
+#gop 
+#maga  
+#donaldtrump 
+#deplorables
+#felon
+#usa
+#melania  
+#kamala
+#republican  
+#conservative  
+#america  
+#makeamericagreatagain 
+#MAGAtrainingAcademy 
+#TrumpHireDEI<|im_end|>
+<|im_start|>assistant<|eot_id|>
+
+--------------------------------------------------------------------------------
+
+Original Message:
+----------------------------------------
+<|im_start|>assistant
+I think i may be in over my head with this home renovation stuff 🫠<|im_end|>
+
+Generated Completion:
+----------------------------------------
+<|begin_of_text|><|im_start|>assistant<|eot_id|>
+
+--------------------------------------------------------------------------------
+
+Original Message:
+----------------------------------------
+<|im_start|>user_1
+Reminds me of the handmaid's tale with everyone trying to escape to Canada 🇨🇦<|im_end|>
+<|im_start|>assistant
+[action: ignore]<|im_end|>
+
+Generated Completion:
+----------------------------------------
+<|begin_of_text|><|im_start|>user_1
+Reminds me of the handmaid's tale with everyone trying to escape to Canada 🇨🇦<|im_end|>
+<|im_start|>assistant<|eot_id|>
+
+--------------------------------------------------------------------------------
+
+
+================================================================================
+Cluster: downloaded_clusters/cluster_1.jsonl
+================================================================================
+
+Original Message:
+----------------------------------------
+<|im_start|>user_1
+“You do?~”
+
+*Sun kept kissing their cheek and neck as he felt his pants slide down further. Maybe he just let Sammi be their influence for the night. He says his last precautions in a more flirty tone as they commence.
+
+“Should I get protection? I uh… may have brought some in my bag…”<|im_end|>
+<|im_start|>assistant
+[action: ignore]<|im_end|>
+
+Generated Completion:
+----------------------------------------
+<|begin_of_text|><|im_start|>user_1
+“You do?~”
+
+*Sun kept kissing their cheek and neck as he felt his pants slide down further. Maybe he just let Sammi be their influence for the night. He says his last precautions in a more flirty tone as they commence.
+
+“Should I get protection? I uh… may have brought some in my bag…”<|im_end|>
+<|im_start|>assistant<|eot_id|>
+
+--------------------------------------------------------------------------------
+
+Original Message:
+----------------------------------------
+<|im_start|>user_1
+The coping is crazy there. They are trying so hard to defend every single move.
+I don't want SS checks to stop, but it may have to happen to open some of these people's eyes.
+"Oh you meant you were stopping MY social security check!?!?!?"<|im_end|>
+<|im_start|>assistant
+[action: ignore]<|im_end|>
+
+Generated Completion:
+----------------------------------------
+<|begin_of_text|><|im_start|>user_1
+The coping is crazy there. They are trying so hard to defend every single move.
+I don't want SS checks to stop, but it may have to happen to open some of these people's eyes.
+"Oh you meant you were stopping MY social security check!?!?!?"<|im_end|>
+<|im_start|>assistant<|eot_id|>
+
+--------------------------------------------------------------------------------
+
+Original Message:
+----------------------------------------
+<|im_start|>assistant
+The new registered agent for Dr. Janette Nesheiwat's company, BC Boost, appears to be a personal injury attorney from Hollywood, Florida.
+
+(Ed. note: among other kinds of cases, such attorneys may represent plaintiffs in product liability suits against companies that sell health supplements.)<|im_end|>
+
+Generated Completion:
+----------------------------------------
+<|begin_of_text|><|im_start|>assistant<|eot_id|>
+
+--------------------------------------------------------------------------------
+
+Original Message:
+----------------------------------------
+<|im_start|>user_1
+Every MP in Canada should be pressing PP about his security clearance now. It is an issue of national security.<|im_end|>
+<|im_start|>assistant
+[action: ignore]<|im_end|>
+
+Generated Completion:
+----------------------------------------
+<|begin_of_text|><|im_start|>user_1
+Every MP in Canada should be pressing PP about his security clearance now. It is an issue of national security.<|im_end|>
+<|im_start|>assistant<|eot_id|>
+
+--------------------------------------------------------------------------------
+
+Original Message:
+----------------------------------------
+<|im_start|>user_1
+OK, the fact that I haven't even read or seen anything about the symbolism of some wearing pink *automatically* means the message failed.
+What was it about?
+I'm sorry, the pink pussy hats are long gone.
+Maxine and AOC skipped.
+Al Green protested bravely.
+That's better than placards and pink.
+Lame.<|im_end|>
+<|im_start|>assistant
+[action: ignore]<|im_end|>
+
+Generated Completion:
+----------------------------------------
+<|begin_of_text|><|im_start|>user_1
+OK, the fact that I haven't even read or seen anything about the symbolism of some wearing pink *automatically* means the message failed.
+What was it about?
+I'm sorry, the pink pussy hats are long gone.
+Maxine and AOC skipped.
+Al Green protested bravely.
+That's better than placards and pink.
+Lame.<|im_end|>
+<|im_start|>assistant<|eot_id|>
+
+--------------------------------------------------------------------------------
+
+
+================================================================================
+Cluster: downloaded_clusters/cluster_2.jsonl
+================================================================================
+
+Original Message:
+----------------------------------------
+<|im_start|>user_1
+As Linda McQuaig has pointed out, there was a time when Canada possessed a vigorous constellation of publicly-owned corporations. Almost all have been privatized as Canada became seized with Reagan-Thatcher ideology of small government combined with low taxes on the wealthy and corporations.<|im_end|>
+<|im_start|>assistant
+[action: like]<|im_end|>
+
+Generated Completion:
+----------------------------------------
+<|begin_of_text|><|im_start|>user_1
+As Linda McQuaig has pointed out, there was a time when Canada possessed a vigorous constellation of publicly-owned corporations. Almost all have been privatized as Canada became seized with Reagan-Thatcher ideology of small government combined with low taxes on the wealthy and corporations.<|im_end|>
+<|im_start|>assistant<|eot_id|>
+
+--------------------------------------------------------------------------------
+
+Original Message:
+----------------------------------------
+<|im_start|>user_1
+There is nothing in the Constitution that guarantees Washington, DC the right to teachers, police, and firefighters. So it’s hard to understand the Left’s hissy fit over the Republican spending bill. 
+
+by Jonathan Turley<|im_end|>
+<|im_start|>assistant
+[action: like]<|im_end|>
+
+Generated Completion:
+----------------------------------------
+<|begin_of_text|><|im_start|>user_1
+There is nothing in the Constitution that guarantees Washington, DC the right to teachers, police, and firefighters. So it’s hard to understand the Left’s hissy fit over the Republican spending bill. 
+
+by Jonathan Turley<|im_end|>
+<|im_start|>assistant<|eot_id|>
+
+--------------------------------------------------------------------------------
+
+Original Message:
+----------------------------------------
+<|im_start|>user_1
+If that's no good... it may be Joeverinternet.<|im_end|>
+<|im_start|>assistant
+[action: ignore]<|im_end|>
+
+Generated Completion:
+----------------------------------------
+<|begin_of_text|><|im_start|>user_1
+If that's no good... it may be Joeverinternet.<|im_end|>
+<|im_start|>assistant<|eot_id|>
+
+--------------------------------------------------------------------------------
+
+Original Message:
+----------------------------------------
+<|im_start|>assistant
+Blanchet said it on CBC this a.m. - that's only a snippet of his statement on tariffs.<|im_end|>
+
+Generated Completion:
+----------------------------------------
+<|begin_of_text|><|im_start|>assistant<|eot_id|>
+
+--------------------------------------------------------------------------------
+
+Original Message:
+----------------------------------------
+<|im_start|>assistant
+But it may work, especially absent a dems’ counter.<|im_end|>
+
+Generated Completion:
+----------------------------------------
+<|begin_of_text|><|im_start|>assistant<|eot_id|>
+
+--------------------------------------------------------------------------------
+

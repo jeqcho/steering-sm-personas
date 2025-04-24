@@ -1,3 +1,7 @@
+"""
+Write results to outputs/
+"""
+
 import torch
 from peft import PeftModel
 import random
@@ -11,7 +15,7 @@ from shared import (
 )
 
 def generate_completions(
-    checkpoint_path: str = "/home/ubuntu/sandbox-persona/checkpoints/checkpoint-step_200",
+    checkpoint_path: str = "/home/ubuntu/sandbox-persona/checkpoints/checkpoint-step_500",
     examples_per_cluster: int = 5,
     output_dir: str = "outputs"
 ):
@@ -60,7 +64,7 @@ def generate_completions(
                     logger.warning(f"Unexpected input format in example {idx}. Skipping.")
                     continue
                     
-                conditioning_text = parts[0] + "<|im_start|>assistant"
+                conditioning_text = parts[0] + "<|im_start|>assistant\n"
                 
                 # Tokenize only the conditioning part
                 inputs = tokenizer(conditioning_text, return_tensors="pt", padding=True, truncation=True, max_length=2048)
@@ -70,7 +74,7 @@ def generate_completions(
                 with torch.no_grad():
                     outputs = model.generate(
                         **inputs,
-                        max_new_tokens=200,
+                        max_new_tokens=600,
                         do_sample=True,
                         temperature=0.7,
                         top_p=0.9,
@@ -78,7 +82,7 @@ def generate_completions(
                     )
                 
                 # Decode completion
-                completion = tokenizer.decode(outputs[0], skip_special_tokens=True)
+                completion = tokenizer.decode(outputs[0], skip_special_tokens=False)
                 
                 # Write to file with nice formatting
                 f.write("Original Message:\n")

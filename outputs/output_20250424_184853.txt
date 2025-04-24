@@ -1,0 +1,289 @@
+
+================================================================================
+Cluster: downloaded_clusters/cluster_0.jsonl
+================================================================================
+
+Original Message:
+----------------------------------------
+<|im_start|>user_1
+PETTY, VINDICTIVE TRUMP!!!!
+
+Trump may revoke legal status of 240,000 Ukrainians in the U.S.<|im_end|>
+<|im_start|>assistant
+[action: ignore]<|im_end|>
+
+Generated Completion:
+----------------------------------------
+<|begin_of_text|><|im_start|>user_1
+PETTY, VINDICTIVE TRUMP!!!!
+
+Trump may revoke legal status of 240,000 Ukrainians in the U.S.<|im_end|>
+<|im_start|>assistant
+<|eot_id|>
+
+--------------------------------------------------------------------------------
+
+Original Message:
+----------------------------------------
+<|im_start|>user_1
+I may need to download it too with so many moots playing it! lol<|im_end|>
+<|im_start|>assistant
+[action: follow]<|im_end|>
+
+Generated Completion:
+----------------------------------------
+<|begin_of_text|><|im_start|>user_1
+I may need to download it too with so many moots playing it! lol<|im_end|>
+<|im_start|>assistant
+<|eot_id|>
+
+--------------------------------------------------------------------------------
+
+Original Message:
+----------------------------------------
+<|im_start|>user_1
+We need to medical on election security, since they stole the last one. Otherwise, we're just trying to overrule a corrupt system with that same corrupted system.<|im_end|>
+<|im_start|>assistant
+[action: ignore]<|im_end|>
+
+Generated Completion:
+----------------------------------------
+<|begin_of_text|><|im_start|>user_1
+We need to medical on election security, since they stole the last one. Otherwise, we're just trying to overrule a corrupt system with that same corrupted system.<|im_end|>
+<|im_start|>assistant
+<|eot_id|>
+
+--------------------------------------------------------------------------------
+
+Original Message:
+----------------------------------------
+<|im_start|>user_1
+Congressional Democrats can invite expert witnesses to formal hearings, such as fired former gov officials,to explain the negative impacts of DOGE’s rampage, as well as informal hearings,like the one held last week by Sen. Elizabeth Warren with former Consumer Financial Protection Bureau officials.<|im_end|>
+<|im_start|>assistant
+[action: ignore]<|im_end|>
+
+Generated Completion:
+----------------------------------------
+<|begin_of_text|><|im_start|>user_1
+Congressional Democrats can invite expert witnesses to formal hearings, such as fired former gov officials,to explain the negative impacts of DOGE’s rampage, as well as informal hearings,like the one held last week by Sen. Elizabeth Warren with former Consumer Financial Protection Bureau officials.<|im_end|>
+<|im_start|>assistant
+<|eot_id|>
+
+--------------------------------------------------------------------------------
+
+Original Message:
+----------------------------------------
+<|im_start|>assistant
+Results may vary 🤷🏾‍♂️<|im_end|>
+
+Generated Completion:
+----------------------------------------
+<|begin_of_text|><|im_start|>assistant
+<|eot_id|>
+
+--------------------------------------------------------------------------------
+
+
+================================================================================
+Cluster: downloaded_clusters/cluster_1.jsonl
+================================================================================
+
+Original Message:
+----------------------------------------
+<|im_start|>user_1
+Good morning to everyone standing strong with Canada right now. Thank you. 🇨🇦 ☀️<|im_end|>
+<|im_start|>assistant
+[action: like]<|im_end|>
+
+Generated Completion:
+----------------------------------------
+<|begin_of_text|><|im_start|>user_1
+Good morning to everyone standing strong with Canada right now. Thank you. 🇨🇦 ☀️<|im_end|>
+<|im_start|>assistant
+<|eot_id|>
+
+--------------------------------------------------------------------------------
+
+Original Message:
+----------------------------------------
+<|im_start|>user_1
+A message to Canadians and a wake-up call to Americans
+open.substack.com/pub/stevesch...<|im_end|>
+<|im_start|>assistant
+[action: ignore]<|im_end|>
+
+Generated Completion:
+----------------------------------------
+<|begin_of_text|><|im_start|>user_1
+A message to Canadians and a wake-up call to Americans
+open.substack.com/pub/stevesch...<|im_end|>
+<|im_start|>assistant
+<|eot_id|>
+
+--------------------------------------------------------------------------------
+
+Original Message:
+----------------------------------------
+<|im_start|>user_1
+The German blitzkrieg took 6 weeks and they invaded France in May 1940. I lived a 5-year nightmare until the Americans liberated us, losing 18 members of my family to the Holocaust. You can't fathom what it is like to live under a completely arbitrary, extremely cruel government. 53 days.<|im_end|>
+<|im_start|>assistant
+[action: follow]<|im_end|>
+
+Generated Completion:
+----------------------------------------
+<|begin_of_text|><|im_start|>user_1
+The German blitzkrieg took 6 weeks and they invaded France in May 1940. I lived a 5-year nightmare until the Americans liberated us, losing 18 members of my family to the Holocaust. You can't fathom what it is like to live under a completely arbitrary, extremely cruel government. 53 days.<|im_end|>
+<|im_start|>assistant
+<|eot_id|>
+
+--------------------------------------------------------------------------------
+
+Original Message:
+----------------------------------------
+<|im_start|>user_1
+Earth’s oceans were likely green billions of years ago due to the presence of iron hydroxide and cyanobacteria with phycobilin pigments. While the oceans are now blue, rising temperatures and phytoplankton populations could cause them to turn green again.
+
+apple.news/A6es4MHw1QMK...<|im_end|>
+<|im_start|>assistant
+[action: ignore]<|im_end|>
+
+Generated Completion:
+----------------------------------------
+<|begin_of_text|><|im_start|>user_1
+Earth’s oceans were likely green billions of years ago due to the presence of iron hydroxide and cyanobacteria with phycobilin pigments. While the oceans are now blue, rising temperatures and phytoplankton populations could cause them to turn green again.
+
+apple.news/A6es4MHw1QMK...<|im_end|>
+<|im_start|>assistant
+<|eot_id|>
+
+--------------------------------------------------------------------------------
+
+Original Message:
+----------------------------------------
+<|im_start|>assistant
+🌑 People with a clear view of the eastern horizon may catch a glimpse of a red moon rising tonight thanks to the total lunar eclipse. The maximum eclipse occurs just after moonrise (around 8pm).
+
+📷 Upload your own photos of the red moon in the comments below!<|im_end|>
+
+Generated Completion:
+----------------------------------------
+<|begin_of_text|><|im_start|>assistant
+<|eot_id|>
+
+--------------------------------------------------------------------------------
+
+
+================================================================================
+Cluster: downloaded_clusters/cluster_2.jsonl
+================================================================================
+
+Original Message:
+----------------------------------------
+<|im_start|>user_1
+❤️ Monika May ◾ 📸 Femjoy 
+
+@tasha510.bsky.social @tullage.bsky.social  @simply-heinz.bsky.social @leonie04.bsky.social @pinupstickers.bsky.social @tay-fy.bsky.social @nathalienat.bsky.social @kristenkobandt.bsky.social @hhcst67.bsky.social @jordant61799.bsky.social @wowstunners.bsky.social<|im_end|>
+<|im_start|>assistant
+[action: ignore]<|im_end|>
+
+Generated Completion:
+----------------------------------------
+<|begin_of_text|><|im_start|>user_1
+❤️ Monika May ◾ 📸 Femjoy 
+
+@tasha510.bsky.social @tullage.bsky.social  @simply-heinz.bsky.social @leonie04.bsky.social @pinupstickers.bsky.social @tay-fy.bsky.social @nathalienat.bsky.social @kristenkobandt.bsky.social @hhcst67.bsky.social @jordant61799.bsky.social @wowstunners.bsky.social<|im_end|>
+<|im_start|>assistant
+<|eot_id|>
+
+--------------------------------------------------------------------------------
+
+Original Message:
+----------------------------------------
+<|im_start|>user_1
+Tim Walz: 
+
+“I’m hitting the road, traveling to red states across the country to lend a megaphone to the people. 
+
+Your congressman may not want to listen, but they’re going to hear from us anyway.”<|im_end|>
+<|im_start|>assistant
+[action: ignore]<|im_end|>
+
+Generated Completion:
+----------------------------------------
+<|begin_of_text|><|im_start|>user_1
+Tim Walz: 
+
+“I’m hitting the road, traveling to red states across the country to lend a megaphone to the people. 
+
+Your congressman may not want to listen, but they’re going to hear from us anyway.”<|im_end|>
+<|im_start|>assistant
+<|eot_id|>
+
+--------------------------------------------------------------------------------
+
+Original Message:
+----------------------------------------
+<|im_start|>assistant
+MAGA: Trump is anti-war; we're anti-war.
+
+Also MAGA: Trump wants to "annex" Canada (take away Canadian sovereignty like Putin wants to take away Ukrainian sovereignty); we want to "annex" Canada.
+
+Do all of them want to do this? No, but enough of the so-called war-hating MAGA do. All hail Trump. /S<|im_end|>
+
+Generated Completion:
+----------------------------------------
+<|begin_of_text|><|im_start|>assistant
+<|eot_id|>
+
+--------------------------------------------------------------------------------
+
+Original Message:
+----------------------------------------
+<|im_start|>user_1
+The Steel industry layoffs have started 
+
+Algoma spokesperson Laura Devoni confirmed in an email.
+"Related to the tariffs we have had approximately 20 layoffs to date," Devoni said.
+
+As reported in the Toronto Star 
+
+Why Canada will win - Our laid off workers get EI and Medical. US workers do not.<|im_end|>
+<|im_start|>assistant
+[action: ignore]<|im_end|>
+
+Generated Completion:
+----------------------------------------
+<|begin_of_text|><|im_start|>user_1
+The Steel industry layoffs have started 
+
+Algoma spokesperson Laura Devoni confirmed in an email.
+"Related to the tariffs we have had approximately 20 layoffs to date," Devoni said.
+
+As reported in the Toronto Star 
+
+Why Canada will win - Our laid off workers get EI and Medical. US workers do not.<|im_end|>
+<|im_start|>assistant
+<|eot_id|>
+
+--------------------------------------------------------------------------------
+
+Original Message:
+----------------------------------------
+<|im_start|>user_1
+Two rich little boys gonna rule the world! They’ll show Greenland and Canada who’s boss. 
+
+Sorry world, it’s a joke alright but not funny anymore. 😠😠😠😠<|im_end|>
+<|im_start|>assistant
+[action: follow]<|im_end|>
+
+Generated Completion:
+----------------------------------------
+<|begin_of_text|><|im_start|>user_1
+Two rich little boys gonna rule the world! They’ll show Greenland and Canada who’s boss. 
+
+Sorry world, it’s a joke alright but not funny anymore. 😠😠😠😠<|im_end|>
+<|im_start|>assistant
+<|eot_id|>
+
+--------------------------------------------------------------------------------
+

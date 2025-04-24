@@ -1,0 +1,294 @@
+
+================================================================================
+Cluster: downloaded_clusters/cluster_0.jsonl
+================================================================================
+
+Original Message:
+----------------------------------------
+<|im_start|>user_1
+Russia does not interest them, per se, as a vision for the common good. Putin is their hitman, their junkyard dog that they would feed their enemies to in hopes of weakening liberal democracy so they can raise up their own siloviki.<|im_end|>
+<|im_start|>assistant
+[action: ignore]<|im_end|>
+
+Generated Completion:
+----------------------------------------
+<|im_start|>user_1
+Russia does not interest them, per se, as a vision for the common good. Putin is their hitman, their junkyard dog that they would feed their enemies to in hopes of weakening liberal democracy so they can raise up their own siloviki.<|im_end|>
+<|im_start|>assistant
+
+--------------------------------------------------------------------------------
+
+Original Message:
+----------------------------------------
+<|im_start|>user_1
+"Why to Vote     Non-Voters"
+
+People on our taxpayers' benefits 
+need to prove that they did vote
+Non-Voters don't deserve assistance
+they have no civic responsibility!?
+#Politics
+#GOP
+#DNC
+"Compulsory Voting?! " Hell Yeah!?<|im_end|>
+<|im_start|>assistant
+[action: ignore]<|im_end|>
+
+Generated Completion:
+----------------------------------------
+<|im_start|>user_1
+"Why to Vote     Non-Voters"
+
+People on our taxpayers' benefits 
+need to prove that they did vote
+Non-Voters don't deserve assistance
+they have no civic responsibility!?
+#Politics
+#GOP
+#DNC
+"Compulsory Voting?! " Hell Yeah!?<|im_end|>
+<|im_start|>assistant
+
+--------------------------------------------------------------------------------
+
+Original Message:
+----------------------------------------
+<|im_start|>user_1
+No likes 😆..youve probably thought I’ve lost the plot…it was a young Frank from Hellraiser<|im_end|>
+<|im_start|>assistant
+[action: follow]<|im_end|>
+
+Generated Completion:
+----------------------------------------
+<|im_start|>user_1
+No likes 😆..youve probably thought I’ve lost the plot…it was a young Frank from Hellraiser<|im_end|>
+<|im_start|>assistant
+
+--------------------------------------------------------------------------------
+
+Original Message:
+----------------------------------------
+<|im_start|>user_1
+On the NHS reforms, this is how @stephenkb.bsky.social,  concludes this morning's politics newsletter in the FT. 
+
+It can't be said often enough, in Labour we've finally got a government that is putting effective action, however difficult, ahead of concerns for short-term political gain. 
+
+👏👏👏👏👏<|im_end|>
+<|im_start|>assistant
+[action: ignore]<|im_end|>
+
+Generated Completion:
+----------------------------------------
+<|im_start|>user_1
+On the NHS reforms, this is how @stephenkb.bsky.social,  concludes this morning's politics newsletter in the FT. 
+
+It can't be said often enough, in Labour we've finally got a government that is putting effective action, however difficult, ahead of concerns for short-term political gain. 
+
+👏👏👏👏👏<|im_end|>
+<|im_start|>assistant
+
+--------------------------------------------------------------------------------
+
+Original Message:
+----------------------------------------
+<|im_start|>user_1
+Just cancelled Netflix. The nice service rep was surprised I did it in response to US tariffs against Canada today. I am just one Canadian🇨🇦 but hew boy I know I'm not alone. We will not back down from a fight.<|im_end|>
+<|im_start|>assistant
+[action: ignore]<|im_end|>
+
+Generated Completion:
+----------------------------------------
+<|im_start|>user_1
+Just cancelled Netflix. The nice service rep was surprised I did it in response to US tariffs against Canada today. I am just one Canadian🇨🇦 but hew boy I know I'm not alone. We will not back down from a fight.<|im_end|>
+<|im_start|>assistant
+
+--------------------------------------------------------------------------------
+
+
+================================================================================
+Cluster: downloaded_clusters/cluster_1.jsonl
+================================================================================
+
+Original Message:
+----------------------------------------
+<|im_start|>user_1
+The way I read it, Canada is selling their own USD-based bonds. They are not selling off US bonds that they already own. I don't understand the bond market at all, but your post seems to imply the latter (a sell off) when it's the former.<|im_end|>
+<|im_start|>assistant
+[action: ignore]<|im_end|>
+
+Generated Completion:
+----------------------------------------
+<|im_start|>user_1
+The way I read it, Canada is selling their own USD-based bonds. They are not selling off US bonds that they already own. I don't understand the bond market at all, but your post seems to imply the latter (a sell off) when it's the former.<|im_end|>
+<|im_start|>assistant
+
+--------------------------------------------------------------------------------
+
+Original Message:
+----------------------------------------
+<|im_start|>user_1
+He didn't even flinch from the sparks. That little weapon wasn't a threat to him. In fact, he was thoroughly amused because of his reaction. ❝ Why hit me when it has already been decided? ❞
+
+The chances of killing him to avoid getting wed is zero. He may have manipulated the sect members.
+
++<|im_end|>
+<|im_start|>assistant
+[action: ignore]<|im_end|>
+
+Generated Completion:
+----------------------------------------
+<|im_start|>user_1
+He didn't even flinch from the sparks. That little weapon wasn't a threat to him. In fact, he was thoroughly amused because of his reaction. ❝ Why hit me when it has already been decided? ❞
+
+The chances of killing him to avoid getting wed is zero. He may have manipulated the sect members.
+
++<|im_end|>
+<|im_start|>assistant
+
+--------------------------------------------------------------------------------
+
+Original Message:
+----------------------------------------
+<|im_start|>user_1
+"Greenland: Hundreds protest against Trump's takeover plans."
+
+Canada 🇨🇦 stands with Greenland 🇬🇱 
+
+www.dw.com/en/greenland...<|im_end|>
+<|im_start|>assistant
+[action: ignore]<|im_end|>
+
+Generated Completion:
+----------------------------------------
+<|im_start|>user_1
+"Greenland: Hundreds protest against Trump's takeover plans."
+
+Canada 🇨🇦 stands with Greenland 🇬🇱 
+
+www.dw.com/en/greenland...<|im_end|>
+<|im_start|>assistant
+
+--------------------------------------------------------------------------------
+
+Original Message:
+----------------------------------------
+<|im_start|>user_1
+Set yourself a deadline (this week) for generating even a minimal free webpage with your name on it. This is a learning journey. Take your baby steps. This is your writing career starting. It's scary. It may feel hard. You automatically become your own marketer here. #writingcommunity #booksky<|im_end|>
+<|im_start|>assistant
+[action: ignore]<|im_end|>
+
+Generated Completion:
+----------------------------------------
+<|im_start|>user_1
+Set yourself a deadline (this week) for generating even a minimal free webpage with your name on it. This is a learning journey. Take your baby steps. This is your writing career starting. It's scary. It may feel hard. You automatically become your own marketer here. #writingcommunity #booksky<|im_end|>
+<|im_start|>assistant
+
+--------------------------------------------------------------------------------
+
+Original Message:
+----------------------------------------
+<|im_start|>user_1
+We NEED THE NAMES OF EVERY DEMOCRAT WHO VOTES FOR THIS BUDGET CUTTING BILL FOR POOR CHILDREN, WOMEN, VETS, AND DISABLED PEOPLE. FETTERMAN IS ALREADY ON OUR REMOVAL OF TRAITOR HIT LIST!!  IS SENATOR MURRAY THE ONLY ONE WITH BALLS TO POINT OUT HOW DISTRUCTIVE IT MAY BE FOR THE FUTURE OF DEMOCRACY!SAD<|im_end|>
+<|im_start|>assistant
+[action: ignore]<|im_end|>
+
+Generated Completion:
+----------------------------------------
+<|im_start|>user_1
+We NEED THE NAMES OF EVERY DEMOCRAT WHO VOTES FOR THIS BUDGET CUTTING BILL FOR POOR CHILDREN, WOMEN, VETS, AND DISABLED PEOPLE. FETTERMAN IS ALREADY ON OUR REMOVAL OF TRAITOR HIT LIST!!  IS SENATOR MURRAY THE ONLY ONE WITH BALLS TO POINT OUT HOW DISTRUCTIVE IT MAY BE FOR THE FUTURE OF DEMOCRACY!SAD<|im_end|>
+<|im_start|>assistant
+
+--------------------------------------------------------------------------------
+
+
+================================================================================
+Cluster: downloaded_clusters/cluster_2.jsonl
+================================================================================
+
+Original Message:
+----------------------------------------
+<|im_start|>user_1
+Proud to stand with Canada and Justin Trudeau.
+
+Starlink gives Elon too much control—glad Canada canceled their contract.
+
+Meanwhile, IRS cuts will gut revenue, hurting the working class while the wealthy cheat the system.
+
+When the REVOLUTION begins, will you rise to the moment or stand aside?
+
+👍🔁💙<|im_end|>
+<|im_start|>assistant
+[action: like]<|im_end|>
+
+Generated Completion:
+----------------------------------------
+<|im_start|>user_1
+Proud to stand with Canada and Justin Trudeau.
+
+Starlink gives Elon too much control—glad Canada canceled their contract.
+
+Meanwhile, IRS cuts will gut revenue, hurting the working class while the wealthy cheat the system.
+
+When the REVOLUTION begins, will you rise to the moment or stand aside?
+
+👍🔁💙<|im_end|>
+<|im_start|>assistant
+
+--------------------------------------------------------------------------------
+
+Original Message:
+----------------------------------------
+<|im_start|>assistant
+AAPL green<|im_end|>
+
+Generated Completion:
+----------------------------------------
+<|im_start|>assistant
+
+--------------------------------------------------------------------------------
+
+Original Message:
+----------------------------------------
+<|im_start|>user_1
+"Governor" Trudeau is now united with Europe, where he is referred to as Prime Minister. Canada should officially ally with Europe in an economic bloc.<|im_end|>
+<|im_start|>assistant
+[action: like]<|im_end|>
+
+Generated Completion:
+----------------------------------------
+<|im_start|>user_1
+"Governor" Trudeau is now united with Europe, where he is referred to as Prime Minister. Canada should officially ally with Europe in an economic bloc.<|im_end|>
+<|im_start|>assistant
+
+--------------------------------------------------------------------------------
+
+Original Message:
+----------------------------------------
+<|im_start|>user_1
+Treasury Secretary Scott Bessent: "If you want to be a numbskull like Justin Trudeau and say, 'Oh we’re going to do this', then tariffs are probably going to go up,”" he says.
+
+Scott Bessent can fuck off<|im_end|>
+<|im_start|>assistant
+[action: follow]<|im_end|>
+
+Generated Completion:
+----------------------------------------
+<|im_start|>user_1
+Treasury Secretary Scott Bessent: "If you want to be a numbskull like Justin Trudeau and say, 'Oh we’re going to do this', then tariffs are probably going to go up,”" he says.
+
+Scott Bessent can fuck off<|im_end|>
+<|im_start|>assistant
+
+--------------------------------------------------------------------------------
+
+Original Message:
+----------------------------------------
+<|im_start|>assistant
+Remove the American products. May be now the selection will be more diverse and seeing other countries highlighted that were not before. Happy to see something else like Ontario or Nova Scotia more inter provincial trade needed!!<|im_end|>
+
+Generated Completion:
+----------------------------------------
+<|im_start|>assistant
+
+--------------------------------------------------------------------------------
+
