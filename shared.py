@@ -10,6 +10,7 @@ from utils import convert_chain_to_text, get_subject_user_id
 import logging
 from sklearn.model_selection import train_test_split
 import os
+import datetime
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -116,7 +117,9 @@ class ConversationDataset(Dataset):
         # Dump payload into logs/test.jsonl by appending
         # comment this out if not debugging
         os.makedirs("logs", exist_ok=True)
-        with open("logs/test.jsonl", "a") as f:
+        timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
+        log_filename = f"logs/test_{timestamp}.jsonl"
+        with open(log_filename, "w") as f:
             # Convert tensors to lists for JSON serialization
             json_payload = {
                 "input_ids": payload["input_ids"].tolist(),
