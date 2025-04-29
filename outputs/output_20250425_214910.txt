@@ -1,0 +1,397 @@
+
+================================================================================
+Cluster: downloaded_clusters/cluster_0.jsonl
+================================================================================
+
+Original Message:
+----------------------------------------
+<|begin_of_text|><|start_header_id|>system<|end_header_id|>
+
+Complete your message.<|eot_id|><|start_header_id|>user_1<|end_header_id|>
+
+I may START drinking for Lent!!!<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+[action: follow]<|eot_id|>
+
+Generated Completion:
+----------------------------------------
+<|begin_of_text|><|begin_of_text|><|start_header_id|>system<|end_header_id|>
+
+Complete your message.<|eot_id|><|start_header_id|>user_1<|end_header_id|>
+
+I may START drinking for Lent!!!<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+<|eot_id|>
+
+--------------------------------------------------------------------------------
+
+Original Message:
+----------------------------------------
+<|begin_of_text|><|start_header_id|>system<|end_header_id|>
+
+Complete your message.<|eot_id|><|start_header_id|>user_1<|end_header_id|>
+
+Gay Gay Gay Gay Gay Gay Gay Gay
+Blacks Blacks Blacks Blacks Blacks
+Palestinians Palestinians Palestinians
+Canada Mexico Greenland - A Gulf
+
+Their priorities are so fucked up.<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+[action: ignore]<|eot_id|>
+
+Generated Completion:
+----------------------------------------
+<|begin_of_text|><|begin_of_text|><|start_header_id|>system<|end_header_id|>
+
+Complete your message.<|eot_id|><|start_header_id|>user_1<|end_header_id|>
+
+Gay Gay Gay Gay Gay Gay Gay Gay
+Blacks Blacks Blacks Blacks Blacks
+Palestinians Palestinians Palestinians
+Canada Mexico Greenland - A Gulf
+
+Their priorities are so fucked up.<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+<|eot_id|>
+
+--------------------------------------------------------------------------------
+
+Original Message:
+----------------------------------------
+<|begin_of_text|><|start_header_id|>system<|end_header_id|>
+
+Complete your message.<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+do you guys know any Canadian owned online clothing shops you'd want me to support? in these trying times we gotta stick together<|eot_id|>
+
+Generated Completion:
+----------------------------------------
+<|begin_of_text|><|begin_of_text|><|start_header_id|>system<|end_header_id|>
+
+Complete your message.<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+<|eot_id|>
+
+--------------------------------------------------------------------------------
+
+Original Message:
+----------------------------------------
+<|begin_of_text|><|start_header_id|>system<|end_header_id|>
+
+Complete your message.<|eot_id|><|start_header_id|>user_1<|end_header_id|>
+
+Buy you a drink in DC.
+May 1<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+[action: ignore]<|eot_id|>
+
+Generated Completion:
+----------------------------------------
+<|begin_of_text|><|begin_of_text|><|start_header_id|>system<|end_header_id|>
+
+Complete your message.<|eot_id|><|start_header_id|>user_1<|end_header_id|>
+
+Buy you a drink in DC.
+May 1<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+<|eot_id|>
+
+--------------------------------------------------------------------------------
+
+Original Message:
+----------------------------------------
+<|begin_of_text|><|start_header_id|>system<|end_header_id|>
+
+Complete your message.<|eot_id|><|start_header_id|>user_1<|end_header_id|>
+
+Shame on these 10 democratic representatives who voted with Republicans to censure Al Green for interrupting Trump’s address. Trump insulted Democrats repeatedly during his speech. Republicans like Marge Green and Lauren Bobert famously disrupted Biden’s addresses without censure of any kind.<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+[action: ignore]<|eot_id|>
+
+Generated Completion:
+----------------------------------------
+<|begin_of_text|><|begin_of_text|><|start_header_id|>system<|end_header_id|>
+
+Complete your message.<|eot_id|><|start_header_id|>user_1<|end_header_id|>
+
+Shame on these 10 democratic representatives who voted with Republicans to censure Al Green for interrupting Trump’s address. Trump insulted Democrats repeatedly during his speech. Republicans like Marge Green and Lauren Bobert famously disrupted Biden’s addresses without censure of any kind.<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+<|eot_id|>
+
+--------------------------------------------------------------------------------
+
+
+================================================================================
+Cluster: downloaded_clusters/cluster_1.jsonl
+================================================================================
+
+Original Message:
+----------------------------------------
+<|begin_of_text|><|start_header_id|>system<|end_header_id|>
+
+Complete your message.<|eot_id|><|start_header_id|>user_1<|end_header_id|>
+
+Accountability is a rare trait in politics<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+[action: follow]<|eot_id|>
+
+Generated Completion:
+----------------------------------------
+<|begin_of_text|><|begin_of_text|><|start_header_id|>system<|end_header_id|>
+
+Complete your message.<|eot_id|><|start_header_id|>user_1<|end_header_id|>
+
+Accountability is a rare trait in politics<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+<|eot_id|>
+
+--------------------------------------------------------------------------------
+
+Original Message:
+----------------------------------------
+<|begin_of_text|><|start_header_id|>system<|end_header_id|>
+
+Complete your message.<|eot_id|><|start_header_id|>user_1<|end_header_id|>
+
+Oct 9 2024
+Winona State was thrilled to receive word just before the election of a $1.1 million federal grant to provide training for students, public officials and staff of small government entities in #MN01
+
+Nov 5
+#Trump & #RepFinstad win Winona County
+
+Mar 6 
+Musk says NO
+youtu.be/8sVbH68Q_4w?...<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+[action: ignore]<|eot_id|>
+
+Generated Completion:
+----------------------------------------
+<|begin_of_text|><|begin_of_text|><|start_header_id|>system<|end_header_id|>
+
+Complete your message.<|eot_id|><|start_header_id|>user_1<|end_header_id|>
+
+Oct 9 2024
+Winona State was thrilled to receive word just before the election of a $1.1 million federal grant to provide training for students, public officials and staff of small government entities in #MN01
+
+Nov 5
+#Trump & #RepFinstad win Winona County
+
+Mar 6 
+Musk says NO
+youtu.be/8sVbH68Q_4w?...<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+<|eot_id|>
+
+--------------------------------------------------------------------------------
+
+Original Message:
+----------------------------------------
+<|begin_of_text|><|start_header_id|>system<|end_header_id|>
+
+Complete your message.<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+We now sit down for Project Table discussions 📋
+
+📘 @psdi-uk.bsky.social
+
+🌐 www.psdi.ac.uk
+
+📓 @codata-isc.bsky.social Digital Representation of Units of Measurement (DRUM)
+
+🌐 codata.org/initiatives/...
+
+📙 @iupac.org Gold Book
+
+🌐 goldbook.iupac.org
+
+📗 @iupac.org Green Book
+
+🌐 iupac.org/wp-content/u...<|eot_id|>
+
+Generated Completion:
+----------------------------------------
+<|begin_of_text|><|begin_of_text|><|start_header_id|>system<|end_header_id|>
+
+Complete your message.<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+<|eot_id|>
+
+--------------------------------------------------------------------------------
+
+Original Message:
+----------------------------------------
+<|begin_of_text|><|start_header_id|>system<|end_header_id|>
+
+Complete your message.<|eot_id|><|start_header_id|>user_1<|end_header_id|>
+
+It may not be optimal our Commander in Chief is a Russian asset? ... 
+
+Probably should not have elected a President, who will sell us out to foreign powers? But, I just drive a bus and I dont own a suit, so what would I know?<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+[action: ignore]<|eot_id|>
+
+Generated Completion:
+----------------------------------------
+<|begin_of_text|><|begin_of_text|><|start_header_id|>system<|end_header_id|>
+
+Complete your message.<|eot_id|><|start_header_id|>user_1<|end_header_id|>
+
+It may not be optimal our Commander in Chief is a Russian asset?... 
+
+Probably should not have elected a President, who will sell us out to foreign powers? But, I just drive a bus and I dont own a suit, so what would I know?<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+<|eot_id|>
+
+--------------------------------------------------------------------------------
+
+Original Message:
+----------------------------------------
+<|begin_of_text|><|start_header_id|>system<|end_header_id|>
+
+Complete your message.<|eot_id|><|start_header_id|>user_1<|end_header_id|>
+
+Good morning Elizabeth 🌞💙<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+[action: follow]<|eot_id|>
+
+Generated Completion:
+----------------------------------------
+<|begin_of_text|><|begin_of_text|><|start_header_id|>system<|end_header_id|>
+
+Complete your message.<|eot_id|><|start_header_id|>user_1<|end_header_id|>
+
+Good morning Elizabeth 🌞💙<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+<|eot_id|>
+
+--------------------------------------------------------------------------------
+
+
+================================================================================
+Cluster: downloaded_clusters/cluster_2.jsonl
+================================================================================
+
+Original Message:
+----------------------------------------
+<|begin_of_text|><|start_header_id|>system<|end_header_id|>
+
+Complete your message.<|eot_id|><|start_header_id|>user_1<|end_header_id|>
+
+For those curious, the Government of Canada has no special advisories in effect for Canadians travelling to the United States
+
+travel.gc.ca/destinations...<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+[action: follow]<|eot_id|>
+
+Generated Completion:
+----------------------------------------
+<|begin_of_text|><|begin_of_text|><|start_header_id|>system<|end_header_id|>
+
+Complete your message.<|eot_id|><|start_header_id|>user_1<|end_header_id|>
+
+For those curious, the Government of Canada has no special advisories in effect for Canadians travelling to the United States
+
+travel.gc.ca/destinations...<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+<|eot_id|>
+
+--------------------------------------------------------------------------------
+
+Original Message:
+----------------------------------------
+<|begin_of_text|><|start_header_id|>system<|end_header_id|>
+
+Complete your message.<|eot_id|><|start_header_id|>user_1<|end_header_id|>
+
+Here’s everything you need to know about the Trump administration’s attempt to deport Mahmoud Khalil — and what it may mean for other people too:<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+[action: follow]<|eot_id|>
+
+Generated Completion:
+----------------------------------------
+<|begin_of_text|><|begin_of_text|><|start_header_id|>system<|end_header_id|>
+
+Complete your message.<|eot_id|><|start_header_id|>user_1<|end_header_id|>
+
+Here’s everything you need to know about the Trump administration’s attempt to deport Mahmoud Khalil — and what it may mean for other people too:<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+<|eot_id|>
+
+--------------------------------------------------------------------------------
+
+Original Message:
+----------------------------------------
+<|begin_of_text|><|start_header_id|>system<|end_header_id|>
+
+Complete your message.<|eot_id|><|start_header_id|>user_1<|end_header_id|>
+
+I agree, and those who caved, need to be held accountable for the harms they caused . They need to be primaried . If they’re not willing to stand up for their constituents, then maybe politics isn’t the right career choice . They should choose another line of work instead , that won’t harm people<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+[action: follow]<|eot_id|>
+
+Generated Completion:
+----------------------------------------
+<|begin_of_text|><|begin_of_text|><|start_header_id|>system<|end_header_id|>
+
+Complete your message.<|eot_id|><|start_header_id|>user_1<|end_header_id|>
+
+I agree, and those who caved, need to be held accountable for the harms they caused. They need to be primaried. If they’re not willing to stand up for their constituents, then maybe politics isn’t the right career choice. They should choose another line of work instead, that won’t harm people<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+<|eot_id|>
+
+--------------------------------------------------------------------------------
+
+Original Message:
+----------------------------------------
+<|begin_of_text|><|start_header_id|>system<|end_header_id|>
+
+Complete your message.<|eot_id|><|start_header_id|>user_1<|end_header_id|>
+
+Canada’s strong response to the unjustified US tariffs is having an impact. I am proud of the united front of workers, labour, businesses, federal and provincial governments that is helping Canada to navigate through this crisis. (1/3)<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+[action: like]<|eot_id|>
+
+Generated Completion:
+----------------------------------------
+<|begin_of_text|><|begin_of_text|><|start_header_id|>system<|end_header_id|>
+
+Complete your message.<|eot_id|><|start_header_id|>user_1<|end_header_id|>
+
+Canada’s strong response to the unjustified US tariffs is having an impact. I am proud of the united front of workers, labour, businesses, federal and provincial governments that is helping Canada to navigate through this crisis. (1/3)<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+<|eot_id|>
+
+--------------------------------------------------------------------------------
+
+Original Message:
+----------------------------------------
+<|begin_of_text|><|start_header_id|>system<|end_header_id|>
+
+Complete your message.<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+2/2
+Pete Buttigieg
+AOC
+Bernie Sanders
+Gov. Jay Pritzker
+Jasmine Crockett
+Raphael Warnock
+Mark Cuban
+Maxwell Frost
+David Hogg
+Jon Stewart
+MeidasTouchNetwork brothers 
+(Your suggestions here . . .)<|eot_id|>
+
+Generated Completion:
+----------------------------------------
+<|begin_of_text|><|begin_of_text|><|start_header_id|>system<|end_header_id|>
+
+Complete your message.<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+<|eot_id|>
+
+--------------------------------------------------------------------------------
+

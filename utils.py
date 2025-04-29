@@ -8,6 +8,7 @@ class Message(TypedDict):
 
 Chain = List[Message]  # List of Message dictionaries
 
+SYSTEM_PROMPT = """Complete your message."""
 
 def get_subject_user_id(chain: Chain) -> str:
     """Get the user_id of the last person"""
@@ -47,9 +48,8 @@ def convert_chain_to_text(chain: Chain) -> str:
     user_id_mapping = create_user_id_mapping(chain)
 
     # Process messages using the mapping
-    encoded_messages = []
+    message = f"""<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\n{SYSTEM_PROMPT}<|eot_id|>"""
     for msg in chain:
         user_tag = user_id_mapping[msg["user_id"]]
-        encoded_messages.append(f"<|im_start|>{user_tag}\n{msg['text']}<|im_end|>")
-
-    return "\n".join(encoded_messages)
+        message += f"<|start_header_id|>{user_tag}<|end_header_id|>\n\n{msg['text']}<|eot_id|>"
+    return message

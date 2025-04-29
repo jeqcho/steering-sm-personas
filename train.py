@@ -245,7 +245,7 @@ def main():
     test_dataset = ConversationDataset(CLUSTER_POST_FILES[:1], tokenizer, split='test', test_size=0.001)
     
     # Training configuration
-    config = TrainingConfig()
+    config = TrainingConfig(batch_size=1)
     
     # Initialize trainer
     trainer = PrefixTrainer(

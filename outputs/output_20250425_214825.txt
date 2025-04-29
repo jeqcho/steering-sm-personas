@@ -1,0 +1,222 @@
+
+================================================================================
+Cluster: downloaded_clusters/cluster_0.jsonl
+================================================================================
+
+Original Message:
+----------------------------------------
+<|begin_of_text|><|start_header_id|>system<|end_header_id|>
+
+Complete your message.<|eot_id|><|start_header_id|>user_1<|end_header_id|>
+
+Dear Spinless D's who voted to with the mob to censure Al Green- THIS IS WHAT YOU DO YOU EFFING COWARDS!
+
+House Speaker Mike Johnson (R-LA) tried to regain control of the House floor Thursday as some Democrats protested the censure of Rep. Al Green (D-TX) by singing, "We Shall Overcome."<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+[action: ignore]<|eot_id|>
+
+Generated Completion:
+----------------------------------------
+<|begin_of_text|><|begin_of_text|><|start_header_id|>system<|end_header_id|>
+
+Complete your message.<|eot_id|><|start_header_id|>user_1<|end_header_id|>
+
+Dear Spinless D's who voted to with the mob to censure Al Green- THIS IS WHAT YOU DO YOU EFFING COWARDS!
+
+House Speaker Mike Johnson (R-LA) tried to regain control of the House floor Thursday as some Democrats protested the censure of Rep. Al Green (D-TX) by singing, "We Shall Overcome."<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+<|eot_id|>
+
+--------------------------------------------------------------------------------
+
+Original Message:
+----------------------------------------
+<|begin_of_text|><|start_header_id|>system<|end_header_id|>
+
+Complete your message.<|eot_id|><|start_header_id|>user_1<|end_header_id|>
+
+Waste of time. Worst circus ever. Al Green was definitely the best part.<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+[action: ignore]<|eot_id|>
+
+Generated Completion:
+----------------------------------------
+<|begin_of_text|><|begin_of_text|><|start_header_id|>system<|end_header_id|>
+
+Complete your message.<|eot_id|><|start_header_id|>user_1<|end_header_id|>
+
+Waste of time. Worst circus ever. Al Green was definitely the best part.<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+<|eot_id|>
+
+--------------------------------------------------------------------------------
+
+Original Message:
+----------------------------------------
+<|begin_of_text|><|start_header_id|>system<|end_header_id|>
+
+Complete your message.<|eot_id|><|start_header_id|>user_1<|end_header_id|>
+
+This is a great idea. Canada needs to start fighting this trade war by ignoring American IP. This could cause American companies to scream at Trump until he stops this trade war very quickly. 
+
+www.youtube.com/watch?v=P95G...<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+[action: ignore]<|eot_id|>
+
+Generated Completion:
+----------------------------------------
+<|begin_of_text|><|begin_of_text|><|start_header_id|>system<|end_header_id|>
+
+Complete your message.<|eot_id|><|start_header_id|>user_1<|end_header_id|>
+
+This is a great idea. Canada needs to start fighting this trade war by ignoring American IP. This could cause American companies to scream at Trump until he stops this trade war very quickly. 
+
+www.youtube.com/watch?v=P95G...<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+<|eot_id|>
+
+--------------------------------------------------------------------------------
+
+Original Message:
+----------------------------------------
+<|begin_of_text|><|start_header_id|>system<|end_header_id|>
+
+Complete your message.<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+But I suppose I see where you're coming from, philosophical as it may be. 
+
+Let's hope this won't be your last meal, hmm? That'd be terrible for business.<|eot_id|>
+
+Generated Completion:
+----------------------------------------
+<|begin_of_text|><|begin_of_text|><|start_header_id|>system<|end_header_id|>
+
+Complete your message.<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+<|eot_id|>
+
+--------------------------------------------------------------------------------
+
+Original Message:
+----------------------------------------
+<|begin_of_text|><|start_header_id|>system<|end_header_id|>
+
+Complete your message.<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+Inis na inis ako tuwing dadaan ako ng highway na may malaking poster si Quiboloy. Ang kadiri talaga bakit ba hinahayaan ng COMELEC na makatakbo sa election. Pag yan nanalo, mas lalong doomed ang Pilipinas niyan 😭<|eot_id|>
+
+Generated Completion:
+----------------------------------------
+<|begin_of_text|><|begin_of_text|><|start_header_id|>system<|end_header_id|>
+
+Complete your message.<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+<|eot_id|>
+
+--------------------------------------------------------------------------------
+
+
+================================================================================
+Cluster: downloaded_clusters/cluster_1.jsonl
+================================================================================
+
+Original Message:
+----------------------------------------
+<|begin_of_text|><|start_header_id|>system<|end_header_id|>
+
+Complete your message.<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+The second part of my look at Agents Of S.H.I.E.L.D. with David Smith. I still love this show, whatever the wider opinion on it may be now. Although admittedly I loved it more as it went on...
+
+timworthington.org/2020/04/07/i...<|eot_id|>
+
+Generated Completion:
+----------------------------------------
+<|begin_of_text|><|begin_of_text|><|start_header_id|>system<|end_header_id|>
+
+Complete your message.<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+<|eot_id|>
+
+--------------------------------------------------------------------------------
+
+Original Message:
+----------------------------------------
+<|begin_of_text|><|start_header_id|>system<|end_header_id|>
+
+Complete your message.<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+Pierre Poilievre wants to bring Trumpism to Canada<|eot_id|>
+
+Generated Completion:
+----------------------------------------
+<|begin_of_text|><|begin_of_text|><|start_header_id|>system<|end_header_id|>
+
+Complete your message.<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+<|eot_id|>
+
+--------------------------------------------------------------------------------
+
+Original Message:
+----------------------------------------
+<|begin_of_text|><|start_header_id|>system<|end_header_id|>
+
+Complete your message.<|eot_id|><|start_header_id|>user_1<|end_header_id|>
+
+Jasmine Crockett, AOC, Al Green<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+[action: ignore]<|eot_id|>
+
+Generated Completion:
+----------------------------------------
+<|begin_of_text|><|begin_of_text|><|start_header_id|>system<|end_header_id|>
+
+Complete your message.<|eot_id|><|start_header_id|>user_1<|end_header_id|>
+
+Jasmine Crockett, AOC, Al Green<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+<|eot_id|>
+
+--------------------------------------------------------------------------------
+
+Original Message:
+----------------------------------------
+<|begin_of_text|><|start_header_id|>system<|end_header_id|>
+
+Complete your message.<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+Mark Carney wins federal Liberal leadership, will succeed Justin Trudeau as prime minister ntv.ca/mark-carney-...<|eot_id|>
+
+Generated Completion:
+----------------------------------------
+<|begin_of_text|><|begin_of_text|><|start_header_id|>system<|end_header_id|>
+
+Complete your message.<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+<|eot_id|>
+
+--------------------------------------------------------------------------------
+
+Original Message:
+----------------------------------------
+<|begin_of_text|><|start_header_id|>system<|end_header_id|>
+
+Complete your message.<|eot_id|><|start_header_id|>user_1<|end_header_id|>
+
+#Canada<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+[action: ignore]<|eot_id|>
+
+Generated Completion:
+----------------------------------------
+<|begin_of_text|><|begin_of_text|><|start_header_id|>system<|end_header_id|>
+
+Complete your message.<|eot_id|><|start_header_id|>user_1<|end_header_id|>
+
+#Canada<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+<|eot_id|>
+
+--------------------------------------------------------------------------------
+

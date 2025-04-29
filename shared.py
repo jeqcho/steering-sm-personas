@@ -55,7 +55,7 @@ class ConversationDataset(Dataset):
                     full_text = convert_chain_to_text(chain)
 
                     # Split text to get assistant's response
-                    parts = full_text.split("<|im_start|>assistant")
+                    parts = full_text.split("<|start_header_id|>assistant<|end_header_id|>")
                     if len(parts) != 2:
                         continue  # Skip malformed examples
                     assistant_text = (
@@ -92,14 +92,19 @@ class ConversationDataset(Dataset):
         )
         
         # Create labels where we only compute loss on assistant's response
-        # First, find where the assistant's text starts in the full text
-        full_tokens = self.tokenizer.encode(full_text)
-        assistant_tokens = self.tokenizer.encode(assistant_text)
-        
-        # Create labels with -100 for tokens before assistant's response
         labels = tokenized["input_ids"].clone()
-        assistant_start_idx = len(full_tokens) - len(assistant_tokens)
-        labels[:, :assistant_start_idx] = -100  # Set to -100 to ignore in loss
+        
+        # Find the last occurrence of the assistant marker
+        assistant_marker = "<|start_header_id|>assistant<|end_header_id|>\n\n"
+        last_marker_pos = full_text.rfind(assistant_marker)
+        
+        assert last_marker_pos != -1
+        # Tokenize the text up to the marker
+        text_before = full_text[:last_marker_pos + len(assistant_marker)]
+        tokens_before = self.tokenizer(text_before, add_special_tokens=False)["input_ids"]
+        
+        # Set all tokens before and including the marker to -100
+        labels[0, :len(tokens_before)] = -100
         
         payload = {
             "input_ids": tokenized["input_ids"].squeeze(0),

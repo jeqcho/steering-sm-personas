@@ -13,6 +13,7 @@ from shared import (
     load_model_and_tokenizer,
     logger
 )
+from tqdm import tqdm
 
 def generate_completions(
     checkpoint_path: str = "/home/ubuntu/sandbox-persona/checkpoints/checkpoint-step_500",
@@ -36,7 +37,7 @@ def generate_completions(
     # Generate completions
     with open(output_file, 'w') as f:
         # Process each cluster file separately
-        for cluster_file in CLUSTER_POST_FILES:
+        for cluster_file in tqdm(CLUSTER_POST_FILES):
             # Create dataset for this cluster
             dataset = ConversationDataset([cluster_file], tokenizer)
             
@@ -55,19 +56,16 @@ def generate_completions(
             # Generate completions for selected examples
             for idx in indices:
                 example = dataset[idx]
-                input_text = example["text"]
+                input_text: str = example["text"]
                 
                 # Split input into conditioning and target parts
                 # Assuming format is <|im_start|>user_1 ... <|im_end|> <|im_start|>assistant
-                parts = input_text.split("<|im_start|>assistant")
-                if len(parts) != 2:
-                    logger.warning(f"Unexpected input format in example {idx}. Skipping.")
-                    continue
+                parts = input_text.rsplit("<|start_header_id|>assistant<|end_header_id|>\n\n", 1)
                     
-                conditioning_text = parts[0] + "<|im_start|>assistant\n"
+                conditioning_text = parts[0] + "<|start_header_id|>assistant<|end_header_id|>\n\n"
                 
                 # Tokenize only the conditioning part
-                inputs = tokenizer(conditioning_text, return_tensors="pt", padding=True, truncation=True, max_length=2048)
+                inputs = tokenizer(conditioning_text, return_tensors="pt", padding=True, truncation=True, max_length=2048, add_special_tokens=False)
                 inputs = {k: v.to(model.device) for k, v in inputs.items()}
                 
                 # Generate completion
