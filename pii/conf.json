@@ -1,7 +1,7 @@
 {
     "experiment_name": "full_data",
     "evaluate": false,
-    "file_name": "../../processed_1000_clusters/cluster_0.jsonl",
+    "file_name": "../../all_messages/test_messages.parquet",
     "nli_entities": {
         "salary": 0.991,
         "age": 0.986,
