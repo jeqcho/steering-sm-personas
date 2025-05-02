@@ -1,13 +1,10 @@
-import re
 import json
 import os
-from typing import Any, Dict
+from presidio_anonymizer import BatchAnonymizerEngine
 from tqdm import tqdm
 import time
 
 import pandas as pd
-import numpy as np
-import torch
 from presidio_analyzer import (
     AnalyzerEngine,
     PatternRecognizer,
@@ -15,13 +12,6 @@ from presidio_analyzer import (
     BatchAnalyzerEngine,
 )
 from torch.utils.data import Dataset
-from transformers import pipeline, AutoTokenizer, AutoModelForTokenClassification
-from sklearn.metrics import (
-    accuracy_score,
-    confusion_matrix,
-    precision_score,
-    recall_score,
-)
 from loguru import logger
 
 tqdm.pandas()
@@ -136,42 +126,36 @@ if __name__ == "__main__":
     # logger.info("Finished presidio analysis")
 
     # alt presidio
-    logger.info("Starting batch Presidio analysis with grid search...")
+    logger.info("Starting batch Presidio analysis...")
     df2 = df[["full_text"]]
     df_dict = df2.to_dict(orient="list")
     batch_analyzer = BatchAnalyzerEngine(analyzer_engine=presidio_analyzer)
-    
-    # Grid search parameters
-    batch_sizes = [6, 8, 10, 12]
-    n_processes = [6, 8, 10]
-    
-    # Table to store results
-    results = []
-    
-    logger.info("Batch size | N processes | Time (seconds)")
-    logger.info("---------------------------------------")
-    
-    for batch_size in batch_sizes:
-        for n_process in n_processes:
-            start_time = time.time()
-            analyzer_results = list(batch_analyzer.analyze_dict(
-                df_dict, language="en", batch_size=batch_size, n_process=n_process
-            ))
-            elapsed_time = time.time() - start_time
-            results.append((batch_size, n_process, elapsed_time))
-            logger.info(f"{batch_size:^10} | {n_process:^11} | {elapsed_time:.2f}")
-    
-    # Find the best configuration
-    best_config = min(results, key=lambda x: x[2])
-    logger.info(f"Best configuration: batch_size={best_config[0]}, n_process={best_config[1]}, time={best_config[2]:.2f}s")
-    
+
     # Use the best configuration for the final result
     start_time = time.time()
-    analyzer_results = list(batch_analyzer.analyze_dict(
-        df_dict, language="en", batch_size=best_config[0], n_process=best_config[1]
-    ))
+    analyzer_results = list(
+        batch_analyzer.analyze_dict(
+            df_dict,
+            language="en",
+            batch_size=12,
+            n_process=8
+        )
+    )
+    # remove irrelevant PII
+    # TODO
+    
     df["presidio_batch_output"] = analyzer_results[0].recognizer_results
-    logger.info(f"Finished batch Presidio analysis with best config in {time.time() - start_time:.2f} seconds")
+    elapsed = int(time.time() - start_time)
+    hours, remainder = divmod(elapsed, 3600)
+    minutes, seconds = divmod(remainder, 60)
+    logger.info(
+        f"Finished batch Presidio analysis with best config in {hours}h:{minutes}m:{seconds}s"
+    )
+
+    # anonymize
+    batch_anonymizer = BatchAnonymizerEngine()
+    anonymizer_results = batch_anonymizer.anonymize_dict(analyzer_results)
+    df["scrubbed_output"] = anonymizer_results["full_text"]
 
     # 5 - Calculate output & score
     logger.info("Calculating final labels...")
