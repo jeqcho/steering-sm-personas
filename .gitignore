@@ -178,3 +178,4 @@ caches/*
 logs/*
 
 wandb/
+pii/full_data

@@ -88,16 +88,28 @@ def entity_score(classifier, dataset, entity_list, entity_thresholds=None, batch
     # No entity threshold if not provided
     if entity_thresholds is None:
         entity_thresholds = np.zeros(len(entity_list))
+    
+    # print the first few rows of each of the stuff we feed into classifier
+    logger.info("Sample of input data:")
+    if isinstance(dataset, list):
+        logger.info(f"First 3 dataset entries: {dataset[:3]}")
+    else:
+        logger.info(f"First 3 dataset entries: {[dataset[i] for i in range(min(3, len(dataset)))]}")
+    logger.info(f"Entity list: {entity_list}")
+    logger.info(f"Entity thresholds: {entity_thresholds}")
 
     nli_output = classifier(dataset, entity_list, batch_size=batch_size, multi_label=True)
 
-    threshold_dict = {label: threshold for label, threshold in zip(entity_list, entity_thresholds)}
-
     for i, nli_row in enumerate(tqdm(nli_output, desc="Processing NLI results")):
-        res = {
-            label: score if score > threshold_dict[label] else 0
-            for label, score in zip(nli_row["labels"], nli_row["scores"])
-        }
+        res = {}
+        for label, score in zip(nli_row["labels"], nli_row["scores"]):
+            threshold_index = entity_list.index(label)
+            threshold = entity_thresholds[threshold_index]
+            if score > threshold:
+                res[label] = score
+            else:
+                res[label] = 0
+
         final_output.append(res)
         if i % 1000 == 0:
             logger.info(f"Processed {i} documents for NLI")
@@ -129,7 +141,9 @@ if __name__ == "__main__":
     df = pd.read_parquet(params["file_name"])
     
     # Create a working DataFrame with only non-empty text entries
-    df['full_text'] = df['text']
+    df['full_text'] = df['text'].fillna("some filler text")
+    df['full_text'] = df['full_text'].replace("", "some filler text")
+    
     batch_size = 128
 
     # 2.0 Setup Presidio
@@ -206,7 +220,7 @@ if __name__ == "__main__":
 
     # 5 - Calculate output & score
     logger.info("Calculating final labels...")
-    output_col_list = ["name_match", "presidio_output", "ner_output"]
+    output_col_list = ["presidio_output", "ner_output"]
     for i, entity in enumerate(params["nli_entities"].keys()):
         output_col_list.append(f"nli_{entity}")
     df = set_final_labels(df, output_col_list)

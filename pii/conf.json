@@ -1,7 +1,7 @@
 {
     "experiment_name": "full_data",
     "evaluate": false,
-    "file_name": "../../all_messages/test_messages.parquet",
+    "file_name": "../../all_messages/subsample_1k.parquet",
     "nli_entities": {
         "salary": 0.991,
         "age": 0.986,
