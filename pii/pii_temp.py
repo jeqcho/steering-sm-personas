@@ -141,6 +141,7 @@ if __name__ == "__main__":
     # remove @user
     start = time.time()
     new_results: list[list[RecognizerResult]] = []
+    lowest_scores: list[float] = []  # Store the lowest score for each row
     for i, result in enumerate(analyzer_results[0].recognizer_results):
         assert isinstance(result, list)
         new_result: list[RecognizerResult] = []
@@ -150,8 +151,16 @@ if __name__ == "__main__":
                 if string[subresult.start - 1] == "@":
                     continue
             new_result.append(subresult)
+        # Compute the lowest score for this new_result, default to 2 if empty
+        if new_result:
+            min_score = min([sub.score for sub in new_result])
+        else:
+            min_score = 2
+        lowest_scores.append(min_score)
         new_results.append(new_result)
     analyzer_results[0].recognizer_results = new_results
+    # Add the lowest score as a new column
+    df["lowest_score"] = lowest_scores
     print_elapsed(start, "Presidio removal of unwanted entities")
 
     df["presidio_batch_output"] = analyzer_results[0].recognizer_results

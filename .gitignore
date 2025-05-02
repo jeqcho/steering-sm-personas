@@ -179,3 +179,4 @@ logs/*
 
 wandb/
 pii/full_data
+pii/logs

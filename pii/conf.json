@@ -1,7 +1,7 @@
 {
     "experiment_name": "full_data",
     "evaluate": false,
-    "file_name": "../../all_messages/subsample_50k.parquet",
+    "file_name": "../../all_messages/merged_messages.parquet",
     "presidio_inclusion_list": [
         "CREDIT_CARD",
         "CRYPTO",
