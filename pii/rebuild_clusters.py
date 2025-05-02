@@ -8,9 +8,8 @@
 # do this for each folder
 
 import json
-import os
 from pathlib import Path
-from typing import Dict, List, Any
+from typing import Dict
 from tqdm import tqdm
 
 INPUT_FILE = Path(__file__).parent / "full_data" / "single_cluster.jsonl"
@@ -34,10 +33,26 @@ def process_folder(folder_path: str):
     path = Path(folder_path)
     folder_name = path.name
     # Output directly to the specified folder in home directory
-    output_dir = HOME_DIR / folder_name
+    output_dir = Path(HOME_DIR / "cleaned" / folder_name)
     output_dir.mkdir(exist_ok=True, parents=True)
 
     print(f"Processing folder: {folder_path}")
+
+    # First, copy over user_clusters.json to the output directory
+    user_clusters_file = path / "user_clusters.json"
+    output_user_clusters_file = output_dir / "user_clusters.json"
+
+    assert user_clusters_file.exists()
+    # Read the original file
+    with open(user_clusters_file, "r") as src:
+        user_clusters_data = json.load(src)
+
+    # Write to the output directory
+    with open(output_user_clusters_file, "w") as dest:
+        json.dump(user_clusters_data, dest)
+
+    print(f"Copied user_clusters.json to {output_user_clusters_file}")
+
     # Load the user clusters mapping
     user_clusters = load_user_clusters(path)
 
@@ -82,9 +97,10 @@ def process_folder(folder_path: str):
 def main():
     # Hardcoded list of folders to process (absolute paths from home directory)
     folders = [
-        str(HOME_DIR / "cleaned" / "processed_2_clusters"),
-        str(HOME_DIR / "cleaned" / "processed_25_clusters"),
-        str(HOME_DIR / "cleaned" / "processed_1000_clusters"),
+        str(HOME_DIR / "processed_2_clusters"),
+        str(HOME_DIR / "processed_25_clusters"),
+        str(HOME_DIR / "processed_100_clusters"),
+        str(HOME_DIR / "processed_1000_clusters"),
     ]
 
     for folder in folders:
