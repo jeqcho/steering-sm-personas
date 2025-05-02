@@ -1,0 +1,95 @@
+# input: pii/single_cluster.jsonl and a list of folders e.g. [/processed_2_clusters,processed_25_clusters]
+# output: cluster_X.jsonl where X is an integer from 0 upwards
+
+# for each given folder, take the user_clusters.json file in them
+# it is a Dict[str, int] which maps user ID to a cluster
+# now go through each row of single_cluster.jsonl, where each row is a list of dicts.
+# Look at the user_id of the last dict. Then write that row to the appropriate cluster
+# do this for each folder
+
+import json
+import os
+from pathlib import Path
+from typing import Dict, List, Any
+from tqdm import tqdm
+
+INPUT_FILE = Path(__file__).parent / "full_data" / "single_cluster.jsonl"
+HOME_DIR = Path.home()
+
+
+def load_user_clusters(folder_path: Path) -> Dict[str, int]:
+    """Load the user_clusters.json file from the given folder."""
+    user_clusters_file = folder_path / "user_clusters.json"
+    if not user_clusters_file.exists():
+        raise FileNotFoundError(
+            f"User clusters file not found at: {user_clusters_file}"
+        )
+
+    with open(user_clusters_file, "r") as f:
+        return json.load(f)
+
+
+def process_folder(folder_path: str):
+    """Process a folder, reading user clusters and writing chains to appropriate files."""
+    path = Path(folder_path)
+    folder_name = path.name
+    # Output directly to the specified folder in home directory
+    output_dir = HOME_DIR / folder_name
+    output_dir.mkdir(exist_ok=True, parents=True)
+
+    print(f"Processing folder: {folder_path}")
+    # Load the user clusters mapping
+    user_clusters = load_user_clusters(path)
+
+    # Create a mapping from cluster ID to output file
+    cluster_files = {}
+
+    # Count chains for progress bar
+    with open(INPUT_FILE, "r") as f:
+        total_chains = sum(1 for _ in f)
+
+    # Process each chain in the single_cluster.jsonl
+    with open(INPUT_FILE, "r") as f:
+        for line in tqdm(f, total=total_chains, desc=f"Processing {folder_name}"):
+            chain = json.loads(line)
+            assert chain
+            # Get the user_id from the last message in the chain
+            last_message = chain[-1]
+            user_id = last_message["user_id"]
+
+            # Determine which cluster this user belongs to
+            cluster_id = user_clusters.get(user_id)
+            assert cluster_id is not None, (
+                f"User ID {user_id} not found in user_clusters mapping. Cannot determine cluster assignment."
+            )
+
+            # Write the chain to the appropriate cluster file
+            if cluster_id not in cluster_files:
+                cluster_file = output_dir / f"cluster_{cluster_id}.jsonl"
+                cluster_files[cluster_id] = open(cluster_file, "a")
+
+            cluster_files[cluster_id].write(line)
+
+    # Close all file handles
+    for file_handle in cluster_files.values():
+        file_handle.close()
+
+    print(
+        f"Completed processing {folder_name}. Created {len(cluster_files)} cluster files."
+    )
+
+
+def main():
+    # Hardcoded list of folders to process (absolute paths from home directory)
+    folders = [
+        str(HOME_DIR / "cleaned" / "processed_2_clusters"),
+        str(HOME_DIR / "cleaned" / "processed_25_clusters"),
+        str(HOME_DIR / "cleaned" / "processed_1000_clusters"),
+    ]
+
+    for folder in folders:
+        process_folder(folder)
+
+
+if __name__ == "__main__":
+    main()
