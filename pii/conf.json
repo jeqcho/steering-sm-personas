@@ -2,17 +2,14 @@
     "experiment_name": "full_data",
     "evaluate": false,
     "file_name": "../../all_messages/subsample_50k.parquet",
-    "presidio_exclusion_list": [
-        "PERSON",
-        "DATE_TIME",
-        "NRP",
-        "LOCATION",
-        "US_DRIVER_LICENSE"
+    "presidio_inclusion_list": [
+        "CREDIT_CARD",
+        "CRYPTO",
+        "EMAIL_ADDRESS",
+        "IP_ADDRESS",
+        "PHONE_NUMBER",
+        "URL"
     ],
-    "presidio_deny_list": [
-    ],
-    "presidio_allow_list": [],
-
     "batch_size": 12,
     "threshold": 0,
     "n_process": 8

@@ -1,5 +1,6 @@
 import json
 import os
+from presidio_analyzer.recognizer_registry.recognizer_registry import RecognizerRegistry
 from presidio_analyzer.recognizer_result import RecognizerResult
 from presidio_anonymizer import BatchAnonymizerEngine
 from tqdm import tqdm
@@ -98,12 +99,15 @@ if __name__ == "__main__":
 
     # 2.0 Setup Presidio
     logger.info("Setting up Presidio analyzer...")
-    presidio_analyzer = AnalyzerEngine()
-
-    entities = presidio_analyzer.get_supported_entities()
-
-    irrelevant_entities = set(params["presidio_exclusion_list"])
-    relevant_entities = [ent for ent in entities if ent not in irrelevant_entities]
+    registry_all = RecognizerRegistry()
+    registry_all.load_predefined_recognizers()
+    registry = RecognizerRegistry()
+    recognizers = registry_all.get_recognizers(
+        language="en", entities=params["presidio_inclusion_list"]
+    )
+    for recognizer in recognizers:
+        registry.add_recognizer(recognizer)
+    presidio_analyzer = AnalyzerEngine(registry=registry)
 
     # 2.1 Run Presidio
     # logger.info("Running Presidio analysis...")
@@ -130,7 +134,6 @@ if __name__ == "__main__":
             batch_size=batch_size,
             n_process=n_process,
             score_threshold=threshold,
-            entities=relevant_entities,
         )
     )
     print_elapsed(start, "Presidio batch analysis")
