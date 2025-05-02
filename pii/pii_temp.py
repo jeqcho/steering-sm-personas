@@ -1,5 +1,6 @@
 import json
 import os
+from presidio_analyzer.recognizer_result import RecognizerResult
 from presidio_anonymizer import BatchAnonymizerEngine
 from tqdm import tqdm
 import time
@@ -67,6 +68,13 @@ def set_final_labels(df, output_col_list):
     return df
 
 
+def print_elapsed(start, label="Block"):
+    elapsed = time.time() - start
+    hours, remainder = divmod(int(elapsed), 3600)
+    minutes, seconds = divmod(remainder, 60)
+    print(f"{label} took {hours}h:{minutes}m:{seconds}s")
+
+
 if __name__ == "__main__":
     logger.info("Starting PII detection process...")
 
@@ -84,36 +92,18 @@ if __name__ == "__main__":
     # Create a working DataFrame with only non-empty text entries
     df["full_text"] = df["text"]
 
-    batch_size = 256
+    batch_size = params.get("batch_size", 256)
+    threshold = params.get("threshold", 0)
+    n_process = params.get("n_process", 8)
 
     # 2.0 Setup Presidio
     logger.info("Setting up Presidio analyzer...")
     presidio_analyzer = AnalyzerEngine()
 
-    for entity_dict in tqdm(
-        params["presidio_deny_list"], desc="Adding Presidio recognizers"
-    ):
-        if "pattern" in entity_dict:
-            pattern_recognizer = PatternRecognizer(
-                supported_entity=entity_dict["entity"],
-                deny_list=entity_dict["deny_list"],
-                patterns=[
-                    Pattern(
-                        name=entity_dict["entity"],
-                        regex=entity_dict["pattern"],
-                        score=1,
-                    )
-                ],
-            )
-        else:
-            pattern_recognizer = PatternRecognizer(
-                supported_entity=entity_dict["entity"],
-                deny_list=entity_dict["deny_list"],
-            )
+    entities = presidio_analyzer.get_supported_entities()
 
-        presidio_analyzer.registry.add_recognizer(pattern_recognizer)
-
-    entities_excluded = params["presidio_exclusion_list"]
+    irrelevant_entities = set(params["presidio_exclusion_list"])
+    relevant_entities = [ent for ent in entities if ent not in irrelevant_entities]
 
     # 2.1 Run Presidio
     # logger.info("Running Presidio analysis...")
@@ -132,30 +122,43 @@ if __name__ == "__main__":
     batch_analyzer = BatchAnalyzerEngine(analyzer_engine=presidio_analyzer)
 
     # Use the best configuration for the final result
-    start_time = time.time()
+    start = time.time()
     analyzer_results = list(
         batch_analyzer.analyze_dict(
             df_dict,
             language="en",
-            batch_size=12,
-            n_process=8
+            batch_size=batch_size,
+            n_process=n_process,
+            score_threshold=threshold,
+            entities=relevant_entities,
         )
     )
-    # remove irrelevant PII
-    # TODO
-    
+    print_elapsed(start, "Presidio batch analysis")
+
+    # remove @user
+    start = time.time()
+    new_results: list[list[RecognizerResult]] = []
+    for i, result in enumerate(analyzer_results[0].recognizer_results):
+        assert isinstance(result, list)
+        new_result: list[RecognizerResult] = []
+        for subresult in result:
+            if subresult.entity_type == "URL" and subresult.start > 0:
+                string = analyzer_results[0].value[i]
+                if string[subresult.start - 1] == "@":
+                    continue
+            new_result.append(subresult)
+        new_results.append(new_result)
+    analyzer_results[0].recognizer_results = new_results
+    print_elapsed(start, "Presidio removal of unwanted entities")
+
     df["presidio_batch_output"] = analyzer_results[0].recognizer_results
-    elapsed = int(time.time() - start_time)
-    hours, remainder = divmod(elapsed, 3600)
-    minutes, seconds = divmod(remainder, 60)
-    logger.info(
-        f"Finished batch Presidio analysis with best config in {hours}h:{minutes}m:{seconds}s"
-    )
 
     # anonymize
+    start = time.time()
     batch_anonymizer = BatchAnonymizerEngine()
     anonymizer_results = batch_anonymizer.anonymize_dict(analyzer_results)
     df["scrubbed_output"] = anonymizer_results["full_text"]
+    print_elapsed(start, "Presidio scrubbing")
 
     # 5 - Calculate output & score
     logger.info("Calculating final labels...")

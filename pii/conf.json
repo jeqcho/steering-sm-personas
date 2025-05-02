@@ -1,14 +1,19 @@
 {
     "experiment_name": "full_data",
     "evaluate": false,
-    "file_name": "../../all_messages/subsample_10k.parquet",
+    "file_name": "../../all_messages/subsample_50k.parquet",
     "presidio_exclusion_list": [
         "PERSON",
         "DATE_TIME",
         "NRP",
-        "LOCATION"
+        "LOCATION",
+        "US_DRIVER_LICENSE"
     ],
     "presidio_deny_list": [
     ],
-    "presidio_allow_list": []
+    "presidio_allow_list": [],
+
+    "batch_size": 12,
+    "threshold": 0,
+    "n_process": 8
 }
