@@ -98,3 +98,20 @@ Then copy it
 ssh -o "ControlPath=~/.ssh/cm-%r@%h:%p" jchooi@narval.alliancecan.ca "mkdir -p ~/projects/ctb-liyue/s4yor1/pii_removed/"
 scp -o "ControlPath=~/.ssh/cm-%r@%h:%p" -r cleaned/processed_* jchooi@narval.alliancecan.ca:~/projects/ctb-liyue/s4yor1/pii_removed/
 ```
+
+
+## Notes
+
+Here are the entities that are removed (and their corresponding token)
+```
+<CREDIT_CARD>
+<CRYPTO>
+<EMAIL_ADDRESS>
+<IP_ADDRESS>
+<PHONE_NUMBER>
+<URL>
+```
+
+These are specified in `conf.json`.
+
+I removed privatization for @username.bsky.social (so it's still in the dataset). 
