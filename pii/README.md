@@ -64,10 +64,10 @@ I then ran `sample.py` to get some smaller files in `all_messages/` to work with
 python sample.py
 ```
 
-Then run the pii removal
+Then run the pii removal in the background, will take about 2 hours.
 
 ```bash
-python pii_temp.py
+nohup python pii_temp.py > logs/pii-2.log 2>&1 &
 ```
 
 Then run `rebuild_chains.py` to get it back into a blob

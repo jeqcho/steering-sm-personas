@@ -91,7 +91,7 @@ if __name__ == "__main__":
     df = pd.read_parquet(params["file_name"])
 
     # Create a working DataFrame with only non-empty text entries
-    df["full_text"] = df["text"]
+    df = df.rename(columns={"text": "full_text"})
 
     batch_size = params.get("batch_size", 256)
     threshold = params.get("threshold", 0)
@@ -107,6 +107,17 @@ if __name__ == "__main__":
     )
     for recognizer in recognizers:
         registry.add_recognizer(recognizer)
+
+    # srcub @username.blsky.social
+    bluesky_pattern = Pattern(
+        name="bluesky_pattern", regex="(?<=@)[A-Za-z0-9\\-]+\\.bsky\\.social", score=0.9
+    )
+    # Define the recognizer with one or more patterns
+    bluesky_recognizer = PatternRecognizer(
+        supported_entity="USERNAME", patterns=[bluesky_pattern]
+    )
+    registry.add_recognizer(bluesky_recognizer)
+
     presidio_analyzer = AnalyzerEngine(registry=registry)
 
     # 2.1 Run Presidio
@@ -121,8 +132,7 @@ if __name__ == "__main__":
 
     # alt presidio
     logger.info("Starting batch Presidio analysis...")
-    df2 = df[["full_text"]]
-    df_dict = df2.to_dict(orient="list")
+    df_dict = df[["full_text"]].to_dict(orient="list")
     batch_analyzer = BatchAnalyzerEngine(analyzer_engine=presidio_analyzer)
 
     # Use the best configuration for the final result
@@ -142,6 +152,7 @@ if __name__ == "__main__":
     start = time.time()
     new_results: list[list[RecognizerResult]] = []
     lowest_scores: list[float] = []  # Store the lowest score for each row
+    blsky_str = ".bsky.social"
     for i, result in enumerate(analyzer_results[0].recognizer_results):
         assert isinstance(result, list)
         new_result: list[RecognizerResult] = []
@@ -149,7 +160,14 @@ if __name__ == "__main__":
             if subresult.entity_type == "URL" and subresult.start > 0:
                 string = analyzer_results[0].value[i]
                 if string[subresult.start - 1] == "@":
-                    continue
+                    # username
+                    if string[:subresult.end].endswith(blsky_str):
+                        # blsky.social username
+                        continue
+                    else:
+                        # custom username
+                        subresult.entity_type = "USERNAME"
+                        new_result.append(subresult)
             new_result.append(subresult)
         # Compute the lowest score for this new_result, default to 2 if empty
         if new_result:
@@ -182,6 +200,11 @@ if __name__ == "__main__":
     directory = params["experiment_name"]
     if not os.path.exists(directory):
         os.mkdir(directory)
+    
+    df['presidio_batch_output'] = df['presidio_batch_output'].astype(str)
+    
+    # for dubigging
+    # df.to_csv(directory + "/pii_dataset_tags.csv", index=False)
 
-    df.to_csv(directory + "/pii_dataset_tags.csv", index=False)
+    df.to_parquet(directory + "/pii_dataset_tags.parquet", index=False)
     logger.info("Process completed successfully!")
