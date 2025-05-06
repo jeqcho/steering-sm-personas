@@ -67,10 +67,10 @@ python sample.py
 Then run the pii removal in the background, will take about 2 hours.
 
 ```bash
-nohup python pii_temp.py > logs/pii-2.log 2>&1 &
+nohup python pii_temp.py > logs/pii.log 2>&1 &
 ```
 
-Then run `rebuild_chains.py` to get it back into a blob
+Then run `rebuild_chains.py` to get it back into a blob, takes about 5 minutes
 
 ```bash
 python rebuild_chains.py

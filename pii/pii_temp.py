@@ -261,6 +261,7 @@ if __name__ == "__main__":
     logger.info("Filtering columns for export...")
     # Keep only specified columns
     columns_to_keep = [
+        "user_id",
         "anonymized_user_id",
         "relative_integer_time",
         "actions",

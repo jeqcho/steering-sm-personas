@@ -19,12 +19,11 @@ from tqdm import tqdm
 INPUT_FILE = Path(__file__).parent / 'full_data' / 'pii_dataset_tags.parquet'
 OUTPUT_FILE = Path(__file__).parent / 'full_data' / 'single_cluster.jsonl'
 
-# Columns: user_id,unix_epoch,chain_id,text,actions,full_text,lowest_score,presidio_batch_output,scrubbed_output,final_flag
+# Columns: anonymized_user_id,relative_integer_time,chain_id,actions,scrubbed_output
 
 def process_and_write():
     last_chain_id = None
     current_chain = []
-    first_epoch = None
     
     # Get total number of rows for progress tracking
     total_rows = pd.read_parquet(INPUT_FILE, columns=['chain_id']).shape[0]
@@ -39,23 +38,15 @@ def process_and_write():
             row_dict = row.to_dict()
             chain_id = row_dict['chain_id']
             
-            # If chain_id changes, reset the first_epoch and write the previous chain
+            # If chain_id changes, write the previous chain
             if last_chain_id is not None and chain_id != last_chain_id:
-                # Before writing, adjust all unix_epoch values to be relative to the first message
                 fout.write(json.dumps(current_chain) + '\n')
                 current_chain = []
-                first_epoch = None
-            
-            # Record the first epoch time in this chain if this is the first message
-            if first_epoch is None:
-                first_epoch = int(row_dict['unix_epoch'])
-            
-            # Calculate relative unix_epoch
-            relative_epoch = int(row_dict['unix_epoch']) - first_epoch
             
             msg = {
+                'anonymized_user_id': row_dict['anonymized_user_id'],
                 'user_id': row_dict['user_id'],
-                'unix_epoch': relative_epoch,
+                'relative_integer_time': row_dict['relative_integer_time'],
             }
             
             has_actions = pd.notnull(row_dict['actions']) and str(row_dict['actions']).strip() != ''

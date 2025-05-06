@@ -34,7 +34,14 @@ def process_folder(folder_path: str):
     folder_name = path.name
     # Output directly to the specified folder in home directory
     output_dir = Path(HOME_DIR / "cleaned" / folder_name)
-    output_dir.mkdir(exist_ok=True, parents=True)
+    
+    # Remove existing files if the directory exists
+    if output_dir.exists():
+        for file in output_dir.iterdir():
+            file.unlink()
+        print(f"Removed existing files from {output_dir}")
+    else:
+        output_dir.mkdir(exist_ok=True, parents=True)
 
     print(f"Processing folder: {folder_path}")
 
@@ -77,7 +84,14 @@ def process_folder(folder_path: str):
             assert cluster_id is not None, (
                 f"User ID {user_id} not found in user_clusters mapping. Cannot determine cluster assignment."
             )
-
+            
+            # erase user_id and use anonymous_user_id
+            for message in chain:
+                message["user_id"] = message["anonymized_user_id"]
+                del message["anonymized_user_id"]
+            
+            line = json.dumps(chain) + '\n'
+            
             # Write the chain to the appropriate cluster file
             if cluster_id not in cluster_files:
                 cluster_file = output_dir / f"cluster_{cluster_id}.jsonl"
