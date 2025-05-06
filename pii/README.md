@@ -70,7 +70,7 @@ Then run the pii removal in the background, will take about 2 hours.
 nohup python pii_temp.py > logs/pii.log 2>&1 &
 ```
 
-Then run `rebuild_chains.py` to get it back into a blob, takes about 5 minutes
+Then run `rebuild_chains.py` to get it back into a blob at `full_data/single_cluster.jsonl`, takes about 5 minutes
 
 ```bash
 python rebuild_chains.py
