@@ -1,5 +1,6 @@
 import json
 import os
+import hashlib
 from presidio_analyzer.recognizer_registry.recognizer_registry import RecognizerRegistry
 from presidio_analyzer.recognizer_result import RecognizerResult
 from presidio_anonymizer import BatchAnonymizerEngine
@@ -161,7 +162,7 @@ if __name__ == "__main__":
                 string = analyzer_results[0].value[i]
                 if string[subresult.start - 1] == "@":
                     # username
-                    if string[:subresult.end].endswith(blsky_str):
+                    if string[: subresult.end].endswith(blsky_str):
                         # blsky.social username
                         continue
                     else:
@@ -195,16 +196,78 @@ if __name__ == "__main__":
     output_col_list = ["presidio_batch_output"]
     df = set_final_labels(df, output_col_list)
 
+    # sort by unix_epoch
+    logger.info("Sorting by unix_epoch...")
+    df = df.sort_values(by="unix_epoch", ascending=True)
+
+    # Add relative_integer_time field
+    logger.info("Adding relative_integer_time field...")
+    df["relative_integer_time"] = range(len(df))
+
+    # anonymize did
+    # create a dict to map each did to its relative_integer_time of their first message
+    # convert those values into SHA256
+    # create a new column called anonymized_did that replaces did with SHA256
+    logger.info("Anonymizing user IDs...")
+    start = time.time()
+
+    # Since we already sorted by unix_epoch, the first occurrence of each user_id is the earliest one
+    # Use drop_duplicates to keep only the first occurrence of each user_id
+    user_first_messages = df.drop_duplicates(subset=["user_id"], keep="first")
+
+    # Create a mapping from user_id to relative_integer_time
+    user_to_time_map = dict(
+        zip(
+            user_first_messages["user_id"], user_first_messages["relative_integer_time"]
+        )
+    )
+
+    # Generate SHA256 hashes for each user_id's first occurrence time
+    user_to_hash = {}
+    for user_id, first_time in user_to_time_map.items():
+        hash_object = hashlib.sha256(str(first_time).encode())
+        user_to_hash[user_id] = hash_object.hexdigest()
+
+    # Create a new column called anonymized_user_id that replaces user_id with SHA256
+    df["anonymized_user_id"] = df["user_id"].map(user_to_hash)
+
+    # check for collisions by counting the unique user_id and unique anonymized_user_id
+    unique_user_ids = df["user_id"].nunique()
+    unique_anonymized_ids = df["anonymized_user_id"].nunique()
+    logger.info(f"Unique user_ids: {unique_user_ids}")
+    logger.info(f"Unique anonymized_user_ids: {unique_anonymized_ids}")
+
+    if unique_user_ids != unique_anonymized_ids:
+        logger.warning(
+            f"COLLISION DETECTED: {unique_user_ids - unique_anonymized_ids} collisions found!"
+        )
+    else:
+        logger.info("No collisions detected in anonymization")
+
+    print_elapsed(start, "User ID anonymization")
+
     # 6 - Export
     logger.info("Exporting results...")
     directory = params["experiment_name"]
     if not os.path.exists(directory):
         os.mkdir(directory)
-    
-    df['presidio_batch_output'] = df['presidio_batch_output'].astype(str)
-    
+
+    df["presidio_batch_output"] = df["presidio_batch_output"].astype(str)
+
     # for dubigging
-    # df.to_csv(directory + "/pii_dataset_tags.csv", index=False)
+    if params["debug"]:
+        df.to_csv(directory + "/pii_dataset_tags_debug_all_cols.csv", index=False)
+
+    logger.info("Filtering columns for export...")
+    # Keep only specified columns
+    columns_to_keep = [
+        "anonymized_user_id",
+        "relative_integer_time",
+        "actions",
+        "scrubbed_output",
+        "chain_id",
+    ]
+    df = df[columns_to_keep]
 
     df.to_parquet(directory + "/pii_dataset_tags.parquet", index=False)
     logger.info("Process completed successfully!")

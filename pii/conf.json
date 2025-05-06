@@ -1,6 +1,7 @@
 {
     "experiment_name": "full_data",
     "evaluate": false,
+    "debug": false,
     "file_name": "../../all_messages/merged_messages.parquet",
     "presidio_inclusion_list": [
         "CREDIT_CARD",

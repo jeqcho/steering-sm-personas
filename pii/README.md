@@ -82,7 +82,7 @@ Finally run `rebuild_clusters.py` to rebuild it into `cleaned/`
 python rebuild_clusters.py
 ```
 
-Then scp it back to compute canada, but to `scratch`. Run this on EC2 as usual.
+Then scp it back to compute canada. Run this on EC2 as usual.
 
 ```bash
 cd ~/
@@ -114,4 +114,9 @@ Here are the entities that are removed (and their corresponding token)
 
 These are specified in `conf.json`.
 
-I removed privatization for @username.bsky.social (so it's still in the dataset). 
+Bluesky username handles are also removed, which is anything of the form `@username.bsky.social` or `@<URL>`.
+
+Unix epoch is removed and reassigned from 1 to 52M+ as integers. Ties are broken arbitrarily (deterministically based on how the sorting algo on unix epoch worked). Each message will have exactly one integer. Call this `relative_integer_time`
+
+`did` for each message is removed, and the `did` is replaced with the SHA256 hash of the `relative_integer_time` of their first message.
+
