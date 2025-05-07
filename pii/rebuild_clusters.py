@@ -7,13 +7,27 @@
 # Look at the user_id of the last dict. Then write that row to the appropriate cluster
 # do this for each folder
 
+import hashlib
 import json
 from pathlib import Path
 from typing import Dict
 from tqdm import tqdm
+import os
+from dotenv import load_dotenv
 
 INPUT_FILE = Path(__file__).parent / "full_data" / "single_cluster.jsonl"
 HOME_DIR = Path.home()
+
+# Load environment variables from .env file
+dotenv_path = Path(__file__).parent / ".env"
+load_dotenv(dotenv_path)
+
+# Get the secret from environment variables
+SECRET = os.environ.get("HASH_SECRET")
+if not SECRET:
+    raise ValueError(
+        "HASH_SECRET environment variable not found. Make sure to create .env file with HASH_SECRET."
+    )
 
 
 def load_user_clusters(folder_path: Path) -> Dict[str, int]:
@@ -86,10 +100,15 @@ def process_folder(folder_path: str):
             )
 
             # drop the user_id
+            dids = []
             for message in chain:
-                message["relative_user_id"] = message["anonymized_user_id"]
-                del message["anonymized_user_id"]
-                del message["user_id"]
+                dids.append(message.pop("user_id"))
+            dump = json.dumps(chain, sort_keys=True)
+            for i, message in enumerate(chain):
+                hashed_did = hashlib.sha256(
+                    f"{dids[i]}{dump}{SECRET}".encode()
+                ).hexdigest()
+                message["user_id"] = hashed_did
 
             line = json.dumps(chain) + "\n"
             # erase user_id and use anonymous_user_id

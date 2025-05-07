@@ -33,6 +33,7 @@ gitdb==4.0.12
 GitPython==3.1.44
 huggingface-hub==0.30.2
 idna==3.10
+inquirerpy==0.3.4
 interegular==0.3.3
 ipykernel==6.29.5
 ipython==8.35.0
@@ -79,6 +80,7 @@ pandas==2.2.3
 parso==0.8.4
 peft==0.15.1
 pexpect==4.9.0
+pfzy==0.3.4
 phonenumbers==8.13.55
 pillow==11.1.0
 platformdirs==4.3.7

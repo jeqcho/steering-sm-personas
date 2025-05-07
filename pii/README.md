@@ -70,18 +70,25 @@ Then run the pii removal in the background, will take about 2 hours.
 nohup python pii_temp.py > logs/pii.log 2>&1 &
 ```
 
-Then run `rebuild_chains.py` to get it back into a blob at `full_data/single_cluster.jsonl`, takes about 5 minutes
+Then run `rebuild_chains.py` to get it back into a blob at `full_data/single_cluster.jsonl`, takes about 6 minutes
 
 ```bash
 python rebuild_chains.py
 ```
 
-Finally run `rebuild_clusters.py` to rebuild it into `cleaned/`
+Next we will rebuild the clusters, and remove the `user_id`. We first need to generate a secret key to be used for hashing (see `pii/hashing` for more details).
+
+```bash
+echo HASH_SECRET=$(openssl rand -base64 32) > .env
+```
+
+Finally run `rebuild_clusters.py` to rebuild it into `cleaned/`. This will use the secret above.
 
 ```bash
 python rebuild_clusters.py
 ```
 
+## Upload to Compute Canada
 Then scp it back to compute canada. Run this on EC2 as usual.
 
 ```bash
@@ -99,6 +106,26 @@ ssh -o "ControlPath=~/.ssh/cm-%r@%h:%p" jchooi@narval.alliancecan.ca "mkdir -p ~
 scp -o "ControlPath=~/.ssh/cm-%r@%h:%p" -r cleaned/processed_* jchooi@narval.alliancecan.ca:~/projects/ctb-liyue/s4yor1/pii_removed/
 ```
 
+If something happens that causes some file to drop, you can just ssh each
+```
+scp -o "ControlPath=~/.ssh/cm-%r@%h:%p" -r cleaned/processed_25_clusters jchooi@narval.alliancecan.ca:~/projects/ctb-liyue/s4yor1/pii_removed/
+```
+
+## Upload to Huggingface
+
+```bash
+
+# Install the Hugging Face CLI
+pip install -U "huggingface_hub[cli]"
+
+# Login with your Hugging Face credentials
+huggingface-cli login
+
+cd ~/cleaned
+
+# Push your dataset files
+huggingface-cli upload jeqcho/bluesky-agents . --repo-type=dataset
+```
 
 ## Notes
 

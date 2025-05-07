@@ -26,15 +26,6 @@ OUTPUT_FILE = Path(__file__).parent / "full_data" / "single_cluster.jsonl"
 
 def write_chain(fout: TextIOWrapper, chain: list[Dict[str, Any]]):
     # de-identify users
-    user_deidentifier = dict()
-    # last user gets user_id 0
-    for message in chain[::-1]:
-        if message["anonymized_user_id"] not in user_deidentifier.keys():
-            new_id = len(user_deidentifier.keys())
-            user_deidentifier[message["anonymized_user_id"]] = new_id
-        message["anonymized_user_id"] = user_deidentifier.get(
-            message["anonymized_user_id"]
-        )
     fout.write(json.dumps(chain) + "\n")
 
 
@@ -61,7 +52,6 @@ def process_and_write():
                 current_chain = []
 
             msg = {
-                "anonymized_user_id": row_dict["anonymized_user_id"],
                 "user_id": row_dict["user_id"],
                 "relative_integer_time": row_dict["relative_integer_time"],
             }
