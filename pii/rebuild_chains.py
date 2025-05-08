@@ -77,9 +77,10 @@ def process_and_write():
             if not (has_actions or has_text):
                 raise ValueError(f"Row has neither text nor actions: {row_dict}")
             if has_actions:
-                msg["actions"] = row_dict["actions"]
+                msg["actions"] = json.loads(row_dict["actions"])
             else:
                 msg["text"] = row_dict["scrubbed_output"]
+            
 
             current_chain.append(msg)
             last_chain_id = chain_id
