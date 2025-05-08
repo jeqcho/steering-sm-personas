@@ -61,19 +61,8 @@ def process_folder(folder_path: str):
 
     # First, copy over user_clusters.json to the output directory
     user_clusters_file = path / "user_clusters.json"
-    output_user_clusters_file = output_dir / "user_clusters.json"
 
     assert user_clusters_file.exists()
-    # Read the original file
-    with open(user_clusters_file, "r") as src:
-        user_clusters_data = json.load(src)
-
-    # Write to the output directory
-    with open(output_user_clusters_file, "w") as dest:
-        json.dump(user_clusters_data, dest)
-
-    print(f"Copied user_clusters.json to {output_user_clusters_file}")
-
     # Load the user clusters mapping
     user_clusters = load_user_clusters(path)
 

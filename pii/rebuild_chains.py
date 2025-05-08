@@ -25,7 +25,8 @@ OUTPUT_FILE = Path(__file__).parent / "full_data" / "single_cluster.jsonl"
 
 
 def write_chain(fout: TextIOWrapper, chain: list[Dict[str, Any]]):
-    # de-identify users
+    # make sure the chain is sorted by time
+    chain = sorted(chain, key=lambda message: message["relative_integer_time"])
     fout.write(json.dumps(chain) + "\n")
 
 
@@ -40,6 +41,8 @@ def process_and_write():
         # For parquet files, we need to read the entire file at once
         # If memory is a concern, we can use fastparquet or pyarrow to read in chunks
         df = pd.read_parquet(INPUT_FILE)
+        # sort by chain_id
+        df = df.sort_values("chain_id").reset_index(drop=True)
 
         for _, row in tqdm(df.iterrows(), total=total_rows, desc="Processing rows"):
             # Convert row to dictionary

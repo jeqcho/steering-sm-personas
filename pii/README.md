@@ -124,7 +124,7 @@ huggingface-cli login
 cd ~/cleaned
 
 # Push your dataset files
-huggingface-cli upload jeqcho/bluesky-agents . --repo-type=dataset
+huggingface-cli upload-large-folder ComplexDataLab/bluesky-persona . --repo-type=dataset --num-workers=16
 ```
 
 ## Notes
