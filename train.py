@@ -1,18 +1,16 @@
-from typing import List, Dict, Any, Tuple, Optional
+from pathlib import Path
+from typing import Any
 from peft.mixed_model import PeftMixedModel
 from peft.peft_model import PeftModel
 import torch
 from torch.utils.data import DataLoader
-from transformers import AutoModelForCausalLM, AutoTokenizer
-from peft import get_peft_config, get_peft_model, PrefixTuningConfig, TaskType
-import logging
+from peft import get_peft_model, PrefixTuningConfig, TaskType
 from tqdm import tqdm
 import os
 from dataclasses import dataclass
 import wandb
 from shared import (
     ConversationDataset,
-    CLUSTER_POST_FILES,
     load_model_and_tokenizer,
     collate_fn,
     logger
@@ -20,7 +18,7 @@ from shared import (
 from huggingface_hub import login
 from dotenv import load_dotenv
 
-wandb.require("legacy-service")
+# wandb.require("legacy-service")
 
 @dataclass
 class TrainingConfig:
@@ -241,11 +239,12 @@ def main():
     model.print_trainable_parameters()
     
     # Create datasets
-    train_dataset = ConversationDataset(CLUSTER_POST_FILES[:1], tokenizer, split='train', test_size=0.001)
-    test_dataset = ConversationDataset(CLUSTER_POST_FILES[:1], tokenizer, split='test', test_size=0.001)
+    cluster_folder_path = Path("/home/ubuntu/cleaned/processed_100_clusters/")
+    train_dataset = ConversationDataset(cluster_folder_path, tokenizer, split='train', test_size=0.001)
+    test_dataset = ConversationDataset(cluster_folder_path, tokenizer, split='test', test_size=0.001)
     
     # Training configuration
-    config = TrainingConfig(batch_size=1)
+    config = TrainingConfig(batch_size=5)
     
     # Initialize trainer
     trainer = PrefixTrainer(

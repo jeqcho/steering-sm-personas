@@ -12,6 +12,7 @@ import logging
 from sklearn.model_selection import train_test_split
 import os
 import datetime
+from tqdm import tqdm
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -20,6 +21,7 @@ HOME = os.environ.get("HOME", "/home/ubuntu")
 
 # Shared constants
 USERNAME = "jchooi"
+
 
 @dataclass
 class Message:
@@ -40,8 +42,7 @@ class ConversationThread:
         self.user_id_mapping = self._create_user_id_mapping()
 
     def is_textual(self) -> bool:
-        # textual thread don't have actions
-        return not hasattr(self.messages[-1], "actions")
+        return self.messages[-1].text is not None
 
     def _create_user_id_mapping(self) -> Dict[str, str]:
         """Create a mapping from original user IDs to encoded IDs.
@@ -101,6 +102,7 @@ class ConversationDataset(Dataset):
         split: Optional[str] = None,
         test_size: float = 0.2,
         random_state: int = 42,
+        debug: bool = False # load 1% of the dataset
     ):
         self.tokenizer = tokenizer
         self.examples: list[
@@ -112,8 +114,13 @@ class ConversationDataset(Dataset):
         with open(embedding_file_path, "rb") as f:
             cluster_embeddings: list[NDArray[np.float32]] = pickle.load(f)
 
-        # read actual test
-        for i, file_path in enumerate(file_paths):
+        # load the clusters
+        if debug:
+            # load only 5 clusters
+            file_paths = file_paths[:5]
+        for i, file_path in tqdm(
+            enumerate(file_paths), total=len(file_paths), desc="Loading clusters"
+        ):
             cluster_embedding: NDArray[np.float32] = cluster_embeddings[i]
             with open(file_path, "r") as f:
                 for line in f:
@@ -160,8 +167,11 @@ class ConversationDataset(Dataset):
 
         # Only compute loss on assistant's response
         num_preceding_tokens = len(preceding_tokens["input_ids"])
-        masked_preceding_labels = torch.ones(size=(1, num_preceding_tokens)) * -100
         assistant_labels: torch.Tensor = assistant_tokens["input_ids"].clone()
+        masked_preceding_labels = (
+            torch.ones(size=(1, num_preceding_tokens), dtype=assistant_labels.dtype)
+            * -100
+        )
         labels = torch.concat([masked_preceding_labels, assistant_labels], dim=1)
 
         payload = {
@@ -193,22 +203,27 @@ class ConversationDataset(Dataset):
 def collate_fn(batch, max_len=2048):
     """Custom collate function to pad/truncate each sequence to the batch max length, capped at 2048."""
     # Find the max length in this batch, but cap at max_len
-    batch_max_len = min(
-        max(item["input_ids"].size(-1) for item in batch),
-        max_len
-    )
+    batch_max_len = min(max(item["input_ids"].size(-1) for item in batch), max_len)
 
     def pad_or_truncate(tensor, length):
         if tensor.size(-1) > length:
             return tensor[..., :length]
         elif tensor.size(-1) < length:
             pad_size = [*tensor.shape[:-1], length - tensor.size(-1)]
-            return torch.cat([tensor, torch.zeros(*pad_size, dtype=tensor.dtype)], dim=-1)
+            return torch.cat(
+                [tensor, torch.zeros(*pad_size, dtype=tensor.dtype)], dim=-1
+            )
         return tensor
 
-    input_ids = torch.stack([pad_or_truncate(item["input_ids"], batch_max_len) for item in batch])
-    attention_mask = torch.stack([pad_or_truncate(item["attention_mask"], batch_max_len) for item in batch])
-    labels = torch.stack([pad_or_truncate(item["labels"], batch_max_len) for item in batch])
+    input_ids = torch.stack(
+        [pad_or_truncate(item["input_ids"], batch_max_len) for item in batch]
+    )
+    attention_mask = torch.stack(
+        [pad_or_truncate(item["attention_mask"], batch_max_len) for item in batch]
+    )
+    labels = torch.stack(
+        [pad_or_truncate(item["labels"], batch_max_len) for item in batch]
+    )
 
     return {"input_ids": input_ids, "attention_mask": attention_mask, "labels": labels}
 

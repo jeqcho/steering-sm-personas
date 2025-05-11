@@ -19,3 +19,9 @@ Compute the embeddings for each cluster
 cd ~/steering-sm-personas
 nohup python -m src.compute_embeddings > logs/compute_embeddings.log 2>&1 &
 ```
+
+Run prefix-tuning
+
+```bash
+python -m train
+```
