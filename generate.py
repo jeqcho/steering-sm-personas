@@ -2,6 +2,7 @@
 Write results to outputs/
 """
 
+from pathlib import Path
 import torch
 from peft import PeftModel
 import random
@@ -9,7 +10,6 @@ import os
 from datetime import datetime
 from shared import (
     ConversationDataset,
-    CLUSTER_POST_FILES,
     load_model_and_tokenizer,
     logger
 )
@@ -36,8 +36,10 @@ def generate_completions(
     
     # Generate completions
     with open(output_file, 'w') as f:
+        cluster_folder_path = Path("/home/ubuntu/cleaned/processed_100_clusters/")
+        file_paths = list(cluster_folder_path.glob("*.jsonl"))
         # Process each cluster file separately
-        for cluster_file in tqdm(CLUSTER_POST_FILES):
+        for cluster_file in tqdm(file_paths):
             # Create dataset for this cluster
             dataset = ConversationDataset([cluster_file], tokenizer)
             

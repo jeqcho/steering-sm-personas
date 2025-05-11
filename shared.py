@@ -106,22 +106,23 @@ class ConversationDataset(Dataset):
     ):
         self.tokenizer = tokenizer
         self.examples: list[
-            Tuple[str, str, NDArray[np.float32]]
-        ] = []  # (full_text, assistant_text, embeddings)
+            Tuple[str, str, int]
+        ] = []  # (full_text, assistant_text, cluster_id)
 
         file_paths = list(folder_path.glob("*.jsonl"))
+        
+        # load embeddings
         embedding_file_path = folder_path / "embeddings.pkl"
         with open(embedding_file_path, "rb") as f:
-            cluster_embeddings: list[NDArray[np.float32]] = pickle.load(f)
+            self.cluster_embeddings: list[NDArray[np.float32]] = pickle.load(f)
 
         # load the clusters
         if debug:
             # load only 5 clusters
             file_paths = file_paths[:5]
-        for i, file_path in tqdm(
+        for cluster_id, file_path in tqdm(
             enumerate(file_paths), total=len(file_paths), desc="Loading clusters"
         ):
-            cluster_embedding: NDArray[np.float32] = cluster_embeddings[i]
             with open(file_path, "r") as f:
                 for line in f:
                     chain = json.loads(line)
@@ -131,7 +132,7 @@ class ConversationDataset(Dataset):
                         continue
                     preceding_text, assistant_text = thread.get_llama_text()
 
-                    payload = (preceding_text, assistant_text, cluster_embedding)
+                    payload = (preceding_text, assistant_text, cluster_id)
                     self.examples.append(payload)
 
         # Perform train/test split if requested
@@ -147,8 +148,7 @@ class ConversationDataset(Dataset):
         return len(self.examples)
 
     def __getitem__(self, idx: int) -> Dict[str, torch.Tensor]:
-        preceding_text, assistant_text, embeddings = self.examples[idx]
-        embeddings = torch.tensor(embeddings)
+        preceding_text, assistant_text, cluster_id = self.examples[idx]
 
         # Tokenize the full text for input
         preceding_tokens: Dict[str, Any] = self.tokenizer(
@@ -173,12 +173,17 @@ class ConversationDataset(Dataset):
             * -100
         )
         labels = torch.concat([masked_preceding_labels, assistant_labels], dim=1)
+        
+        cluster_embedding = torch.tensor(self.cluster_embeddings[cluster_id])
+        
 
         payload = {
             "input_ids": full_tokens["input_ids"].squeeze(0),
             "attention_mask": full_tokens["attention_mask"].squeeze(0),
             "labels": labels.squeeze(0),
+            "cluster_embedding": cluster_embedding,
             "text": preceding_text,  # Store original text for reference
+            "cluster_id": cluster_id,
         }
 
         # Dump payload into logs/test.jsonl by appending
