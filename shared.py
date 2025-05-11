@@ -1,3 +1,5 @@
+from dataclasses import dataclass
+from pathlib import Path
 from typing import List, Dict, Any, Tuple, Optional
 import json
 import torch
@@ -15,23 +17,54 @@ import datetime
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-HOME = os.environ.get('HOME', '/home/ubuntu')
+HOME = os.environ.get("HOME", "/home/ubuntu")
 
 # Shared constants
 USERNAME = "jchooi"
-USER_EMBEDDING_CACHE_FILE = (
-    f"{HOME}/caches/data_processing_user_embedding_cache.pkl"
-)
+USER_EMBEDDING_CACHE_FILE = f"{HOME}/caches/data_processing_user_embedding_cache.pkl"
 CLUSTER_POST_FILES = [
     f"{HOME}/cleaned/processed_100_clusters/cluster_84.jsonl",
     f"{HOME}/cleaned/processed_100_clusters/cluster_50.jsonl",
 ]
 
 
+@dataclass
+class Message:
+    user_id: str
+    relative_integer_time: int
+    actions: Optional[str] = None
+    text: Optional[str] = None
+
+
+class ConversationThread:
+    messages: list[Message]
+
+    def __init__(self, messages: list[Message]):
+        self.messages = messages
+
+    def _is_textual(self) -> bool:
+        # textual thread don't have actions
+        return not hasattr(self.messages[-1], "actions")
+
+
+def ConversationThreadFactory(thread_dict: list[Dict[str, Any]]) -> ConversationThread:
+    messages: list[Message] = []
+    for message_dict in thread_dict:
+        message = Message(
+            message_dict["user_id"], message_dict["relative_integer_time"]
+        )
+        if message_dict.get("actions"):
+            message.actions = message_dict["actions"]
+        else:
+            message.text = message_dict["text"]
+        messages.append(message)
+    return ConversationThread(messages)
+
+
 class ConversationDataset(Dataset):
     def __init__(
         self,
-        file_paths: List[str],
+        folder_path: Path,
         tokenizer: Any,
         split: Optional[str] = None,
         test_size: float = 0.2,
@@ -47,6 +80,8 @@ class ConversationDataset(Dataset):
         with open(USER_EMBEDDING_CACHE_FILE, "rb") as f:
             user_embeddings = pickle.load(f)
 
+        file_paths = list(folder_path.glob("*.jsonl"))
+
         # read actual test
         for file_path in file_paths:
             with open(file_path, "r") as f:
@@ -57,7 +92,9 @@ class ConversationDataset(Dataset):
                     full_text = convert_chain_to_text(chain)
 
                     # Split text to get assistant's response
-                    parts = full_text.split("<|start_header_id|>assistant<|end_header_id|>")
+                    parts = full_text.split(
+                        "<|start_header_id|>assistant<|end_header_id|>"
+                    )
                     if len(parts) != 2:
                         continue  # Skip malformed examples
                     assistant_text = (
@@ -83,38 +120,40 @@ class ConversationDataset(Dataset):
     def __getitem__(self, idx: int) -> Dict[str, torch.Tensor]:
         full_text, assistant_text, embeddings = self.examples[idx]
         embeddings = torch.tensor(embeddings)
-        
+
         # Tokenize the full text for input
         tokenized = self.tokenizer(
             full_text,
             padding="max_length",
             truncation=True,
             max_length=2048,
-            return_tensors="pt"
+            return_tensors="pt",
         )
-        
+
         # Create labels where we only compute loss on assistant's response
         labels = tokenized["input_ids"].clone()
-        
+
         # Find the last occurrence of the assistant marker
         assistant_marker = "<|start_header_id|>assistant<|end_header_id|>\n\n"
         last_marker_pos = full_text.rfind(assistant_marker)
-        
+
         assert last_marker_pos != -1
         # Tokenize the text up to the marker
-        text_before = full_text[:last_marker_pos + len(assistant_marker)]
-        tokens_before = self.tokenizer(text_before, add_special_tokens=False)["input_ids"]
-        
+        text_before = full_text[: last_marker_pos + len(assistant_marker)]
+        tokens_before = self.tokenizer(text_before, add_special_tokens=False)[
+            "input_ids"
+        ]
+
         # Set all tokens before and including the marker to -100
-        labels[0, :len(tokens_before)] = -100
-        
+        labels[0, : len(tokens_before)] = -100
+
         payload = {
             "input_ids": tokenized["input_ids"].squeeze(0),
             "attention_mask": tokenized["attention_mask"].squeeze(0),
             "labels": labels.squeeze(0),  # Only compute loss on assistant's response
-            "text": full_text  # Store original text for reference
+            "text": full_text,  # Store original text for reference
         }
-        
+
         # Dump payload into logs/test.jsonl by appending
         # comment this out if not debugging
         os.makedirs("logs", exist_ok=True)
@@ -126,11 +165,11 @@ class ConversationDataset(Dataset):
                 "input_ids": payload["input_ids"].tolist(),
                 "attention_mask": payload["attention_mask"].tolist(),
                 "labels": payload["labels"].tolist(),
-                "text": payload["text"]
+                "text": payload["text"],
             }
             json.dump(json_payload, f)
             f.write("\n")
-        
+
         return payload
 
 
@@ -150,6 +189,7 @@ def load_model_and_tokenizer(model_name: str = "meta-llama/Llama-3.2-3B-Instruct
     # Set padding token
     if tokenizer.pad_token is None:
         tokenizer.pad_token = tokenizer.eos_token
+        print(f"No pad tokens. Set {tokenizer.pad_token=}")
 
     # Load base model
     model = AutoModelForCausalLM.from_pretrained(
