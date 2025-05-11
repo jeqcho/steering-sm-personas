@@ -15,15 +15,16 @@ import datetime
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
+HOME = os.environ.get('HOME', '/home/ubuntu')
+
 # Shared constants
 USERNAME = "jchooi"
 USER_EMBEDDING_CACHE_FILE = (
-    f"/home/ubuntu/sandbox-persona/caches/data_processing_user_embedding_cache.pkl"
+    f"{HOME}/caches/data_processing_user_embedding_cache.pkl"
 )
 CLUSTER_POST_FILES = [
-    "downloaded_clusters/cluster_0.jsonl",
-    "downloaded_clusters/cluster_1.jsonl",
-    "downloaded_clusters/cluster_2.jsonl",
+    f"{HOME}/cleaned/processed_100_clusters/cluster_84.jsonl",
+    f"{HOME}/cleaned/processed_100_clusters/cluster_50.jsonl",
 ]
 
 

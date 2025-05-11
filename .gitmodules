@@ -1,0 +1,3 @@
+[submodule "SM-based-personas"]
+	path = SM_based_personas
+	url = git@github.com:Scezaquer/SM-based-personas.git
